@@ -1,0 +1,17 @@
+{
+  "feeds": [
+    { "name": "Claude Blog", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_claude.xml", "layer": 1, "enabled": true },
+    { "name": "Claude Code Changelog", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_changelog_claude_code.xml", "layer": 1, "enabled": true },
+    { "name": "Anthropic News", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml", "layer": 1, "enabled": true },
+    { "name": "Anthropic Engineering", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml", "layer": 1, "enabled": true },
+    { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "layer": 2, "enabled": true },
+    { "name": "Ethan Mollick", "url": "https://www.oneusefulthing.org/feed", "layer": 2, "enabled": true },
+    { "name": "Anthropic Research", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_research.xml", "layer": 2, "enabled": true },
+    { "name": "Addy Osmani", "url": "https://addyosmani.com/feed.xml", "layer": 2, "enabled": true },
+    { "name": "ClaudeLog", "url": "https://claudelog.com/rss.xml", "layer": 2, "enabled": true },
+    { "name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/technology-lab", "layer": 3, "enabled": true },
+    { "name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "layer": 3, "enabled": true },
+    { "name": "VentureBeat AI", "url": "https://venturebeat.com/category/ai/feed", "layer": 3, "enabled": true },
+    { "name": "The Verge AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "layer": 3, "enabled": true }
+  ]
+}

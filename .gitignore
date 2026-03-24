@@ -1,0 +1,25 @@
+# Environment
+.env
+.venv/
+venv/
+
+# Credentials
+credentials.json
+token.json
+
+# Spending
+spend_log.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store

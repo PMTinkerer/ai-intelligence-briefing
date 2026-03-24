@@ -1,0 +1,37 @@
+{
+  "blocked_projects": [
+    {
+      "project": "Guest Comms Intelligence Layer",
+      "status": "blocked",
+      "blocker": "No public API for Breezeway messaging",
+      "unblock_conditions": [
+        "Breezeway announces a public API or webhook system",
+        "Someone publishes a reliable method to extract Breezeway chat data",
+        "An MCP connector for Breezeway appears in any marketplace or repo",
+        "Breezeway's AI feature exposes structured output that can be piggybacked on"
+      ],
+      "workarounds_tried": ["Playwright browser automation (brittle)", "Email notification parsing (untested)"]
+    },
+    {
+      "project": "Competitor Intelligence Scraper",
+      "status": "specced_not_built",
+      "blocker": "Not blocked, waiting for session availability.",
+      "unblock_conditions": [
+        "A pre-built scraper or dataset for Airbnb/VRBO listings appears",
+        "Crawl4AI adds a feature simplifying JS-rendered site handling",
+        "Someone publishes a working Airbnb territory scraping method"
+      ],
+      "workarounds_tried": []
+    },
+    {
+      "project": "Natural Language Scheduler Interface",
+      "status": "on_horizon",
+      "blocker": "Inspector scheduler needs production use first to generate training data from corrections",
+      "unblock_conditions": [
+        "Claude Code ships a feature simplifying natural language interfaces to existing tools",
+        "An MCP server pattern emerges for human-in-the-loop correction workflows"
+      ],
+      "workarounds_tried": []
+    }
+  ]
+}

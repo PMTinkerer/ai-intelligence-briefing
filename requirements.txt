@@ -1,0 +1,10 @@
+anthropic>=0.40.0
+beautifulsoup4>=4.12
+feedparser>=6.0
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.1
+google-auth-httplib2
+lxml
+python-dotenv
+pytest
+requests>=2.31
