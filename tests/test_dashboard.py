@@ -76,3 +76,28 @@ def test_build_dashboard_returns_html(tmp_path: Path):
     assert "Chart" in result
     assert "MCP" in result
     assert "Test" in result
+
+
+def test_dashboard_backlog_has_toggle_checkboxes(tmp_path: Path):
+    briefings = tmp_path / "briefings.json"
+    backlog = tmp_path / "backlog.json"
+    leaderboard = tmp_path / "leaderboard.json"
+
+    briefings.write_text("[]")
+    backlog.write_text(json.dumps({"items": [
+        {"id": "abc123", "title": "Try MCP", "tier": "GAME_CHANGER",
+         "status": "pending", "date_added": "2026-03-20", "days_pending": 3,
+         "expandable_implement": "Install MCP"},
+    ]}))
+    leaderboard.write_text(json.dumps({"leaderboard": []}))
+
+    result = build_dashboard(briefings, backlog, leaderboard)
+
+    # Verify checkbox and toggle infrastructure
+    assert 'type="checkbox"' in result
+    assert "toggleBacklogItem" in result
+    assert "localStorage" in result
+    assert "clearCompleted" in result
+    assert "clear-completed-btn" in result
+    assert "pruneBacklogStorage" in result
+    assert "backlog-counter" in result
