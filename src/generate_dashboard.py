@@ -152,6 +152,12 @@ def build_dashboard(
                       box-shadow:0 1px 3px rgba(0,0,0,.06); border:1px solid #e2e8f0;
                       margin-bottom:16px; }}
 
+  .backlog-item label {{ display:flex; align-items:center; gap:10px; cursor:pointer; }}
+  .backlog-item input[type="checkbox"] {{ width:18px; height:18px; cursor:pointer;
+    accent-color:#0f172a; flex-shrink:0; }}
+  .backlog-item.completed {{ opacity:0.5; }}
+  .backlog-item.completed strong {{ text-decoration:line-through; }}
+
   .empty {{ text-align:center; padding:40px; color:#94a3b8; }}
 </style>
 </head>
@@ -192,11 +198,19 @@ def build_dashboard(
 
   <!-- Backlog Tab -->
   <div id="tab-backlog" class="tab-content">
+    <div id="backlog-counter" style="margin-bottom:12px;font-size:13px;color:#475569;"></div>
     <div id="backlog-list"></div>
-    <p style="margin-top:12px;font-size:12px;color:#94a3b8;">
-      To mark adopted: <code>python src/backlog.py --adopt &lt;id&gt;</code>
-      or edit data/backlog.json directly.
-    </p>
+    <div id="backlog-completed-section"></div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:12px;">
+      <button id="clear-completed-btn" onclick="clearCompleted()"
+              style="display:none;padding:6px 14px;border-radius:6px;border:1px solid #e2e8f0;
+                     background:#fff;font-size:12px;cursor:pointer;font-weight:500;">
+        Clear completed</button>
+      <p style="margin:0;font-size:12px;color:#94a3b8;">
+        These toggles save in your browser. To sync back to the repo:
+        <code>python src/backlog.py --adopt &lt;id&gt;</code>
+      </p>
+    </div>
   </div>
 
   <!-- Trend Tab -->
@@ -286,11 +300,11 @@ function renderBriefings() {{
     const layerName = {{1:'Anthropic',2:'Practitioner',3:'Industry'}}[item.layer]||'';
     let expandable = '';
     if (item.expandable_implement) {{
-      expandable += `<details><summary>Help me implement this</summary>
+      expandable += `<details><summary>Let me walk you through this</summary>
         <div class="expand-content"><pre>${{esc(item.expandable_implement)}}</pre></div></details>`;
     }}
     if (item.expandable_learn) {{
-      expandable += `<details><summary>Help me learn this</summary>
+      expandable += `<details><summary>Here's what you need to know</summary>
         <div class="expand-content"><p>${{esc(item.expandable_learn)}}</p></div></details>`;
     }}
     return `<div class="card">
@@ -306,25 +320,86 @@ function renderBriefings() {{
   }}).join('');
 }}
 
+// Backlog localStorage helpers
+const BACKLOG_PREFIX = 'backlog_completed_';
+function isBacklogCompleted(id) {{ return localStorage.getItem(BACKLOG_PREFIX + id) === '1'; }}
+function setBacklogCompleted(id, done) {{
+  if (done) localStorage.setItem(BACKLOG_PREFIX + id, '1');
+  else localStorage.removeItem(BACKLOG_PREFIX + id);
+}}
+function pruneBacklogStorage(validIds) {{
+  const idSet = new Set(validIds);
+  for (let i = localStorage.length - 1; i >= 0; i--) {{
+    const key = localStorage.key(i);
+    if (key && key.startsWith(BACKLOG_PREFIX)) {{
+      const id = key.slice(BACKLOG_PREFIX.length);
+      if (!idSet.has(id)) localStorage.removeItem(key);
+    }}
+  }}
+}}
+function toggleBacklogItem(id) {{
+  setBacklogCompleted(id, !isBacklogCompleted(id));
+  renderBacklog();
+}}
+function clearCompleted() {{
+  const pending = backlogItems.filter(i => i.status === 'pending');
+  pending.forEach(item => {{ if (isBacklogCompleted(item.id)) setBacklogCompleted(item.id, false); }});
+  renderBacklog();
+}}
+
 // Render backlog
 function renderBacklog() {{
   const el = document.getElementById('backlog-list');
+  const completedEl = document.getElementById('backlog-completed-section');
+  const counterEl = document.getElementById('backlog-counter');
+  const clearBtn = document.getElementById('clear-completed-btn');
   const pending = backlogItems.filter(i => i.status === 'pending')
     .sort((a,b) => (a.date_added||'').localeCompare(b.date_added||''));
 
+  // Prune orphaned localStorage keys for items no longer in the backlog
+  pruneBacklogStorage(pending.map(i => i.id));
+
   if (!pending.length) {{
     el.innerHTML = '<div class="empty">No pending items. You\\'re caught up!</div>';
+    completedEl.innerHTML = '';
+    counterEl.textContent = '';
+    clearBtn.style.display = 'none';
     return;
   }}
 
-  el.innerHTML = pending.map(item => {{
+  const uncompleted = pending.filter(i => !isBacklogCompleted(i.id));
+  const completed = pending.filter(i => isBacklogCompleted(i.id));
+
+  // Update counter
+  counterEl.textContent = completed.length > 0
+    ? `${{completed.length}} of ${{pending.length}} items completed`
+    : `${{pending.length}} pending items`;
+  clearBtn.style.display = completed.length > 0 ? 'inline-block' : 'none';
+
+  function renderItem(item) {{
     const badgeClass = item.tier==='GAME_CHANGER'?'badge-gc':'badge-wyt';
-    return `<div class="backlog-item">
-      <span class="badge ${{badgeClass}}">${{item.tier}}</span>
-      <strong style="margin-left:8px;">${{esc(item.title||'')}}</strong>
-      <span class="backlog-age" style="margin-left:8px;">${{item.days_pending||0}}d pending · ${{item.id}}</span>
+    const done = isBacklogCompleted(item.id);
+    const cls = done ? 'backlog-item completed' : 'backlog-item';
+    return `<div class="${{cls}}">
+      <label>
+        <input type="checkbox" ${{done?'checked':''}}
+               onchange="toggleBacklogItem('${{item.id}}')" />
+        <span class="badge ${{badgeClass}}">${{item.tier}}</span>
+        <strong>${{esc(item.title||'')}}</strong>
+        <span class="backlog-age">${{item.days_pending||0}}d pending · ${{item.id}}</span>
+      </label>
     </div>`;
-  }}).join('');
+  }}
+
+  el.innerHTML = uncompleted.map(renderItem).join('');
+
+  if (completed.length) {{
+    completedEl.innerHTML = '<p style="margin:16px 0 8px;font-size:12px;font-weight:600;'
+      + 'color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;">Completed</p>'
+      + completed.map(renderItem).join('');
+  }} else {{
+    completedEl.innerHTML = '';
+  }}
 }}
 
 // Render trend chart

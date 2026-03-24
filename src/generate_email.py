@@ -169,7 +169,7 @@ def _render_items(items: list[dict]) -> str:
 <div style="margin-top:10px;padding:10px 14px;background-color:#f1f5f9;
             border-left:3px solid {tier_color};border-radius:0 4px 4px 0;">
   <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#475569;
-            text-transform:uppercase;letter-spacing:.05em;">Help me implement this</p>
+            text-transform:uppercase;letter-spacing:.05em;">Let me walk you through this</p>
   <pre style="margin:0;font-size:13px;color:#1e293b;white-space:pre-wrap;
               font-family:monospace;line-height:1.5;">{html.escape(impl)}</pre>
 </div>"""
@@ -180,7 +180,7 @@ def _render_items(items: list[dict]) -> str:
 <div style="margin-top:8px;padding:10px 14px;background-color:#f0f9ff;
             border-left:3px solid #3b82f6;border-radius:0 4px 4px 0;">
   <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#475569;
-            text-transform:uppercase;letter-spacing:.05em;">Help me learn this</p>
+            text-transform:uppercase;letter-spacing:.05em;">Here's what you need to know</p>
   <p style="margin:0;font-size:13px;color:#1e293b;line-height:1.5;">{html.escape(learn)}</p>
 </div>"""
 
@@ -219,7 +219,7 @@ def _render_items(items: list[dict]) -> str:
   <td style="padding:20px 0 0;">
     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
       <tr><td style="padding:0 32px 8px;">
-        <h2 style="margin:0;font-size:16px;color:#0f172a;font-weight:700;">Today's Briefing</h2>
+        <h2 style="margin:0;font-size:16px;color:#0f172a;font-weight:700;">Here's what caught my attention today</h2>
       </td></tr>
       {rows}
     </table>
@@ -263,7 +263,7 @@ def _render_filter_transparency(total_fetched: int, surfaced: int, noted: int, d
 <tr>
   <td style="padding:8px 32px;">
     <p style="margin:0;font-size:11px;color:#94a3b8;text-align:center;">
-      Reviewed {total_fetched} items. Surfaced {surfaced}. Noted {noted} (dashboard only). Dropped {dropped}.
+      I looked through {total_fetched} items today. {surfaced} were worth your time, {noted} were noted for the record, and I dropped {dropped}.
     </p>
   </td>
 </tr>"""
@@ -274,10 +274,10 @@ def _render_quiet_day() -> str:
 <tr>
   <td style="padding:32px;text-align:center;">
     <p style="margin:0;font-size:16px;color:#64748b;">
-      Quiet day — nothing worth your time today.
+      Nothing jumped out at me today — and that's a good thing.
     </p>
     <p style="margin:8px 0 0;font-size:13px;color:#94a3b8;">
-      All systems running. The filter is working.
+      I'm still watching everything. When something matters, you'll be the first to know.
     </p>
   </td>
 </tr>"""

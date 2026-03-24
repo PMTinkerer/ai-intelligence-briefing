@@ -132,8 +132,8 @@ def test_daily_email_filter_transparency():
         dashboard_url="https://example.com",
     )
 
-    assert "Reviewed 25 items" in body
-    assert "Dropped 18" in body
+    assert "I looked through 25 items today" in body
+    assert "I dropped 18" in body
 
 
 def test_daily_email_quiet_day():
@@ -148,7 +148,7 @@ def test_daily_email_quiet_day():
     )
 
     assert "0 items" in subject
-    assert "Quiet day" in body
+    assert "Nothing jumped out at me today" in body
 
 
 def test_daily_email_project_unblock_subject():

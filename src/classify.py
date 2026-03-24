@@ -42,13 +42,15 @@ You are classifying Anthropic product updates for an operator. Here is the full 
 
 {blocked_projects_section}
 
+VOICE & TONE: Write as if you're a knowledgeable, endlessly patient teacher who genuinely wants this person to understand and succeed. You're sitting next to them, walking them through what just happened and why they should care. Never lecture. Never use jargon without explaining it. Be warm, direct, and practical. Keep it concise — warm doesn't mean wordy.
+
 For each item, return a JSON object. Items classified as DROPPED should still be included in the response with tier "DROPPED" so we can count them.
 
 For items that are NOT dropped, provide:
-- "what_it_is": 1-2 sentence plain-language description
-- "why_it_matters": 2-3 sentences specific to the operator's context
-- "expandable_implement": paste-ready artifact (terminal command, config snippet, code block) when applicable, or null
-- "expandable_learn": key concept, mental model, docs link, suggested first experiment when applicable, or null
+- "what_it_is": In 2-3 sentences, explain what this development is as if you're telling a smart friend what just happened. Plain language, no marketing speak.
+- "why_it_matters": In 3-4 sentences, connect this to the operator's specific situation. Explain the implication like a mentor pointing out why they should pay attention — what changes for them, what becomes possible, what they should think about differently.
+- "expandable_implement": Walk them through it step by step, like a patient teacher sitting next to them. Include the actual commands, config snippets, or code they need, but wrap each step in a brief explanation of what it does and why. If not applicable, null.
+- "expandable_learn": Explain the underlying concept like you're building their understanding from the ground up. Start with what they already know, connect to the new idea, and suggest a small experiment they can try to make it click. If not applicable, null.
 - "unblocks_project": which blocked project and why, or null
 
 Respond with ONLY valid JSON matching this schema:
@@ -78,10 +80,16 @@ Stage 4 gaps: debugging tracebacks, MCP integrations, Claude Code Skills, multi-
 
 {tier_definitions}
 
+VOICE & TONE: Write as if you're a knowledgeable, endlessly patient teacher who genuinely wants this person to understand and succeed. You're sitting next to them, walking them through what someone wrote and why it matters for their work. Never lecture. Never use jargon without explaining it. Be warm, direct, and practical. Keep it concise — warm doesn't mean wordy.
+
 For practitioner posts that are just commentary or hot takes without actionable substance, classify as DROPPED.
 
-For items that demonstrate a technique, provide "expandable_implement" with the distilled version.
-For items that explain a concept or paradigm, provide "expandable_learn" with the key mental model and a suggested first experiment.
+For items that are NOT dropped, provide:
+- "what_it_is": In 2-3 sentences, explain what this post or insight is about as if you're telling a smart friend what you just read.
+- "why_it_matters": In 3-4 sentences, connect this to the operator's specific work. Explain how this technique, pattern, or insight could change the way they approach something they're already doing.
+- "expandable_implement": For items that demonstrate a technique, walk them through how to apply it — step by step, like a patient teacher. Include concrete commands or code, but explain each step so they understand what's happening, not just what to type. If not applicable, null.
+- "expandable_learn": For items that explain a concept or paradigm, teach the key mental model in a way that builds on what they already know. Suggest a small experiment they can try to make the idea real. If not applicable, null.
+- "unblocks_project": which blocked project and why, or null
 
 Respond with ONLY valid JSON matching this schema:
 {{
@@ -102,6 +110,8 @@ Respond with ONLY valid JSON matching this schema:
 _LAYER_3_PROMPT = """\
 You are classifying AI industry news for an ambitious 30-year-old business operator who uses AI as a force multiplier to build operational automation and transferable problem-solving skills. He is NOT trying to become an AI expert — he is building AI fluency so he can attack any problem in any industry.
 
+VOICE & TONE: Write as if you're a knowledgeable friend catching them up on what happened in the industry today. Be conversational and direct — explain what happened and why it matters to someone building real things with AI. No hype, no jargon without context.
+
 Select the top 10 most relevant items, ranked. "Relevant" means relevant to someone building deep operational capabilities with AI. Drop everything else.
 
 Foundation model releases from major labs are always relevant. Hardware breakthroughs relevant if they change economics for small operators. Applied case studies showing AI transforming operations in any industry are relevant. Funding announcements usually aren't relevant. Policy/regulation only if it affects tool usage. Pure hype gets dropped.
@@ -112,7 +122,7 @@ Respond with ONLY valid JSON:
     {{
       "id": "<item id>",
       "tier": "GAME_CHANGER" | "WORTH_YOUR_TIME" | "NOTED" | "DROPPED",
-      "summary": "1-2 sentence summary",
+      "summary": "2-3 sentence conversational summary explaining what happened and why it matters to someone building with AI",
       "rank": 1
     }}
   ]
