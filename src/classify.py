@@ -13,7 +13,7 @@ from src.spending_guard import can_spend, load_ledger, record_spend, save_ledger
 
 logger = logging.getLogger(__name__)
 
-_MODEL = "claude-sonnet-4-5-20241022"
+_MODEL = "claude-sonnet-4-5-20250929"
 
 # ---------------------------------------------------------------------------
 # Layer classification
