@@ -12,6 +12,26 @@
       "archived_this_run": 0,
       "oldest_pending": []
     },
+    "dropped_counts": {
+      "layer_1": 52,
+      "layer_2": 9,
+      "layer_3": 14
+    },
+    "total_fetched": 75
+  },
+  {
+    "date": "2026-03-24",
+    "items": [],
+    "leaderboard": [],
+    "backlog_summary": {
+      "total_pending": 0,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": []
+    },
     "dropped_counts": {},
     "total_fetched": 72
   },
