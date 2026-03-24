@@ -32,7 +32,7 @@ Three-layer daily intelligence briefing with aggressive curation. Monitors Anthr
 
 ## Architecture notes
 - RSS feeds only (no scraping, no X API)
-- 4 API calls per daily run (3 layers + leaderboard), all Claude Sonnet 4.6
+- 4 API calls per daily run (3 layers + leaderboard), all Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`)
 - 1 API call per weekly run (synthesis + backlog re-ranking)
 - Feed list and blocked projects are config-driven JSON
 - Each layer fails independently — partial results are still useful
