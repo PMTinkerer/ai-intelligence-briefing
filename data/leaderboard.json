@@ -1,5 +1,7 @@
 {
-  "date": null,
   "leaderboard": [],
-  "changes_today": []
+  "changes_today": [
+    "Leaderboard unchanged (generation failed)"
+  ],
+  "date": "2026-03-24"
 }
