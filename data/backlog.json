@@ -1,7 +1,47 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": "38510ce5c777",
+      "title": "v2.1.83",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2183",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 1,
+      "expandable_implement": "**To use transcript search:** Next time you're in a Claude Code session and need to find something from an earlier conversation, press `Ctrl+O` to enter transcript mode (you'll see your full conversation history). Press `/` and type your search term\u2014maybe \"haversine\" or \"GitHub Actions\" or whatever you're looking for. Use `n` to jump to the next match, `N` to go back. Press `Esc` to exit search and return to transcript view. This is especially useful when you're building on something from a few days ago and don't want to re-explain the context.\n\n**To reference pasted images:** When you're working on something that needs visual context (like generating a cleaning checklist from inspection photos), paste your images into Claude Code as usual. You'll now see `[Image #1]`, `[Image #2]`, etc. as chips in your input area. In your prompt, you can reference them directly: \"Image 1 shows the bathroom counter. Image 2 shows the expected state. Write a Breezeway task that describes the gap between them.\" This makes multi-image prompts much clearer than saying \"the first image\" or \"the one on the left.\"\n\nThe other features are either behind-the-scenes improvements or enterprise-focused (policy management, credential scrubbing). You'll benefit from them passively\u2014faster startup, fewer weird hangs\u2014but you don't need to configure anything.",
+      "status": "pending",
+      "date_added": "2026-03-25",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    },
+    {
+      "id": "8d3fcf0b18b8",
+      "title": "Auto mode for Claude Code",
+      "source_url": "https://simonwillison.net/2026/Mar/24/auto-mode-for-claude-code/#atom-everything",
+      "tier": "GAME_CHANGER",
+      "layer": 2,
+      "expandable_implement": "To start using auto mode, update Claude Code to the latest version and run:\n\nclaude auto-mode enable\n\nThat's it \u2014 you're now using the classifier. To see exactly what rules are protecting you, run:\n\nclaude auto-mode defaults > auto-mode-rules.json\n\nOpen that file and scan through the 'allow' and 'block' sections. You'll see things like 'allow local file operations within project scope' but 'block operations in ~/ or /etc'. If you have a specific workflow that gets blocked \u2014 say, your GitHub Actions tool needs to read a config file from ~/.config \u2014 you can add custom rules to allow it. The key insight: the classifier only sees the current conversation context and the action Claude wants to take. If Claude asks to delete a file and you never mentioned deleting anything, the classifier blocks it. If you explicitly said 'delete all test files', the classifier allows it because it matches your intent. This is a middle ground between 'ask me every time' and 'trust blindly'.",
+      "status": "pending",
+      "date_added": "2026-03-25",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    },
+    {
+      "id": "73318f044426",
+      "title": "Package Managers Need to Cool Down",
+      "source_url": "https://simonwillison.net/2026/Mar/24/package-managers-need-to-cool-down/#atom-everything",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "If you're using uv (which you are for at least some projects), open your pyproject.toml and add:\n\n[tool.uv]\nexclude-newer = \"72h\"\n\nThat tells uv to only consider packages that were released at least 72 hours ago. If you have a trusted package that you want to update immediately (say, anthropic's official SDK), add:\n\nexclude-newer-package = { anthropic = \"0h\" }\n\nFor pip, it's a bit more manual. You can use --uploaded-prior-to with an absolute timestamp, but that's annoying to maintain. Seth Larson's workaround (mentioned in the article) is to run a cron job that updates the timestamp in your pip.conf every day. Honestly, just switch those projects to uv \u2014 it handles relative durations natively and you're already using it elsewhere.\n\nFor GitHub Actions workflows, add this to your workflow file before any pip install step:\n\npip install uv\nuv pip install --exclude-newer 72h -r requirements.txt\n\nNow your CI pipeline has the same protection as your local environment. The key is consistency: if you protect local but not CI, an attacker just has to wait for your next deploy.",
+      "status": "pending",
+      "date_added": "2026-03-25",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    }
+  ],
   "stats": {
-    "total_added": 0,
+    "total_added": 3,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0
