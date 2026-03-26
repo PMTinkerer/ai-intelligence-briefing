@@ -1,5 +1,247 @@
 [
   {
+    "date": "2026-03-26",
+    "items": [
+      {
+        "title": "Thoughts on slowing the fuck down",
+        "url": "https://simonwillison.net/2026/Mar/25/thoughts-on-slowing-the-fuck-down/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-25T21:47:17+00:00",
+        "description": "Thoughts on slowing the fuck down Mario Zechner created the Pi agent framework used by OpenClaw, giving considerable credibility to his opinions on current trends in agentic engineering. He's not impressed: We have basically given up all discipline and agency for a sort of addiction, where your highest goal is to produce the largest amount of code in the shortest amount of time. Consequences be damned. Agents and humans both make mistakes, but agent mistakes accumulate much faster: A human is a bottleneck. A human cannot shit out 20,000 lines of code in a few hours. Even if the human creates such booboos at high frequency, there's only so many booboos the human can introduce in a codebase per day. [...] With an orchestrated army of agents, there is no bottleneck, no human pain. These tiny little harmless booboos suddenly compound at a rate that's unsustainable. You have removed yourself from the loop, so you don't even know that all the innocent booboos have formed a monster of a codebase. You only feel the pain when it's too late. [...] You have zero fucking idea what's going on because you delegated all your agency to your agents. You let them run free, and they are merchants of complexity. I think Mario is exactly right about this. Agents let us move so much faster , but this speed also means that changes which we would normally have considered over the course of weeks are landing in a matter of hours. It's so easy to let the codebase evolve outside of our abilities to reason clearly about it. Cognitive debt is real. Mario recommends slowing down: Give yourself time to think about what you're actually building and why. Give yourself an opportunity to say, fuck no, we don't need this. Set yourself limits on how much code you let the clanker generate per day, in line with your ability to actually review the code. Anything that defines the gestalt of your system, that is architecture, API, and so on, write it by hand. [...] I'm not convinced writing by hand is the best way to address this, but it's absolutely the case that we need the discipline to find a new balance of speed v.s. mental thoroughness now that typing out the code is no longer anywhere close to being the bottleneck on writing software. Tags: ai , generative-ai , llms , coding-agents , cognitive-debt , agentic-engineering",
+        "id": "7e5bb41355f7",
+        "content": "Thoughts on slowing the fuck down Mario Zechner created the Pi agent framework used by OpenClaw, giving considerable credibility to his opinions on current trends in agentic engineering. He's not impressed: We have basically given up all discipline and agency for a sort of addiction, where your highest goal is to produce the largest amount of code in the shortest amount of time. Consequences be damned. Agents and humans both make mistakes, but agent mistakes accumulate much faster: A human is a bottleneck. A human cannot shit out 20,000 lines of code in a few hours. Even if the human creates such booboos at high frequency, there's only so many booboos the human can introduce in a codebase per day. [...] With an orchestrated army of agents, there is no bottleneck, no human pain. These tiny little harmless booboos suddenly compound at a rate that's unsustainable. You have removed yourself from the loop, so you don't even know that all the innocent booboos have formed a monster of a codebase. You only feel the pain when it's too late. [...] You have zero fucking idea what's going on because you delegated all your agency to your agents. You let them run free, and they are merchants of complexity. I think Mario is exactly right about this. Agents let us move so much faster , but this speed also means that changes which we would normally have considered over the course of weeks are landing in a matter of hours. It's so easy to let the codebase evolve outside of our abilities to reason clearly about it. Cognitive debt is real. Mario recommends slowing down: Give yourself time to think about what you're actually building and why. Give yourself an opportunity to say, fuck no, we don't need this. Set yourself limits on how much code you let the clanker generate per day, in line with your ability to actually review the code. Anything that defines the gestalt of your system, that is architecture, API, and so on, write it by hand. [...] I'm not convinced writing by hand is the b",
+        "tier": "GAME_CHANGER",
+        "what_it_is": "Mario Zechner, creator of the Pi agent framework, warns that AI agents generate code so fast that mistakes compound faster than humans can understand them. When you let agents run autonomously, they create 'complexity monsters' \u2014 codebases that evolve beyond your ability to reason about them. He calls this cognitive debt.",
+        "why_it_matters": "You're at the exact inflection point Mario is describing. You're using Claude Code to build production systems fast \u2014 STR Daily Briefing, Inspector Scheduling, this AI briefing tool itself. You've noticed Stage 4 gaps around debugging tracebacks and multi-system orchestration. This post names the problem: when agents move faster than your ability to understand what changed, you lose the ability to debug, extend, or trust your own systems. Mario's prescription \u2014 set daily code generation limits aligned with what you can actually review, and write architecture by hand \u2014 is a concrete framework for staying in control as you scale up agent use.",
+        "expandable_implement": null,
+        "expandable_learn": "Try this experiment to make cognitive debt tangible: Pick one of your production systems and have Claude Code make three substantial improvements in one session without reviewing the changes until the end. Then, a day later, try to debug a hypothetical issue or add a new feature. Notice how much harder it is when you weren't there for each change.\n\nNow try the opposite: Set a rule that you only let Claude Code generate one new file or modify one existing file per session, and you review and understand each change before moving on. Track how this feels different when you need to debug or extend the code later.\n\nThe key insight is that your understanding of the system is your debugging speed. Agents don't just write code \u2014 they transfer the responsibility for understanding from you to the machine. The question isn't whether agents are useful (they clearly are), but at what pace you can absorb their output while maintaining the mental model that lets you fix things when they break.",
+        "unblocks_project": null
+      },
+      {
+        "title": "LiteLLM Hack: Were You One of the 47,000?",
+        "url": "https://simonwillison.net/2026/Mar/25/litellm-hack/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-25T17:21:04+00:00",
+        "description": "LiteLLM Hack: Were You One of the 47,000? Daniel Hnyk used the BigQuery PyPI dataset to determine how many downloads there were of the exploited LiteLLM packages during the 46 minute period they were live on PyPI. The answer was 46,996 across the two compromised release versions (1.82.7 and 1.82.8). They also identified 2,337 packages that depended on LiteLLM - 88% of which did not pin versions in a way that would have avoided the exploited version. Via @hnykda Tags: packaging , pypi , python , security , supply-chain",
+        "id": "021c63d29d0d",
+        "content": "LiteLLM Hack: Were You One of the 47,000? Daniel Hnyk used the BigQuery PyPI dataset to determine how many downloads there were of the exploited LiteLLM packages during the 46 minute period they were live on PyPI. The answer was 46,996 across the two compromised release versions (1.82.7 and 1.82.8). They also identified 2,337 packages that depended on LiteLLM - 88% of which did not pin versions in a way that would have avoided the exploited version. Via @hnykda Tags: packaging , pypi , python , security , supply-chain",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Researcher analyzed the LiteLLM supply chain attack and found that 47,000 downloads happened during the 46 minutes the malicious packages were live on PyPI. More concerning: 88% of the 2,337 packages that depend on LiteLLM had dependency declarations that would have automatically pulled in the compromised version.",
+        "why_it_matters": "You're using the Anthropic API directly, but you're also building tools that import Python packages daily. This incident shows two things that matter for your work: First, even short-lived attacks can affect tens of thousands of installs \u2014 automation doesn't wait for security reviews. Second, most developers don't pin dependencies in a way that would have protected them. Look at your own requirements.txt files: are you pinning to specific versions, or using ranges that would auto-upgrade to a compromised release? The fact that this happened to a popular LLM library suggests the attackers are targeting the AI tooling ecosystem specifically.",
+        "expandable_implement": "Audit your existing projects' dependency pinning:\n\n1. For each project, check your requirements.txt or pyproject.toml. Look for entries like `litellm>=1.0.0` or `openai^1.0.0` \u2014 these would auto-upgrade.\n\n2. Switch to exact pinning for critical dependencies: `anthropic==0.18.1` instead of `anthropic>=0.18.0`. This prevents automatic upgrades to compromised versions.\n\n3. Use a tool like `pip-audit` to check your current dependencies for known vulnerabilities:\n   ```bash\n   pip install pip-audit\n   pip-audit\n   ```\n\n4. For your GitHub Actions workflows, add a scheduled job that runs pip-audit weekly and opens an issue if vulnerabilities are found. This gives you a heads-up without blocking your daily work.\n\n5. Consider adding a manual review step before upgrading any package that touches API credentials or processes external data. This is where Mario's 'slow down' advice applies \u2014 not to code generation, but to dependency updates that could compromise your entire system.",
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "Google bumps up Q Day deadline to 2029, far sooner than previously thought",
+        "url": "https://arstechnica.com/security/2026/03/google-bumps-up-q-day-estimate-to-2029-far-sooner-than-previously-thought/",
+        "source_name": "Ars Technica",
+        "layer": 3,
+        "published": "2026-03-25T15:49:17+00:00",
+        "description": "Company warns entire industry to move off RSA and EC more quickly.",
+        "id": "4665833ed88f",
+        "content": "CRYPTOPOCALYPSE NOW Google bumps up Q Day deadline to 2029, far sooner than previously thought Company warns entire industry to move off RSA and EC more quickly. Dan Goodin \u2013 Mar 25, 2026 11:49 am | 40 Credit:\n\n          \n          JuSun/Getty Images Credit:\n\n          \n          JuSun/Getty Images Text\n        settings Story text Size Small Standard Large Width * Standard Wide Links Standard Orange * Subscribers only Learn more Minimize to nav Google is dramatically shortening its readiness dea",
+        "tier": "GAME_CHANGER",
+        "summary": "Google just moved up its estimate for when quantum computers will break current encryption from some vague future date to 2029 \u2014 three years from now. If you're building systems that need to last, this means you need to start planning your migration to quantum-resistant cryptography now, not later. This affects everything from how you store sensitive data to which authentication systems you choose.",
+        "rank": 1
+      },
+      {
+        "title": "The AI skills gap is here, says AI company, and power users are pulling ahead",
+        "url": "https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T21:44:13+00:00",
+        "description": "Anthropic finds AI isn\u2019t replacing jobs yet, but early data shows growing inequality as experienced users gain an edge, raising concerns about future displacement and workforce divides.",
+        "id": "7b18af128ba5",
+        "content": "Anthropic finds AI isn\u2019t replacing jobs yet, but early data shows growing inequality as experienced users gain an edge, raising concerns about future displacement and workforce divides.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Anthropic released data showing AI isn't replacing jobs yet, but power users are pulling ahead fast, creating a growing skills gap. This confirms what you already know: the people learning to use these tools effectively are gaining compounding advantages. The window to build fluency before it becomes table stakes is narrowing.",
+        "rank": 5
+      },
+      {
+        "title": "Google unveils TurboQuant, a new AI memory compression algorithm \u2014\u00a0and yes, the internet is calling it \u2018Pied Piper\u2019",
+        "url": "https://techcrunch.com/2026/03/25/google-turboquant-ai-memory-compression-silicon-valley-pied-piper/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T20:38:45+00:00",
+        "description": "Google\u2019s TurboQuant has the internet joking about Pied Piper from HBO's \"Silicon Valley.\" The compression algorithm promises to shrink AI\u2019s \u201cworking memory\u201d by up to 6x, but it\u2019s still just a lab experiment for now.",
+        "id": "782715ced829",
+        "content": "Google\u2019s TurboQuant has the internet joking about Pied Piper from HBO's \"Silicon Valley.\" The compression algorithm promises to shrink AI\u2019s \u201cworking memory\u201d by up to 6x, but it\u2019s still just a lab experiment for now.",
+        "tier": "GAME_CHANGER",
+        "summary": "Google released TurboQuant, a compression algorithm that shrinks AI's working memory by up to 6x. This is huge for small operators \u2014 it means you could run more complex models on cheaper hardware, or run the same models faster and cheaper. Still experimental, but if it ships in production tools, it fundamentally changes the economics of what you can build.",
+        "rank": 2
+      },
+      {
+        "title": "Bernie Sanders and AOC propose a ban on data center construction",
+        "url": "https://techcrunch.com/2026/03/25/bernie-sanders-and-aoc-propose-a-ban-on-data-center-construction/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T17:15:50+00:00",
+        "description": "Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.",
+        "id": "042f7a86fd6f",
+        "content": "Senator Bernie Sanders and Rep. Alexandria Ocasio-Cortez introduced companion legislation to halt construction on new data centers until Congress passes comprehensive AI regulation.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Sanders and AOC proposed legislation to halt all new data center construction until Congress passes AI regulation. Unlikely to pass, but signals that data center buildout \u2014 the infrastructure you rely on for API access \u2014 could face political headwinds. Worth watching if you're planning anything that depends on cheap, abundant compute.",
+        "rank": 4
+      },
+      {
+        "title": "Google launches Lyria 3 Pro music generation model",
+        "url": "https://techcrunch.com/2026/03/25/google-launches-lyria-3-pro-music-generation-model/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T16:37:43+00:00",
+        "description": "Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.",
+        "id": "9eb308cca74b",
+        "content": "Google is launching Lyria 3 Pro, an upgraded music model that generates longer, more customizable tracks, as it expands AI music tools across Gemini, enterprise products, and other services.",
+        "tier": "NOTED",
+        "summary": "Google launched Lyria 3 Pro, which generates longer, more customizable music tracks (up to 3 minutes vs 30 seconds). Useful if you're building anything that needs generated audio content, but mostly incremental improvement over existing music generation tools.",
+        "rank": 7
+      },
+      {
+        "title": "Reddit takes on the bots with new \u2018human verification\u2019 requirements for fishy behavior",
+        "url": "https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T16:10:00+00:00",
+        "description": "Reddit will require suspected automated accounts to verify they\u2019re human, as it ramps up efforts to curb bot-driven spam and manipulation.",
+        "id": "459cb3e27240",
+        "content": "Reddit will require suspected automated accounts to verify they\u2019re human, as it ramps up efforts to curb bot-driven spam and manipulation.",
+        "tier": "NOTED",
+        "summary": "Reddit is requiring suspected bot accounts to verify they're human, ramping up anti-bot measures. Relevant if you're building anything that scrapes or integrates with Reddit \u2014 access may get harder. Also a preview of the verification arms race coming to other platforms.",
+        "rank": 8
+      },
+      {
+        "title": "With Sift, two ex-SpaceX engineers are bringing the software that helped launch rockets to the factory floor",
+        "url": "https://techcrunch.com/2026/03/25/with-sift-stack-two-ex-spacex-engineers-are-bringing-the-software-that-helped-launch-rockets-to-the-factory-floor/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T13:00:00+00:00",
+        "description": "Sift is building the data infrastructure for advanced manufacturing.",
+        "id": "834e5a9883ae",
+        "content": "The cry of \u201catoms, not bits!\u201d \u2014 a phrase capturing Silicon Valley\u2019s growing obsession with physical manufacturing over digital products \u2014  reached a fever pitch last week with word that Jeff Bezos is putting together a $100 billion fund to roll up and automate factories. But automating factories isn\u2019t purely a hardware problem. It increasingly depends on sophisticated software and AI tools, and that shift is reshaping the companies building the infrastructure of the physical manufacturing world.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Two ex-SpaceX engineers are bringing the software stack that launched rockets to factory floors with a company called Sift. This is a real-world example of AI and sophisticated software automating physical manufacturing \u2014 exactly the kind of applied case study that shows how these tools translate to atoms-based businesses, not just digital products.",
+        "rank": 6
+      },
+      {
+        "title": "Lucid Bots raises $20M to keep up with demand for its\u00a0window-washing drones",
+        "url": "https://techcrunch.com/2026/03/25/lucid-bots-raises-20m-to-keep-up-with-demand-for-its-window-washing-drones/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-25T11:00:00+00:00",
+        "description": "Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.",
+        "id": "e2a484a4922d",
+        "content": "Lucid Bots has seen demand accelerate over the last year for its window-cleaning drones and power-washing robots.",
+        "tier": "NOTED",
+        "summary": "Lucid Bots raised $20M for its window-washing drones and power-washing robots due to accelerating demand. Another real-world example of AI-powered robotics solving unsexy operational problems in physical industries \u2014 the kind of niche automation that actually makes money.",
+        "rank": 9
+      },
+      {
+        "title": "Disney\u2019s big bets on the metaverse and AI slop aren\u2019t going so well",
+        "url": "https://www.theverge.com/streaming/900837/disney-open-ai-sora-epic-fortnite-metaverse",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-25T20:02:48+00:00",
+        "description": "Less than a week into his tenure as Disney's newly-appointed CEO, Josh D'Amaro is already dealing with two separate crises that have cast a shadow over the company's future plans. OpenAI is shutting down its Sora image-generation program just months after Disney announced a $1 billion dollar collaboration to bake the tech into Disney Plus. [\u2026]",
+        "id": "bdb4be77307a",
+        "content": "Less than a week into his tenure as Disney's newly-appointed CEO, Josh D'Amaro is already dealing with two separate crises that have cast a shadow over the company's future plans. OpenAI is shutting down its Sora image-generation program just months after Disney announced a $1 billion dollar collaboration to bake the tech into Disney Plus. [\u2026]",
+        "tier": "NOTED",
+        "summary": "Disney's $1B collaboration with OpenAI for Sora integration into Disney Plus is in crisis as OpenAI shuts down the Sora program. A reminder that betting big on cutting-edge foundation models from third parties carries real execution risk \u2014 even for companies with Disney's resources.",
+        "rank": 10
+      },
+      {
+        "title": "Anthropic\u2019s Claude Code gets \u2018safer\u2019 auto mode",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/900201/anthropic-claude-code-auto-mode",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-25T11:39:46+00:00",
+        "description": "Anthropic has launched an \"auto mode\" for Claude Code, a new tool that lets AI make permissions-level decisions on users' behalf. The company says the feature offers vibe coders a safer alternative between constant handholding or giving the model dangerous levels of autonomy. Claude Code is capable of acting independently on users' behalf, a useful [\u2026]",
+        "id": "7bbc5f18dc6b",
+        "content": "Anthropic has launched an \"auto mode\" for Claude Code, a new tool that lets AI make permissions-level decisions on users' behalf. The company says the feature offers vibe coders a safer alternative between constant handholding or giving the model dangerous levels of autonomy. Claude Code is capable of acting independently on users' behalf, a useful [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Anthropic launched 'auto mode' for Claude Code, letting the AI make permission-level decisions without constant approval prompts. This is the sweet spot between babysitting every action and giving full autonomy \u2014 you set guardrails, then let it run. If you're using AI to automate workflows, this is a meaningful productivity unlock.",
+        "rank": 3
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 3
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 1
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 2
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 3
+      },
+      {
+        "rank": 5,
+        "title": "Understand dependency supply chain security patterns",
+        "category": "STRATEGIC_MOVE",
+        "rationale": "The LiteLLM hack demonstrates that 88% of dependent packages would have automatically pulled in malicious code. Package cooldown mechanisms are now standard across every major package manager. This isn't paranoia; it's how professionals deploy production systems in 2025. Understanding this pattern teaches you to think about trust boundaries, attack surfaces, and gradual rollout strategies\u2014concepts that apply to ANY system you architect.",
+        "first_step": "Check your production tools (daily briefing, scheduler): which dependencies are pinned? Which auto-update? Add version pinning to at least one critical dependency.",
+        "time_investment": "30 minutes to understand the pattern, 10 minutes per project to implement",
+        "days_on_leaderboard": 2
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 4,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 1,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 1
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 1
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 1
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 2,
+      "layer_3": 13
+    },
+    "total_fetched": 81
+  },
+  {
     "date": "2026-03-25",
     "items": [
       {

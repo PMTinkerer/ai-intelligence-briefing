@@ -521,7 +521,175 @@
       "first_seen": "2026-03-25",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "47e6ea1f47f4": {
+      "title": "v2.1.84",
+      "first_seen": "2026-03-26",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "fde4b2bae629": {
+      "title": "datasette-files-s3 0.1a1",
+      "first_seen": "2026-03-26",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "7e5bb41355f7": {
+      "title": "Thoughts on slowing the fuck down",
+      "first_seen": "2026-03-26",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "2911c1985522": {
+      "title": "datasette-llm 0.1a1",
+      "first_seen": "2026-03-26",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "021c63d29d0d": {
+      "title": "LiteLLM Hack: Were You One of the 47,000?",
+      "first_seen": "2026-03-26",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "4665833ed88f": {
+      "title": "Google bumps up Q Day deadline to 2029, far sooner than previously thought",
+      "first_seen": "2026-03-26",
+      "source_name": "Ars Technica",
+      "layer": 3
+    },
+    "fc611538abce": {
+      "title": "The least surprising chapter of the Manus story is what\u2019s happening right now",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "2b56f8a4cb36": {
+      "title": "Mercor competitor Deccan AI raises $25M, sources experts from India",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "7b18af128ba5": {
+      "title": "The AI skills gap is here, says AI company, and power users are pulling ahead",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "782715ced829": {
+      "title": "Google unveils TurboQuant, a new AI memory compression algorithm \u2014\u00a0and yes, the internet is calling it \u2018Pied Piper\u2019",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "49e57ffa6650": {
+      "title": "Melania Trump wants a robot to homeschool your child",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "042f7a86fd6f": {
+      "title": "Bernie Sanders and AOC propose a ban on data center construction",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9eb308cca74b": {
+      "title": "Google launches Lyria 3 Pro music generation model",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "459cb3e27240": {
+      "title": "Reddit takes on the bots with new \u2018human verification\u2019 requirements for fishy behavior",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "0f794ab03a88": {
+      "title": "Harvey confirms $11B valuation: Sequoia triples down",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "7e5e945939e9": {
+      "title": "Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9bab93a9f3ce": {
+      "title": "Meta launches new initiative to support entrepreneurship, drive AI adoption",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "47ede062b51a": {
+      "title": "Meta turns to AI to make shopping easier on Instagram and Facebook",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "834e5a9883ae": {
+      "title": "With Sift, two ex-SpaceX engineers are bringing the software that helped launch rockets to the factory floor",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "e2a484a4922d": {
+      "title": "Lucid Bots raises $20M to keep up with demand for its\u00a0window-washing drones",
+      "first_seen": "2026-03-26",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "781c0cd5a55a": {
+      "title": "Meta is laying off hundreds of employees as it pours money into AI",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "bdb4be77307a": {
+      "title": "Disney\u2019s big bets on the metaverse and AI slop aren\u2019t going so well",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "05e45a048313": {
+      "title": "Can you monitor a situation without monitors? The Polymarket sports bar tried",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "8898682f3b77": {
+      "title": "Reddit accounts with \u2018fishy\u2019 bot-like behavior will soon need to prove they\u2019re human",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "a34a97ca6633": {
+      "title": "Google Lyria 3 Pro makes longer AI songs",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "2f4638c6d33b": {
+      "title": "Senate Democrats are trying to \u2018codify\u2019 Anthropic&#8217;s red lines on autonomous weapons and mass surveillance",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "2ecc775e47ee": {
+      "title": "Mark Zuckerberg and Jensen Huang are part of Trump\u2019s new \u2018tech panel\u2019",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "7bbc5f18dc6b": {
+      "title": "Anthropic\u2019s Claude Code gets \u2018safer\u2019 auto mode",
+      "first_seen": "2026-03-26",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-25T09:52:07.057618+00:00"
+  "last_run": "2026-03-26T09:59:05.268261+00:00"
 }
