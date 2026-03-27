@@ -7,7 +7,7 @@
       "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
       "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
       "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
-      "days_on_leaderboard": 3
+      "days_on_leaderboard": 4
     },
     {
       "rank": 2,
@@ -16,7 +16,7 @@
       "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
       "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
       "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
-      "days_on_leaderboard": 1
+      "days_on_leaderboard": 2
     },
     {
       "rank": 3,
@@ -25,30 +25,30 @@
       "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
       "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
       "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
-      "days_on_leaderboard": 2
+      "days_on_leaderboard": 3
     },
     {
       "rank": 4,
+      "title": "Study 'vibe porting' pattern: AI-guided migration validated by test suites",
+      "category": "APPLIED_PATTERN",
+      "rationale": "The JSONata port (7 hours to rewrite an entire query language) demonstrates a transferable technique: describe what existing code does, let AI recreate it in a different language/framework, validate against the original's test suite, run both in parallel before switching. This pattern lets you migrate legacy systems without needing to understand every implementation detail. Applicable to moving from Guesty integrations to custom systems, porting vendor tools when APIs change, or adapting open-source solutions to your stack.",
+      "first_step": "Identify one brittle integration in your stack (Breezeway email parsing, Guesty webhook handler) and spec out how you'd 'vibe port' it: what tests would validate identical behavior? What parallel-run period proves safety?",
+      "time_investment": "30 minutes to understand the pattern, applicable to any migration project",
+      "days_on_leaderboard": 1
+    },
+    {
+      "rank": 5,
       "title": "Master independent debugging of production failures",
       "category": "SKILL_GAP",
       "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
       "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
       "time_investment": "Ongoing practice\u2014every failure is a training session",
-      "days_on_leaderboard": 3
-    },
-    {
-      "rank": 5,
-      "title": "Understand dependency supply chain security patterns",
-      "category": "STRATEGIC_MOVE",
-      "rationale": "The LiteLLM hack demonstrates that 88% of dependent packages would have automatically pulled in malicious code. Package cooldown mechanisms are now standard across every major package manager. This isn't paranoia; it's how professionals deploy production systems in 2025. Understanding this pattern teaches you to think about trust boundaries, attack surfaces, and gradual rollout strategies\u2014concepts that apply to ANY system you architect.",
-      "first_step": "Check your production tools (daily briefing, scheduler): which dependencies are pinned? Which auto-update? Add version pinning to at least one critical dependency.",
-      "time_investment": "30 minutes to understand the pattern, 10 minutes per project to implement",
-      "days_on_leaderboard": 2
+      "days_on_leaderboard": 4
     }
   ],
   "changes_today": [
-    "NEW at #2: Zechner's 'slow down' warning displaces the triage/classification pattern. This isn't a tactical change\u2014it's a cognitive discipline that prevents the autonomous optimization loops at #1 from creating unmaintainable systems. The pattern recognizes that speed and sustainability are in tension, and Stage 4 requires knowing when to prioritize understanding over velocity.",
-    "DROPPED from leaderboard: 'Decompose complex operations into triage/classification architectures.' Not because the pattern is less valuable, but because the Guest Comms Intelligence Layer remains blocked and the pattern has been internalized. New items create more delta."
+    "NEW ENTRY at rank 4: 'Vibe porting' pattern displaced dependency security (#5 yesterday). The JSONata case study demonstrates a concrete, immediately applicable technique for migrating legacy systems without deep implementation knowledge. This is more valuable than understanding supply chain security patterns because it's a capability you can deploy this week on actual migration problems (Breezeway integrations, vendor tool adaptations). Security patterns are important but defensive; porting patterns are offensive capability-building.",
+    "Dependency supply chain security dropped off. Still important context, but the operator already understands the pattern (version pinning, gradual rollout, trust boundaries). It's now implemented in production tools. Further investment doesn't compound\u2014it's maintenance, not capability expansion."
   ],
-  "date": "2026-03-26"
+  "date": "2026-03-27"
 }

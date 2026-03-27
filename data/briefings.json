@@ -1,5 +1,263 @@
 [
   {
+    "date": "2026-03-27",
+    "items": [
+      {
+        "title": "v2.1.85",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2185",
+        "source_name": "Claude Code Changelog",
+        "layer": 1,
+        "published": null,
+        "description": "Added `CLAUDE_CODE_MCP_SERVER_NAME` and `CLAUDE_CODE_MCP_SERVER_URL` environment variables to MCP `headersHelper` scripts, allowing one helper to serve multiple servers Added conditional `if` field for hooks using permission rule syntax (e.g., `Bash(git *)`) to filter when they run, reducing process spawning overhead Added timestamp markers in transcripts when scheduled tasks (`/loop`, `CronCreate`) fire Added trailing space after `[Image #N]` placeholder when pasting images Deep link queries (`claude-cli://open?q=\u2026`) now support up to 5,000 characters, with a \"scroll to review\" warning for long pre-filled prompts MCP OAuth now follows RFC 9728 Protected Resource Metadata discovery to find the authorization server Plugins blocked by organization policy (`managed-settings.json`) can no longer be installed or enabled, and are hidden from marketplace views PreToolUse hooks can now satisfy `AskUserQuestion` by returning `updatedInput` alongside `permissionDecision: \"allow\"`, enabling headless integrations that collect answers via their own UI `tool_parameters` in OpenTelemetry tool_result events are now gated behind `OTEL_LOG_TOOL_DETAILS=1` Fixed `/compact` failing with \"context exceeded\" when the conversation has grown too large for the compact request itself to fit Fixed `/plugin enable` and `/plugin disable` failing when a plugin's install location differs from where it's declared in settings Fixed `--worktree` exiting with an error in non-git repositories before the `WorktreeCreate` hook could run Fixed `deniedMcpServers` setting not blocking claude.ai MCP servers Fixed `switch_display` in the computer-use tool returning \"not available in this session\" on multi-monitor setups Fixed crash when `OTEL_LOGS_EXPORTER`, `OTEL_METRICS_EXPORTER`, or `OTEL_TRACES_EXPORTER` is set to `none` Fixed diff syntax highlighting not working in non-native builds Fixed MCP step-up authorization failing when a refresh token exists \u2014 servers requesting elevated scopes via `403 insufficient_scope` now correctly trigger the re-authorization flow Fixed memory leak in remote sessions when a streaming response is interrupted Fixed persistent ECONNRESET errors during edge connection churn by using a fresh TCP connection on retry Fixed prompts getting stuck in the queue after running certain slash commands, with up-arrow unable to retrieve them Fixed Python Agent SDK: `type:'sdk'` MCP servers passed via `--mcp-config` are no longer dropped during startup Fixed raw key sequences appearing in the prompt when running over SSH or in the VS Code integrated terminal Fixed Remote Control session status staying stuck on \"Requires Action\" after a permission is resolved Fixed shift+enter and meta+enter being intercepted by typeahead suggestions instead of inserting newlines Fixed stale content bleeding through when scrolling up during streaming Fixed terminal left in enhanced keyboard mode after exit in Ghostty, Kitty, WezTerm, and other terminals supporting the Kitty keyboard protocol \u2014 Ctrl+C and Ctrl+D now work correctly after quitting Improved @-mention file autocomplete performance on large repositories Improved PowerShell dangerous command detection Improved scroll performance with large transcripts by replacing WASM yoga-layout with a pure TypeScript implementation Reduced UI stutter when compaction triggers on large sessions",
+        "id": "a4f801cb2443",
+        "content": "Added `CLAUDE_CODE_MCP_SERVER_NAME` and `CLAUDE_CODE_MCP_SERVER_URL` environment variables to MCP `headersHelper` scripts, allowing one helper to serve multiple servers Added conditional `if` field for hooks using permission rule syntax (e.g., `Bash(git *)`) to filter when they run, reducing process spawning overhead Added timestamp markers in transcripts when scheduled tasks (`/loop`, `CronCreate`) fire Added trailing space after `[Image #N]` placeholder when pasting images Deep link queries (`claude-cli://open?q=\u2026`) now support up to 5,000 characters, with a \"scroll to review\" warning for long pre-filled prompts MCP OAuth now follows RFC 9728 Protected Resource Metadata discovery to find the authorization server Plugins blocked by organization policy (`managed-settings.json`) can no longer be installed or enabled, and are hidden from marketplace views PreToolUse hooks can now satisfy `AskUserQuestion` by returning `updatedInput` alongside `permissionDecision: \"allow\"`, enabling headless integrations that collect answers via their own UI `tool_parameters` in OpenTelemetry tool_result events are now gated behind `OTEL_LOG_TOOL_DETAILS=1` Fixed `/compact` failing with \"context exceeded\" when the conversation has grown too large for the compact request itself to fit Fixed `/plugin enable` and `/plugin disable` failing when a plugin's install location differs from where it's declared in settings Fixed `--worktree` exiting with an error in non-git repositories before the `WorktreeCreate` hook could run Fixed `deniedMcpServers` setting not blocking claude.ai MCP servers Fixed `switch_display` in the computer-use tool returning \"not available in this session\" on multi-monitor setups Fixed crash when `OTEL_LOGS_EXPORTER`, `OTEL_METRICS_EXPORTER`, or `OTEL_TRACES_EXPORTER` is set to `none` Fixed diff syntax highlighting not working in non-native builds Fixed MCP step-up authorization failing when a refresh token exists \u2014 servers requesting elevated scopes via `403 insuffici",
+        "tier": "NOTED",
+        "what_it_is": "Claude Code v2.1.85 ships a collection of refinements, mostly focused on MCP (Model Context Protocol) infrastructure and workflow hooks. The most significant addition is conditional hooks \u2014 you can now filter when automation triggers run using permission rule syntax. There are also improvements to how MCP servers authenticate, how plugins are managed in enterprise environments, and several bug fixes for edge cases in computer use and OpenTelemetry logging.",
+        "why_it_matters": "The conditional hooks feature is the only item here that might touch your workflow, and even then it's a niche optimization. You're not yet running MCP integrations or custom hooks in production, so most of this is plumbing for a system you haven't built into yet. When you do start orchestrating multiple MCP servers (say, for the Guest Comms Intelligence Layer once Breezeway unblocks), the environment variable helpers and conditional filtering will matter. For now, this is noise \u2014 incremental infrastructure work that doesn't change what you can build or how fast you can build it. Worth knowing it exists so you're not surprised when you see `if` fields in hook documentation, but not worth time today.",
+        "expandable_implement": null,
+        "expandable_learn": "The conditional hook syntax (`if: Bash(git *)`) is a small example of a bigger pattern you'll see more of: declarative filtering instead of procedural logic. Instead of writing code that checks \"is this a git command?\" and branches, you declare the condition upfront and the system handles the branching. This is how modern infrastructure tools (Kubernetes, Terraform, even GitHub Actions) tend to work \u2014 you describe what you want to happen and when, and the runtime handles the execution. The benefit: fewer moving parts, easier to reason about, harder to get into weird states. If you ever find yourself writing a lot of `if` statements in automation scripts to decide whether to run something, ask yourself if the tool supports declarative conditions instead. It's almost always cleaner.",
+        "unblocks_project": null
+      },
+      {
+        "title": "We Rewrote JSONata with AI in a Day, Saved $500K/Year",
+        "url": "https://simonwillison.net/2026/Mar/27/vine-porting-jsonata/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-27T00:35:01+00:00",
+        "description": "We Rewrote JSONata with AI in a Day, Saved $500K/Year Bit of a hyperbolic framing but this looks like another case study of vibe porting , this time spinning up a new custom Go implementation of the JSONata JSON expression language - similar in focus to jq, and heavily associated with the Node-RED platform. As with other vibe-porting projects the key enabling factor was JSONata's existing test suite, which helped build the first working Go version in 7 hours and $400 of token spend. The Reco team then used a shadow deployment for a week to run the new and old versions in parallel to confirm the new implementation exactly matched the behavior of the old one. Tags: go , json , ai , generative-ai , llms , agentic-engineering , vibe-porting",
+        "id": "aee0c2de60d5",
+        "content": "We Rewrote JSONata with AI in a Day, Saved $500K/Year Bit of a hyperbolic framing but this looks like another case study of vibe porting , this time spinning up a new custom Go implementation of the JSONata JSON expression language - similar in focus to jq, and heavily associated with the Node-RED platform. As with other vibe-porting projects the key enabling factor was JSONata's existing test suite, which helped build the first working Go version in 7 hours and $400 of token spend. The Reco team then used a shadow deployment for a week to run the new and old versions in parallel to confirm the new implementation exactly matched the behavior of the old one. Tags: go , json , ai , generative-ai , llms , agentic-engineering , vibe-porting",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "A team ported the JSONata query language from JavaScript to Go in 7 hours using AI, guided by the existing test suite. They then ran both versions in parallel for a week to confirm identical behavior before switching over. This is another example of 'vibe porting' \u2014 using AI to recreate software by describing what it does and validating against tests.",
+        "why_it_matters": "This pattern directly applies to your work. You have Python tools that would benefit from faster execution or easier deployment (like the briefing pipeline or the inspector scheduler). The key insight is that a comprehensive test suite makes AI-assisted rewrites tractable \u2014 the AI doesn't need to understand the code perfectly, it just needs to pass the tests. The shadow deployment approach (running old and new in parallel) is also a template for safely migrating production systems without risking downtime.",
+        "expandable_implement": "To try this pattern on a smaller scale:\n\n1. Pick a slow or clunky component in your current stack \u2014 maybe a Python script that processes data slowly, or a module that would be simpler in a different language.\n\n2. Write a comprehensive test suite first if you don't have one. Export sample inputs and outputs, edge cases, error conditions. The tests are what make this whole approach work.\n\n3. Feed the tests and the original code to Claude and ask it to rewrite in your target language (Go for speed, TypeScript for web integration, whatever fits). Let it iterate against the test failures.\n\n4. Once tests pass, run both versions in parallel on real data for a few days. Log any discrepancies. This is your safety net.\n\n5. Only after confirming identical behavior do you switch over. This de-risks the migration completely.\n\nStart small \u2014 a single utility function or data transformer. Build confidence before attempting something like the entire inspector scheduler.",
+        "expandable_learn": "The mental model here is that AI can 'vibe port' \u2014 it doesn't need to understand every implementation detail, it just needs to produce the same outputs for the same inputs. This works because:\n\n- Tests encode the actual requirements, not the implementation\n- AI is surprisingly good at pattern matching and translation\n- You're not asking for creativity, you're asking for equivalence\n\nThis inverts the usual programming task. Normally you write code to pass tests. Here, you write tests to constrain AI.\n\nA small experiment: Take one of your existing Python functions \u2014 something like date parsing or string formatting in your briefing tool. Write 10 test cases that cover normal use and edge cases. Then ask Claude to rewrite it in JavaScript or Go, running the tests until they all pass. See how the ported version compares. This will give you a feel for where this technique shines and where it struggles (spoiler: it struggles with stateful systems and complex side effects, but excels at pure transformation logic).",
+        "unblocks_project": null
+      },
+      {
+        "title": "My minute-by-minute response to the LiteLLM malware attack",
+        "url": "https://simonwillison.net/2026/Mar/26/response-to-the-litellm-malware-attack/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-26T23:58:22+00:00",
+        "description": "My minute-by-minute response to the LiteLLM malware attack Callum McMahon reported the LiteLLM malware attack to PyPI. Here he shares the Claude transcripts he used to help him confirm the vulnerability and decide what to do about it. Claude even suggested the PyPI security contact address after confirming the malicious code in a Docker container: Confirmed . Fresh download from PyPI right now in an isolated Docker container: Inspecting: litellm-1.82.8-py3-none-any.whl\nFOUND: litellm_init.pth\nSIZE: 34628 bytes\nFIRST 200 CHARS:\nimport os, subprocess, sys; subprocess.Popen([sys.executable, \"-c\", \"import base64; exec(base64.b64decode('aW1wb3J0IHN1YnByb2Nlc3MKaW1wb3J0IHRlbXBmaWxl... The malicious litellm==1.82.8 is live on PyPI right now and anyone installing or upgrading litellm will be infected. This needs to be reported to security@pypi.org immediately. I was chuffed to see Callum use my claude-code-transcripts tool to publish the transcript of the conversation. Via Hacker News Tags: pypi , security , ai , generative-ai , llms , claude , supply-chain",
+        "id": "a8ee33b4d8f8",
+        "content": "My minute-by-minute response to the LiteLLM malware attack Callum McMahon reported the LiteLLM malware attack to PyPI. Here he shares the Claude transcripts he used to help him confirm the vulnerability and decide what to do about it. Claude even suggested the PyPI security contact address after confirming the malicious code in a Docker container: Confirmed . Fresh download from PyPI right now in an isolated Docker container: Inspecting: litellm-1.82.8-py3-none-any.whl\nFOUND: litellm_init.pth\nSIZE: 34628 bytes\nFIRST 200 CHARS:\nimport os, subprocess, sys; subprocess.Popen([sys.executable, \"-c\", \"import base64; exec(base64.b64decode('aW1wb3J0IHN1YnByb2Nlc3MKaW1wb3J0IHRlbXBmaWxl... The malicious litellm==1.82.8 is live on PyPI right now and anyone installing or upgrading litellm will be infected. This needs to be reported to security@pypi.org immediately. I was chuffed to see Callum use my claude-code-transcripts tool to publish the transcript of the conversation. Via Hacker News Tags: pypi , security , ai , generative-ai , llms , claude , supply-chain",
+        "tier": "NOTED",
+        "what_it_is": "A security researcher documented their real-time response to discovering malware in a popular Python package (LiteLLM). They used Claude to analyze the malicious code in an isolated Docker container, confirm the threat, and guide their reporting process. The transcript shows how they used AI as a collaborator during a time-sensitive security incident.",
+        "why_it_matters": "This demonstrates two useful patterns for your workflow. First, using Docker for safe inspection of suspicious code \u2014 something you might encounter when evaluating new Python packages for your pipeline. Second, using Claude as a thinking partner during incidents where you need to move fast but stay methodical. The transcript also shows how to structure AI conversations when you need both technical analysis and procedural guidance (like 'who do I report this to?').",
+        "expandable_implement": null,
+        "expandable_learn": "The key takeaway is using AI as a sanity-check partner during high-pressure decisions. When you're dealing with something unfamiliar (a security issue, a confusing traceback, a production incident), Claude can help you:\n\n- Confirm what you're seeing ('Is this actually malicious or am I misreading?')\n- Suggest next steps ('What should I do now?')\n- Provide context you don't have time to research ('Where do I report this?')\n\nThis is different from asking Claude to solve the problem for you. You're using it to move faster through a process where mistakes are costly.\n\nA small experiment: Next time you hit a confusing error in your briefing pipeline or inspector scheduler, don't just ask Claude to fix it. Instead, describe what you're seeing and ask it to help you understand what's happening and what your options are. Treat it like pair programming with someone who can't see your screen but can explain the concepts. Notice when this speeds you up versus when it slows you down.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Anthropic wins injunction against Trump administration over Defense Department saga",
+        "url": "https://techcrunch.com/2026/03/26/anthropic-wins-injunction-against-trump-administration-over-defense-department-saga/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-27T01:18:38+00:00",
+        "description": "A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.",
+        "id": "389caf951a3c",
+        "content": "A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.",
+        "tier": "NOTED",
+        "summary": "A judge granted Anthropic a preliminary injunction blocking Trump admin restrictions on DoD contracts. Only relevant if you're building for government customers \u2014 otherwise it's just industry drama that doesn't affect your access to Claude.",
+        "rank": 10
+      },
+      {
+        "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
+        "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T23:47:56+00:00",
+        "description": "Google is launching \"switching tools\" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.",
+        "id": "5ca70c31a95d",
+        "content": "Google is launching \"switching tools\" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Google added switching tools to Gemini that let you import chats and personal info from other chatbots. Practical if you've built up context in Claude or ChatGPT and want to test Gemini without starting from zero \u2014 removes friction from experimenting with different models.",
+        "rank": 5
+      },
+      {
+        "title": "Wikipedia cracks down on the use of AI in article writing",
+        "url": "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T21:50:10+00:00",
+        "description": "The site, whose policies are subject to change, has struggled with the issue of AI-generated writing.",
+        "id": "fdf3e3188020",
+        "content": "The site, whose policies are subject to change, has struggled with the issue of AI-generated writing.",
+        "tier": "NOTED",
+        "summary": "Wikipedia banned AI-generated articles because they consistently violate core content policies. Useful data point on where AI output quality still isn't reliable enough for high-stakes knowledge work, even with human review.",
+        "rank": 9
+      },
+      {
+        "title": "ByteDance\u2019s new AI video generation model, Dreamina Seedance 2.0, comes to CapCut",
+        "url": "https://techcrunch.com/2026/03/26/bytedances-new-ai-video-generation-model-dreamina-seedance-2-0-comes-to-capcut/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T15:25:13+00:00",
+        "description": "The new model in CapCut will have built-in protections for making video from real faces or unauthorized intellectual property.",
+        "id": "9139eb2f307e",
+        "content": "The new model in CapCut will have built-in protections for making video from real faces or unauthorized intellectual property.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "ByteDance's new video generation model Dreamina Seedance 2.0 is now in CapCut with built-in protections against unauthorized IP use. If you're creating video content at scale, this is a practical tool that's already integrated into an editing workflow you might already use.",
+        "rank": 3
+      },
+      {
+        "title": "Conntour raises $7M from General Catalyst, YC to build an AI search engine for security video systems",
+        "url": "https://techcrunch.com/2026/03/26/conntour-raises-7m-from-general-catalyst-yc-to-build-an-ai-search-engine-for-security-video-systems/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T13:41:00+00:00",
+        "description": "Conntour uses AI models to let security teams query camera feeds using natural language to find any object, person, or situation.",
+        "id": "19c6d8e547f6",
+        "content": "Conntour uses AI models to let security teams query camera feeds using natural language to find any object, person, or situation.",
+        "tier": "NOTED",
+        "summary": "Conntour raised $7M to build AI search for security video systems \u2014 natural language queries across camera feeds. Interesting applied AI case study if you're thinking about how to make legacy systems searchable, though most operators won't be building security infrastructure.",
+        "rank": 7
+      },
+      {
+        "title": "Cohere launches an open source voice model specifically for transcription",
+        "url": "https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T13:30:00+00:00",
+        "description": "Relatively light at just 2 billion parameters, the model is meant for use with consumer-grade GPUs for those who want to self-host it. It currently supports 14 languages.",
+        "id": "596f43f4595b",
+        "content": "Relatively light at just 2 billion parameters, the model is meant for use with consumer-grade GPUs for those who want to self-host it. It currently supports 14 languages.",
+        "tier": "GAME_CHANGER",
+        "summary": "Cohere released an open source transcription model at just 2 billion parameters that runs on consumer GPUs and supports 14 languages. If you're building anything with voice input, this means you can now self-host accurate transcription without monthly API bills eating your margins.",
+        "rank": 2
+      },
+      {
+        "title": "Mistral releases a new open source model for speech generation",
+        "url": "https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-26T11:30:00+00:00",
+        "description": "The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI.",
+        "id": "6bf06aa3762d",
+        "content": "The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI.",
+        "tier": "GAME_CHANGER",
+        "summary": "Mistral just dropped an open source speech generation model that lets you build voice agents for sales and customer engagement. This puts enterprise-grade voice AI in your hands without depending on ElevenLabs or OpenAI's APIs \u2014 huge for anyone building customer-facing automation or internal voice interfaces.",
+        "rank": 1
+      },
+      {
+        "title": "Apple will reportedly allow other AI chatbots to plug into Siri",
+        "url": "https://www.theverge.com/tech/902048/apple-siri-ai-chatbot-update-ios-27",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-26T21:31:27+00:00",
+        "description": "Apple's iOS 27 update will allow users to choose the AI chatbot they want to link with Siri. That's according to a report from Bloomberg's Mark Gurman, who says third-party chatbots downloaded from the App Store, like Google's Gemini or Anthropic's Claude, will be able to fetch replies for Siri - similar to how the [\u2026]",
+        "id": "c5ab5c0ace91",
+        "content": "Apple's iOS 27 update will allow users to choose the AI chatbot they want to link with Siri. That's according to a report from Bloomberg's Mark Gurman, who says third-party chatbots downloaded from the App Store, like Google's Gemini or Anthropic's Claude, will be able to fetch replies for Siri - similar to how the [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Apple's iOS 27 will let you plug any AI chatbot into Siri \u2014 Gemini, Claude, whatever you download. This matters because it breaks the vendor lock-in on mobile AI interfaces, meaning you can build workflows that use the best model for each job instead of being stuck with whatever Apple ships.",
+        "rank": 4
+      },
+      {
+        "title": "Google&#8217;s &#8216;live&#8217; AI search assistant can handle conversations in dozens more languages",
+        "url": "https://www.theverge.com/tech/901816/google-search-live-ai-assistant-expansion",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-26T18:47:51+00:00",
+        "description": "Google is expanding access to Search Live, a feature that lets you search for information using your voice and camera. The AI search assistant is now available in more than 200 countries and territories, as well as dozens of languages, according to an announcement on Thursday. Search Live rolled out broadly in the US last [\u2026]",
+        "id": "864d302b957e",
+        "content": "Google is expanding access to Search Live, a feature that lets you search for information using your voice and camera. The AI search assistant is now available in more than 200 countries and territories, as well as dozens of languages, according to an announcement on Thursday. Search Live rolled out broadly in the US last [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Google's Search Live (voice + camera AI search) is now available in 200+ countries and dozens of languages. If you're building tools for international users or exploring multimodal search interfaces, this shows how the interaction patterns are evolving beyond text.",
+        "rank": 6
+      },
+      {
+        "title": "Meta gets ready to launch two new Ray-Ban AI glasses",
+        "url": "https://www.theverge.com/column/901314/meta-new-ray-ban-ai-glasses",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-26T16:30:00+00:00",
+        "description": "This is Lowpass by Janko Roettgers, a newsletter on the ever-evolving intersection of tech and entertainment, syndicated just for The Verge subscribers once a week. Meta and its AI glasses hardware partner EssilorLuxottica are getting ready to launch the next generation of their Ray-Ban AI glasses. That's according to a series of FCC filings for [\u2026]",
+        "id": "416c0fad977c",
+        "content": "This is Lowpass by Janko Roettgers, a newsletter on the ever-evolving intersection of tech and entertainment, syndicated just for The Verge subscribers once a week. Meta and its AI glasses hardware partner EssilorLuxottica are getting ready to launch the next generation of their Ray-Ban AI glasses. That's according to a series of FCC filings for [\u2026]",
+        "tier": "NOTED",
+        "summary": "Meta is prepping two new Ray-Ban AI glasses models based on FCC filings. Worth watching if you're thinking about how AI interfaces move beyond screens, but not actionable until they actually ship.",
+        "rank": 8
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 4
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 2
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 3
+      },
+      {
+        "rank": 4,
+        "title": "Study 'vibe porting' pattern: AI-guided migration validated by test suites",
+        "category": "APPLIED_PATTERN",
+        "rationale": "The JSONata port (7 hours to rewrite an entire query language) demonstrates a transferable technique: describe what existing code does, let AI recreate it in a different language/framework, validate against the original's test suite, run both in parallel before switching. This pattern lets you migrate legacy systems without needing to understand every implementation detail. Applicable to moving from Guesty integrations to custom systems, porting vendor tools when APIs change, or adapting open-source solutions to your stack.",
+        "first_step": "Identify one brittle integration in your stack (Breezeway email parsing, Guesty webhook handler) and spec out how you'd 'vibe port' it: what tests would validate identical behavior? What parallel-run period proves safety?",
+        "time_investment": "30 minutes to understand the pattern, applicable to any migration project",
+        "days_on_leaderboard": 1
+      },
+      {
+        "rank": 5,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 4
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 5,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 1,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 2
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 2
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 2
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 0,
+      "layer_2": 1,
+      "layer_3": 10
+    },
+    "total_fetched": 77
+  },
+  {
     "date": "2026-03-26",
     "items": [
       {

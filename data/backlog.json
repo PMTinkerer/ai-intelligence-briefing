@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "021c63d29d0d",
@@ -50,11 +50,24 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
+      "days_pending": 1
+    },
+    {
+      "id": "aee0c2de60d5",
+      "title": "We Rewrote JSONata with AI in a Day, Saved $500K/Year",
+      "source_url": "https://simonwillison.net/2026/Mar/27/vine-porting-jsonata/#atom-everything",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "To try this pattern on a smaller scale:\n\n1. Pick a slow or clunky component in your current stack \u2014 maybe a Python script that processes data slowly, or a module that would be simpler in a different language.\n\n2. Write a comprehensive test suite first if you don't have one. Export sample inputs and outputs, edge cases, error conditions. The tests are what make this whole approach work.\n\n3. Feed the tests and the original code to Claude and ask it to rewrite in your target language (Go for speed, TypeScript for web integration, whatever fits). Let it iterate against the test failures.\n\n4. Once tests pass, run both versions in parallel on real data for a few days. Log any discrepancies. This is your safety net.\n\n5. Only after confirming identical behavior do you switch over. This de-risks the migration completely.\n\nStart small \u2014 a single utility function or data transformer. Build confidence before attempting something like the entire inspector scheduler.",
+      "status": "pending",
+      "date_added": "2026-03-27",
+      "date_adopted": null,
+      "date_archived": null,
       "days_pending": 0
     }
   ],
   "stats": {
-    "total_added": 4,
+    "total_added": 5,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0

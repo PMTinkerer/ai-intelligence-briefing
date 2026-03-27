@@ -689,7 +689,151 @@
       "first_seen": "2026-03-26",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "a4f801cb2443": {
+      "title": "v2.1.85",
+      "first_seen": "2026-03-27",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "aee0c2de60d5": {
+      "title": "We Rewrote JSONata with AI in a Day, Saved $500K/Year",
+      "first_seen": "2026-03-27",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "a8ee33b4d8f8": {
+      "title": "My minute-by-minute response to the LiteLLM malware attack",
+      "first_seen": "2026-03-27",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "5f3bb4d16bad": {
+      "title": "Quantization from the ground up",
+      "first_seen": "2026-03-27",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "389caf951a3c": {
+      "title": "Anthropic wins injunction against Trump administration over Defense Department saga",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "5ca70c31a95d": {
+      "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "fdf3e3188020": {
+      "title": "Wikipedia cracks down on the use of AI in article writing",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "f1b379d98812": {
+      "title": "OpenAI abandons yet another side quest: ChatGPT\u2019s erotic mode",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "81da4f9544bd": {
+      "title": "Data centers get ready \u2014 the Senate wants to see your power bills",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9139eb2f307e": {
+      "title": "ByteDance\u2019s new AI video generation model, Dreamina Seedance 2.0, comes to CapCut",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "19c6d8e547f6": {
+      "title": "Conntour raises $7M from General Catalyst, YC to build an AI search engine for security video systems",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "596f43f4595b": {
+      "title": "Cohere launches an open source voice model specifically for transcription",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "beceb09b3cdc": {
+      "title": "A \u2018pound of flesh\u2019 from data centers: one senator\u2019s answer to AI job losses",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "6bf06aa3762d": {
+      "title": "Mistral releases a new open source model for speech generation",
+      "first_seen": "2026-03-27",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "531b3904a55e": {
+      "title": "Judge sides with Anthropic to temporarily block the Pentagon&#8217;s ban",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "4ad65877b21d": {
+      "title": "David Sacks is no longer the White House AI and Crypto Czar",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "c2a288dcfc0d": {
+      "title": "Google is making it easier to import another AI\u2019s memory into Gemini",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "c5ab5c0ace91": {
+      "title": "Apple will reportedly allow other AI chatbots to plug into Siri",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "99010b0c1bfe": {
+      "title": "Apple\u2019s AI Playlist Playground is bad at music",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "864d302b957e": {
+      "title": "Google&#8217;s &#8216;live&#8217; AI search assistant can handle conversations in dozens more languages",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "416c0fad977c": {
+      "title": "Meta gets ready to launch two new Ray-Ban AI glasses",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "07392ef2399f": {
+      "title": "Wikipedia bans AI-generated articles",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "4c7b17f4370d": {
+      "title": "Senators are pushing to find out how much electricity data centers actually use",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "e381032a057c": {
+      "title": "Webtoon is adding AI localization tools to its comics platform",
+      "first_seen": "2026-03-27",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-26T09:59:05.268261+00:00"
+  "last_run": "2026-03-27T09:52:29.763161+00:00"
 }
