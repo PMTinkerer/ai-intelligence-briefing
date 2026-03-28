@@ -833,7 +833,61 @@
       "first_seen": "2026-03-27",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "7d026a90b0aa": {
+      "title": "v2.1.86",
+      "first_seen": "2026-03-28",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "9b81ad433793": {
+      "title": "datasette-showboat 0.1a2",
+      "first_seen": "2026-03-28",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "b1256cdce274": {
+      "title": "Quoting Richard Fontana",
+      "first_seen": "2026-03-28",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "58ffcf300589": {
+      "title": "Vibe coding SwiftUI apps is a lot of fun",
+      "first_seen": "2026-03-28",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "0c8960980b22": {
+      "title": "Why SoftBank\u2019s new $40B loan points to a 2026 OpenAI IPO",
+      "first_seen": "2026-03-28",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "4360fdd02bf5": {
+      "title": "Memory chip giant SK hynix could help end \u2018RAMmageddon\u2019 with blockbuster US IPO",
+      "first_seen": "2026-03-28",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "7728d5d789fa": {
+      "title": "VCs are betting billions on AI\u2019s next wave, so why is OpenAI killing Sora?",
+      "first_seen": "2026-03-28",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "2a90cd359642": {
+      "title": "OpenAI shuts down Sora while Meta gets shut out in court",
+      "first_seen": "2026-03-28",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "8ce36c7d7fd8": {
+      "title": "The latest in data centers, AI, and energy",
+      "first_seen": "2026-03-28",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-27T09:52:29.763161+00:00"
+  "last_run": "2026-03-28T09:35:08.529757+00:00"
 }

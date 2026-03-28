@@ -1,5 +1,140 @@
 [
   {
+    "date": "2026-03-28",
+    "items": [
+      {
+        "title": "Vibe coding SwiftUI apps is a lot of fun",
+        "url": "https://simonwillison.net/2026/Mar/27/vibe-coding-swiftui/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-27T20:59:53+00:00",
+        "description": "I have a new laptop - a 128GB M5 MacBook Pro, which early impressions show to be very capable for running good local LLMs. I got frustrated with Activity Monitor and decided to vibe code up some alternative tools for monitoring performance and I'm very happy with the results. This is my second experiment with vibe coding macOS apps - the first was this presentation app a few weeks ago . It turns out Claude Opus 4.6 and GPT-5.4 are both very competent at SwiftUI - and a full SwiftUI app can fit in a single text file, which means I can use them to spin something up without even opening Xcode. I\u2019ve built two apps so far: Bandwidther shows me what apps are using network bandwidth and Gpuer to show me what\u2019s going on with the GPU. At Claude\u2019s suggestion both of these are now menu bar icons that open a panel full of information. Bandwidther I built this app first, because I wanted to see what Dropbox was doing. It looks like this: I\u2019ve shared the full transcript I used to build the first version of the app. My prompts were pretty minimal: Show me how much network bandwidth is in use from this machine to the internet as opposed to local LAN (My initial curiosity was to see if Dropbox was transferring files via the LAN from my old computer or was downloading from the internet.) mkdir /tmp/bandwidther and write a native Swift UI app in there that shows me these details on a live ongoing basis This got me the first version, which proved to me this was worth pursuing further. git init and git commit what you have so far Since I was about to start adding new features. Now suggest features we could add to that app, the goal is to provide as much detail as possible concerning network usage including by different apps The nice thing about having Claude suggest features is that it has a much better idea for what\u2019s possible than I do. We had a bit of back and forth fixing some bugs, then I sent a few more prompts to get to the two column layout shown above: add Per-Process Bandwidth, relaunch the app once that is done now add the reverse DNS feature but make sure original IP addresses are still visible too, albeit in smaller typeface redesign the app so that it is wider, I want two columns - the per-process one on the left and the rest on the right OK make it a task bar icon thing, when I click the icon I want the app to appear, the icon itself should be a neat minimal little thing The source code and build instructions are available in simonw/bandwidther . Gpuer While I was building Bandwidther in one session I had another session running to build a similar tool for seeing what the GPU was doing. Here\u2019s what I ended up with: Here's the transcript . This one took even less prompting because I could use the in-progress Bandwidther as an example: I want to know how much RAM and GPU this computer is using, which is hard because stuff on the GPU and RAM does not seem to show up in Activity Monitor This collected information using system_profiler and memory_pressure and gave me an answer - more importantly it showed me this was possible, so I said: Look at /tmp/bandwidther and then create a similar app in /tmp/gpuer which shows the information from above on an ongoing basis, or maybe does it better After a few more changes to the Bandwidther app I told it to catch up: Now take a look at recent changes in /tmp/bandwidther - that app now uses a sys tray icon, imitate that This remains one of my favorite tricks for using coding agents: having them recombine elements from other projects. The code for Gpuer can be found in simonw/gpuer on GitHub. You shouldn't trust these apps These two apps are classic vibe coding: I don't know Swift and I hardly glanced at the code they were writing. More importantly though, I have very little experience with macOS internals such as the values these tools are measuring. I am completely unqualified to evaluate if the numbers and charts being spat out by these tools are credible or accurate! I've added warnings to both GitHub repositories to that effect. This morning I caught Gpuer reporting that I had just 5GB of memory left when that clearly wasn't the case (according to Activity Monitor). I pasted a screenshot into Claude Code and it adjusted the calculations and the new numbers look right, but I'm still not confident that it's reporting things correctly. I only shared them on GitHub because I think they're interesting as an example of what Claude can do with SwiftUI. Despite my lack of confidence in the apps themselves, I did learn some useful things from these projects: A SwiftUI app can get a whole lot done with a single file of code - here's GpuerApp.swift (880 lines) and BandwidtherApp.swift (1063 lines). Wrapping various terminal commands in a neat UI with Swift is easily achieved. Claude has surprisingly good design taste when it comes to SwiftUI applications. Turning an app into a menu bar app is just a few lines of extra code as well. You don't need to open Xcode to build this kind of application! These two apps took very little time to build and have convinced me that building macOS apps in SwiftUI is a new capability I should consider for future projects. Tags: macos , ai , generative-ai , llms , vibe-coding , coding-agents , swift , claude-code",
+        "id": "58ffcf300589",
+        "content": "I have a new laptop - a 128GB M5 MacBook Pro, which early impressions show to be very capable for running good local LLMs. I got frustrated with Activity Monitor and decided to vibe code up some alternative tools for monitoring performance and I'm very happy with the results. This is my second experiment with vibe coding macOS apps - the first was this presentation app a few weeks ago . It turns out Claude Opus 4.6 and GPT-5.4 are both very competent at SwiftUI - and a full SwiftUI app can fit in a single text file, which means I can use them to spin something up without even opening Xcode. I\u2019ve built two apps so far: Bandwidther shows me what apps are using network bandwidth and Gpuer to show me what\u2019s going on with the GPU. At Claude\u2019s suggestion both of these are now menu bar icons that open a panel full of information. Bandwidther I built this app first, because I wanted to see what Dropbox was doing. It looks like this: I\u2019ve shared the full transcript I used to build the first version of the app. My prompts were pretty minimal: Show me how much network bandwidth is in use from this machine to the internet as opposed to local LAN (My initial curiosity was to see if Dropbox was transferring files via the LAN from my old computer or was downloading from the internet.) mkdir /tmp/bandwidther and write a native Swift UI app in there that shows me these details on a live ongoing basis This got me the first version, which proved to me this was worth pursuing further. git init and git commit what you have so far Since I was about to start adding new features. Now suggest features we could add to that app, the goal is to provide as much detail as possible concerning network usage including by different apps The nice thing about having Claude suggest features is that it has a much better idea for what\u2019s possible than I do. We had a bit of back and forth fixing some bugs, then I sent a few more prompts to get to the two column layout shown above: add Per-Process Bandwidth",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Simon Willison demonstrates a workflow he calls 'vibe coding' where he builds complete macOS apps using only LLM conversations, without opening Xcode. He created two SwiftUI menu bar apps\u2014one for monitoring network bandwidth by app, another for GPU usage\u2014by iteratively prompting Claude Opus 4.6 and GPT-5.4 with natural language descriptions of what he wanted.",
+        "why_it_matters": "This is a practical pattern for quickly building custom monitoring or utility tools that solve immediate problems without getting bogged down in traditional development setup. You're already comfortable with Claude Code for Python work, but this shows how conversational coding extends to GUI apps on different platforms. When you hit friction with existing tools\u2014like wanting better visibility into your GitHub Actions usage or needing a custom dashboard for your STR metrics\u2014this same approach could get you a working prototype in an hour instead of spending days learning a new framework.",
+        "expandable_implement": "Start with a single-file approach like Simon did. Create a project directory and ask Claude to write a complete SwiftUI app in one file that does one specific thing you've been wanting\u2014maybe a menu bar app that shows you today's STR occupancy across properties, or a simple window that monitors your GitHub Actions minutes usage. The key moves: (1) Ask Claude to suggest features rather than trying to spec everything upfront\u2014it knows what's possible in SwiftUI better than you do. (2) Use git from the start so you can roll back when experiments don't work. (3) Keep the scope tiny initially\u2014get something on screen that does the core thing, then iterate. You don't need to know Swift or SwiftUI; you're having a conversation about what you want to see and letting the LLM handle the implementation details. The full transcript Simon shared shows this is genuinely achievable even if you've never written a line of Swift.",
+        "expandable_learn": "The mental model here is treating the LLM as a specialist who can work in domains you don't know, as long as you can clearly describe the outcome you want. This works because SwiftUI apps can be self-contained in a way that many other platforms can't\u2014a single file can be a complete, runnable GUI application. The breakthrough isn't the code; it's realizing that 'I don't know that platform' is no longer a blocking concern for small utility projects. Experiment: Think of one monitoring or visibility problem you have right now where the existing tools don't quite fit. Spend 20 minutes in a Claude conversation describing what you want to see on screen and why. Don't try to architect it\u2014just describe the problem like you're explaining it to a teammate. See how far you get toward a working prototype without writing any code yourself.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Memory chip giant SK hynix could help end \u2018RAMmageddon\u2019 with blockbuster US IPO",
+        "url": "https://techcrunch.com/2026/03/27/memory-chip-giant-sk-hynix-could-help-end-rammageddon-with-blockbuster-us-ipo/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-27T19:11:28+00:00",
+        "description": "SK hynix\u2019s potential U.S. listing could raise $10-$14 billion to help it build more capacity, encourage others to follow, and end the 'RAMmageddon' memory shortage.",
+        "id": "4360fdd02bf5",
+        "content": "SK hynix\u2019s potential U.S. listing could raise $10-$14 billion to help it build more capacity, encourage others to follow, and end the 'RAMmageddon' memory shortage.",
+        "tier": "NOTED",
+        "summary": "SK hynix might IPO in the US to raise $10-14B for memory chip production, potentially ending the 'RAMmageddon' shortage. Relevant if you're dealing with GPU/compute constraints \u2014 more memory chip capacity eventually means better availability and pricing for the hardware you need to run inference or fine-tune models locally.",
+        "rank": 2
+      },
+      {
+        "title": "OpenAI shuts down Sora while Meta gets shut out in court",
+        "url": "https://techcrunch.com/video/openai-shuts-down-sora-while-meta-gets-shut-out-in-court/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-27T13:30:00+00:00",
+        "description": "When an 82-year-old Kentucky woman was\u00a0offered $26 million\u00a0from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone\u00a02,000 acres\u00a0nearby anyway, but as AI infrastructure stretches further into the real world,\u00a0the real world is starting to push back.\u00a0 That tension is everywhere [\u2026]",
+        "id": "2a90cd359642",
+        "content": "When an 82-year-old Kentucky woman was\u00a0offered $26 million\u00a0from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone\u00a02,000 acres\u00a0nearby anyway, but as AI infrastructure stretches further into the real world,\u00a0the real world is starting to push back.\u00a0 That tension is everywhere [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "OpenAI is shutting down Sora, their video generation model. This matters because it signals that even well-funded foundation model labs are making hard choices about what to maintain \u2014 video generation might not be economically viable yet, or they're consolidating focus. If you've been planning workflows around Sora, time to pivot to alternatives like Runway or Pika.",
+        "rank": 1
+      },
+      {
+        "title": "The latest in data centers, AI, and energy",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-27T18:35:53+00:00",
+        "description": "Massive new data centers are the physical foundation for tech companies\u2019 hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impact on power grids, utility bills, nearby communities, and the environment.\u00a0 From audacious plans to launch data centers into [\u2026]",
+        "id": "8ce36c7d7fd8",
+        "content": "Massive new data centers are the physical foundation for tech companies\u2019 hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impact on power grids, utility bills, nearby communities, and the environment.\u00a0 From audacious plans to launch data centers into [\u2026]",
+        "tier": "NOTED",
+        "summary": "Data center expansion is hitting real-world resistance from communities worried about power grid strain and utility costs. This infrastructure tension affects long-term API pricing and availability \u2014 if data centers can't expand as planned, compute gets more expensive and harder to access for everyone building with AI.",
+        "rank": 3
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 5
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 3
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 4
+      },
+      {
+        "rank": 4,
+        "title": "Study 'vibe coding' as a rapid prototyping workflow for non-core tools",
+        "category": "APPLIED_PATTERN",
+        "rationale": "Willison's workflow\u2014building complete apps without opening an IDE, iterating purely through LLM conversations\u2014demonstrates a technique for rapid tool creation outside your primary stack. Not everything needs production-grade architecture. For one-off utilities (monitoring tools, admin dashboards, quick data processors), this pattern lets you ship in hours instead of days. The key insight: some problems deserve throwaway code, and AI makes throwaway code viable at a new scale.",
+        "first_step": "Identify one internal tool you've been avoiding building (property performance dashboard, inspector route visualizer, maintenance cost tracker) and spend 30 minutes describing it to Claude Code. See how far you get without writing code.",
+        "time_investment": "30 minutes to test the pattern, applicable to any quick-build utility",
+        "days_on_leaderboard": 1
+      },
+      {
+        "rank": 5,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 5
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 6,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 1,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 3
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 3
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 3
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 2,
+      "layer_3": 2
+    },
+    "total_fetched": 62
+  },
+  {
     "date": "2026-03-27",
     "items": [
       {

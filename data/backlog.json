@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "aee0c2de60d5",
@@ -63,11 +63,24 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
+      "days_pending": 1
+    },
+    {
+      "id": "58ffcf300589",
+      "title": "Vibe coding SwiftUI apps is a lot of fun",
+      "source_url": "https://simonwillison.net/2026/Mar/27/vibe-coding-swiftui/#atom-everything",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "Start with a single-file approach like Simon did. Create a project directory and ask Claude to write a complete SwiftUI app in one file that does one specific thing you've been wanting\u2014maybe a menu bar app that shows you today's STR occupancy across properties, or a simple window that monitors your GitHub Actions minutes usage. The key moves: (1) Ask Claude to suggest features rather than trying to spec everything upfront\u2014it knows what's possible in SwiftUI better than you do. (2) Use git from the start so you can roll back when experiments don't work. (3) Keep the scope tiny initially\u2014get something on screen that does the core thing, then iterate. You don't need to know Swift or SwiftUI; you're having a conversation about what you want to see and letting the LLM handle the implementation details. The full transcript Simon shared shows this is genuinely achievable even if you've never written a line of Swift.",
+      "status": "pending",
+      "date_added": "2026-03-28",
+      "date_adopted": null,
+      "date_archived": null,
       "days_pending": 0
     }
   ],
   "stats": {
-    "total_added": 5,
+    "total_added": 6,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0

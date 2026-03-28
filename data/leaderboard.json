@@ -7,7 +7,7 @@
       "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
       "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
       "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
-      "days_on_leaderboard": 4
+      "days_on_leaderboard": 5
     },
     {
       "rank": 2,
@@ -16,7 +16,7 @@
       "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
       "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
       "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
-      "days_on_leaderboard": 2
+      "days_on_leaderboard": 3
     },
     {
       "rank": 3,
@@ -25,15 +25,15 @@
       "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
       "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
       "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
-      "days_on_leaderboard": 3
+      "days_on_leaderboard": 4
     },
     {
       "rank": 4,
-      "title": "Study 'vibe porting' pattern: AI-guided migration validated by test suites",
+      "title": "Study 'vibe coding' as a rapid prototyping workflow for non-core tools",
       "category": "APPLIED_PATTERN",
-      "rationale": "The JSONata port (7 hours to rewrite an entire query language) demonstrates a transferable technique: describe what existing code does, let AI recreate it in a different language/framework, validate against the original's test suite, run both in parallel before switching. This pattern lets you migrate legacy systems without needing to understand every implementation detail. Applicable to moving from Guesty integrations to custom systems, porting vendor tools when APIs change, or adapting open-source solutions to your stack.",
-      "first_step": "Identify one brittle integration in your stack (Breezeway email parsing, Guesty webhook handler) and spec out how you'd 'vibe port' it: what tests would validate identical behavior? What parallel-run period proves safety?",
-      "time_investment": "30 minutes to understand the pattern, applicable to any migration project",
+      "rationale": "Willison's workflow\u2014building complete apps without opening an IDE, iterating purely through LLM conversations\u2014demonstrates a technique for rapid tool creation outside your primary stack. Not everything needs production-grade architecture. For one-off utilities (monitoring tools, admin dashboards, quick data processors), this pattern lets you ship in hours instead of days. The key insight: some problems deserve throwaway code, and AI makes throwaway code viable at a new scale.",
+      "first_step": "Identify one internal tool you've been avoiding building (property performance dashboard, inspector route visualizer, maintenance cost tracker) and spend 30 minutes describing it to Claude Code. See how far you get without writing code.",
+      "time_investment": "30 minutes to test the pattern, applicable to any quick-build utility",
       "days_on_leaderboard": 1
     },
     {
@@ -43,12 +43,12 @@
       "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
       "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
       "time_investment": "Ongoing practice\u2014every failure is a training session",
-      "days_on_leaderboard": 4
+      "days_on_leaderboard": 5
     }
   ],
   "changes_today": [
-    "NEW ENTRY at rank 4: 'Vibe porting' pattern displaced dependency security (#5 yesterday). The JSONata case study demonstrates a concrete, immediately applicable technique for migrating legacy systems without deep implementation knowledge. This is more valuable than understanding supply chain security patterns because it's a capability you can deploy this week on actual migration problems (Breezeway integrations, vendor tool adaptations). Security patterns are important but defensive; porting patterns are offensive capability-building.",
-    "Dependency supply chain security dropped off. Still important context, but the operator already understands the pattern (version pinning, gradual rollout, trust boundaries). It's now implemented in production tools. Further investment doesn't compound\u2014it's maintenance, not capability expansion."
+    "ENTERED #4: 'Vibe coding' pattern from Willison's SwiftUI demos. This isn't about learning SwiftUI\u2014it's about recognizing when to use throwaway-quality rapid prototyping vs production architecture. Replaces 'vibe porting' (#4 yesterday) because rapid prototyping is a more frequently applicable pattern than migration workflows.",
+    "All other positions hold. Today's items (OpenAI/Meta news, pending releases) don't create new capabilities or change strategic priorities."
   ],
-  "date": "2026-03-27"
+  "date": "2026-03-28"
 }
