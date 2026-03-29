@@ -887,7 +887,61 @@
       "first_seen": "2026-03-28",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "dc261aaec4a7": {
+      "title": "v2.1.87",
+      "first_seen": "2026-03-29",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "388aafa484ed": {
+      "title": "Quoting Matt Webb",
+      "first_seen": "2026-03-29",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "68e9d9bfd047": {
+      "title": "Bluesky leans into AI with Attie, an app for building custom feeds",
+      "first_seen": "2026-03-29",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "b5b58f7d4d34": {
+      "title": "Stanford study outlines dangers of asking AI chatbots for personal advice",
+      "first_seen": "2026-03-29",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9f40a3f97dd4": {
+      "title": "Elon Musk\u2019s last co-founder reportedly leaves xAI",
+      "first_seen": "2026-03-29",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "419dcab79745": {
+      "title": "Anthropic\u2019s Claude popularity with paying consumers is skyrocketing",
+      "first_seen": "2026-03-29",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "4d457d93f142": {
+      "title": "Suno leans into customization with v5.5",
+      "first_seen": "2026-03-29",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "39af8f1bbcf6": {
+      "title": "Why can\u2019t TikTok identify AI generated ads when I can?",
+      "first_seen": "2026-03-29",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "a9eeb03192e5": {
+      "title": "Why OpenAI killed Sora",
+      "first_seen": "2026-03-29",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-28T09:35:08.529757+00:00"
+  "last_run": "2026-03-29T09:34:30.070363+00:00"
 }

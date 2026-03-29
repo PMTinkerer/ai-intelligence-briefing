@@ -1,5 +1,166 @@
 [
   {
+    "date": "2026-03-29",
+    "items": [
+      {
+        "title": "Quoting Matt Webb",
+        "url": "https://simonwillison.net/2026/Mar/28/matt-webb/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-28T12:04:26+00:00",
+        "description": "The thing about agentic coding is that agents grind problems into dust. Give an agent a problem and a while loop and - long term - it\u2019ll solve that problem even if it means burning a trillion tokens and re-writing down to the silicon. [...] But we want AI agents to solve coding problems quickly and in a way that is maintainable and adaptive and composable (benefiting from improvements elsewhere), and where every addition makes the whole stack better. So at the bottom is really great libraries that encapsulate hard problems, with great interfaces that make the \u201cright\u201d way the easy way for developers building apps with them. Architecture! While I\u2019m vibing (I call it vibing now, not coding and not vibe coding) while I\u2019m vibing, I am looking at lines of code less than ever before, and thinking about architecture more than ever before. \u2014 Matt Webb , An appreciation for (technical) architecture Tags: matt-webb , ai , llms , vibe-coding , coding-agents , ai-assisted-programming , generative-ai , agentic-engineering , definitions",
+        "id": "388aafa484ed",
+        "content": "The thing about agentic coding is that agents grind problems into dust. Give an agent a problem and a while loop and - long term - it\u2019ll solve that problem even if it means burning a trillion tokens and re-writing down to the silicon. [...] But we want AI agents to solve coding problems quickly and in a way that is maintainable and adaptive and composable (benefiting from improvements elsewhere), and where every addition makes the whole stack better. So at the bottom is really great libraries that encapsulate hard problems, with great interfaces that make the \u201cright\u201d way the easy way for developers building apps with them. Architecture! While I\u2019m vibing (I call it vibing now, not coding and not vibe coding) while I\u2019m vibing, I am looking at lines of code less than ever before, and thinking about architecture more than ever before. \u2014 Matt Webb , An appreciation for (technical) architecture Tags: matt-webb , ai , llms , vibe-coding , coding-agents , ai-assisted-programming , generative-ai , agentic-engineering , definitions",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Matt Webb observes that AI coding agents can solve any problem given enough time and tokens, but the real skill is architecting systems so agents solve problems efficiently rather than grinding through infinite iterations. He's shifting from writing code to designing the structure that makes the right solution obvious.",
+        "why_it_matters": "You're hitting Stage 4 problems \u2014 debugging tracebacks, orchestrating multiple systems, building autonomous loops. This is the exact inflection point Matt describes. When you're wrestling with a GitHub Actions pipeline that won't fail gracefully or trying to get Claude Code to understand your project structure, the instinct is to iterate harder. But the insight here is that you need better architecture first. If your STR Daily Briefing has clean separation between data fetching, classification, and email generation, Claude can fix a broken Gmail step without touching the rest. If your Inspector Scheduler has well-defined boundaries between schedule parsing, conflict detection, and calendar updates, debugging becomes straightforward. Poor architecture makes agents grind. Good architecture makes them effective.",
+        "expandable_implement": null,
+        "expandable_learn": "Next time you're stuck in a debugging loop with Claude Code, step back and ask: 'What would make this problem trivial to solve?' Often the answer is structural \u2014 clearer function boundaries, better error messages, more explicit state management. Try this: Pick your most frustrating recurring bug in the Inspector Scheduler. Before asking Claude to fix it again, spend 15 minutes sketching how you'd restructure that part of the system to make the bug impossible or obvious. Then implement that structure with Claude's help. You'll likely find the bug fixes itself once the architecture is right, and future issues in that area become much easier to diagnose.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Bluesky leans into AI with Attie, an app for building custom feeds",
+        "url": "https://techcrunch.com/2026/03/28/bluesky-leans-into-ai-with-attie-an-app-for-building-custom-feeds/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-28T23:00:00+00:00",
+        "description": "Bluesky\u2019s new app Attie uses AI to help people build custom feeds the open social networking protocol atproto.",
+        "id": "68e9d9bfd047",
+        "content": "Bluesky\u2019s new app Attie uses AI to help people build custom feeds the open social networking protocol atproto.",
+        "tier": "NOTED",
+        "summary": "Bluesky released Attie, an app that uses AI to help people build custom feeds on their protocol. Interesting as a case study in AI-powered curation and how open protocols enable experimentation, but not immediately relevant unless you're building social tools or thinking about algorithmic content filtering in your operations.",
+        "rank": 4
+      },
+      {
+        "title": "Stanford study outlines dangers of asking AI chatbots for personal advice",
+        "url": "https://techcrunch.com/2026/03/28/stanford-study-outlines-dangers-of-asking-ai-chatbots-for-personal-advice/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-28T20:45:54+00:00",
+        "description": "While there\u2019s been plenty of debate about AI sycophancy, a new study by Stanford computer scientists attempts to measure how harmful that tendency might be.",
+        "id": "b5b58f7d4d34",
+        "content": "While there\u2019s been plenty of debate about AI sycophancy, a new study by Stanford computer scientists attempts to measure how harmful that tendency might be.",
+        "tier": "NOTED",
+        "summary": "Stanford researchers measured how AI chatbot sycophancy (telling you what you want to hear) could be harmful when people ask for personal advice. Good to be aware of when you're using AI for decision support \u2014 always pressure test outputs and don't mistake agreement for accuracy. The models want to please you, not challenge you.",
+        "rank": 5
+      },
+      {
+        "title": "Anthropic\u2019s Claude popularity with paying consumers is skyrocketing",
+        "url": "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-28T14:15:00+00:00",
+        "description": "Estimates for total Claude consumer users are all over the map (we've seen figures ranging from 18 million to 30 million). Anthropic hasn't disclosed this data, but a spokesperson did tell TechCrunch that Claude paid subscriptions have more than doubled this year.",
+        "id": "419dcab79745",
+        "content": "Estimates for total Claude consumer users are all over the map (we've seen figures ranging from 18 million to 30 million). Anthropic hasn't disclosed this data, but a spokesperson did tell TechCrunch that Claude paid subscriptions have more than doubled this year.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Claude paid subscriptions have more than doubled this year, showing real consumer willingness to pay for AI that feels different. This matters because it proves there's room for multiple winners in foundation models \u2014 you're not locked into just OpenAI. Claude's emphasis on thoughtful responses and extended context windows is clearly resonating with people doing real work.",
+        "rank": 2
+      },
+      {
+        "title": "Suno leans into customization with v5.5",
+        "url": "https://www.theverge.com/entertainment/903056/suno-ai-music-v5-5-model",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-28T18:33:10+00:00",
+        "description": "Suno just released one of its biggest updates yet with v5.5 of its AI music model. Where previous updates focused mostly on improving fidelity and creating more natural vocals, v5.5 is about giving users more control. It includes three new features: Voices, My Taste, and Custom Models. In the release notes, Suno says that Voices [\u2026]",
+        "id": "4d457d93f142",
+        "content": "Suno just released one of its biggest updates yet with v5.5 of its AI music model. Where previous updates focused mostly on improving fidelity and creating more natural vocals, v5.5 is about giving users more control. It includes three new features: Voices, My Taste, and Custom Models. In the release notes, Suno says that Voices [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Suno's v5.5 gives you way more control over AI music generation with custom voices, taste profiles, and model tuning. This is the pattern to watch: AI tools moving from 'generate random thing' to 'generate MY thing consistently.' If you're building anything with generative AI, controllability and consistency are becoming table stakes.",
+        "rank": 3
+      },
+      {
+        "title": "Why OpenAI killed Sora",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/902368/openai-sora-dead-ai-video-generation-competition",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-28T12:00:00+00:00",
+        "description": "On Tuesday morning, everything was business as usual at OpenAI. By the end of the day, the company had announced that it would scrap its video-generation app, Sora, and reverse plans for video generation inside ChatGPT; it would wind down a $1 billion Disney deal; it would shuffle the role of a high-level executive; and [\u2026]",
+        "id": "a9eeb03192e5",
+        "content": "On Tuesday morning, everything was business as usual at OpenAI. By the end of the day, the company had announced that it would scrap its video-generation app, Sora, and reverse plans for video generation inside ChatGPT; it would wind down a $1 billion Disney deal; it would shuffle the role of a high-level executive; and [\u2026]",
+        "tier": "GAME_CHANGER",
+        "summary": "OpenAI shut down Sora and pulled back on video generation across ChatGPT, killing a $1B Disney deal in the process. This is a major strategic pivot from a leading lab \u2014 either they hit a wall on video economics/quality, or they're reallocating resources to something bigger. For builders, it signals video generation may not be production-ready yet and the competitive landscape just opened up.",
+        "rank": 1
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 6
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 4
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 5
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 6
+      },
+      {
+        "rank": 5,
+        "title": "Understand Matt Webb's insight: architect systems to make solutions obvious, not solvable",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Webb identifies the shift from writing code to designing the structure that makes the right solution obvious to agents. Agents can solve any problem with infinite tokens and time, but the skill is creating architectures where the efficient path emerges naturally. This is the mental model that prevents complexity monsters and makes autonomous systems maintainable. It's system design as constraint definition.",
+        "first_step": "Review your inspector scheduler architecture. Identify one place where the agent had to iterate multiple times to get right. Ask: what constraint or structure could you have added to make the correct solution more obvious from the start?",
+        "time_investment": "30 minutes of architectural reflection per project",
+        "days_on_leaderboard": 1
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 6,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 4
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 4
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 4
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 0,
+      "layer_3": 2
+    },
+    "total_fetched": 62
+  },
+  {
     "date": "2026-03-28",
     "items": [
       {
