@@ -1,5 +1,172 @@
 [
   {
+    "date": "2026-03-30",
+    "items": [
+      {
+        "title": "Pretext",
+        "url": "https://simonwillison.net/2026/Mar/29/pretext/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-29T20:08:45+00:00",
+        "description": "Pretext Exciting new browser library from Cheng Lou, previously a React core developer and the original creator of the react-motion animation library. Pretext solves the problem of calculating the height of a paragraph of line-wrapped text without touching the DOM . The usual way of doing this is to render the text and measure its dimensions, but this is extremely expensive. Pretext uses an array of clever tricks to make this much, much faster, which enables all sorts of new text rendering effects in browser applications. Here's one demo that shows the kind of things this makes possible: The key to how this works is the way it separates calculations into a call to a prepare() function followed by multiple calls to layout() . The prepare() function splits the input text into segments (effectively words, but it can take things like soft hyphens and non-latin character sequences and emoji into account as well) and measures those using an off-screen canvas, then caches the results. This is comparatively expensive but only runs once. The layout() function can then emulate the word-wrapping logic in browsers to figure out how many wrapped lines the text will occupy at a specified width and measure the overall height. I had Claude build me this interactive artifact to help me visually understand what's going on, based on a simplified version of Pretext itself. The way this is tested is particularly impressive. The earlier tests rendered a full copy of the Great Gatsby in multiple browsers to confirm that the estimated measurements were correct against a large volume of text. This was later joined by the corpora/ folder using the same technique against lengthy public domain documents in Thai, Chinese, Korean, Japanese, Arabic, and more. Cheng Lou says : The engine\u2019s tiny (few kbs), aware of browser quirks, supports all the languages you\u2019ll need, including Korean mixed with RTL Arabic and platform-specific emojis This was achieved through showing Claude Code and Codex the browsers ground truth, and have them measure & iterate against those at every significant container width, running over weeks Via @_chenglou Tags: browsers , css , javascript , testing , react , typescript",
+        "id": "f7f3591443c6",
+        "content": "Pretext Exciting new browser library from Cheng Lou, previously a React core developer and the original creator of the react-motion animation library. Pretext solves the problem of calculating the height of a paragraph of line-wrapped text without touching the DOM . The usual way of doing this is to render the text and measure its dimensions, but this is extremely expensive. Pretext uses an array of clever tricks to make this much, much faster, which enables all sorts of new text rendering effects in browser applications. Here's one demo that shows the kind of things this makes possible: The key to how this works is the way it separates calculations into a call to a prepare() function followed by multiple calls to layout() . The prepare() function splits the input text into segments (effectively words, but it can take things like soft hyphens and non-latin character sequences and emoji into account as well) and measures those using an off-screen canvas, then caches the results. This is comparatively expensive but only runs once. The layout() function can then emulate the word-wrapping logic in browsers to figure out how many wrapped lines the text will occupy at a specified width and measure the overall height. I had Claude build me this interactive artifact to help me visually understand what's going on, based on a simplified version of Pretext itself. The way this is tested is particularly impressive. The earlier tests rendered a full copy of the Great Gatsby in multiple browsers to confirm that the estimated measurements were correct against a large volume of text. This was later joined by the corpora/ folder using the same technique against lengthy public domain documents in Thai, Chinese, Korean, Japanese, Arabic, and more. Cheng Lou says : The engine\u2019s tiny (few kbs), aware of browser quirks, supports all the languages you\u2019ll need, including Korean mixed with RTL Arabic and platform-specific emojis This was achieved through showing Claude Code and Codex the br",
+        "tier": "NOTED",
+        "what_it_is": "Pretext is a new browser library that calculates the height of line-wrapped text without rendering it to the DOM, making it orders of magnitude faster than the traditional measure-after-render approach. It works by pre-calculating word widths using an off-screen canvas, then emulating browser word-wrapping logic to estimate final dimensions.",
+        "why_it_matters": "This is a clever optimization technique, but it solves a problem you don't currently have. Your work is primarily backend automation and AI orchestration \u2014 you're not building interactive text-heavy UIs that need real-time layout calculations. The interesting takeaway here is the general pattern: expensive operations can often be decomposed into a one-time preparation step plus fast lookups. That's worth keeping in mind for any performance bottleneck, but this specific library isn't actionable for your stack.",
+        "expandable_implement": null,
+        "expandable_learn": "The core pattern here is called 'amortization' \u2014 you pay a high cost once (measuring individual words), then use those measurements many times (calculating layouts at different widths) without touching the expensive operation again. Think about your own pipelines: are there operations you're repeating that could be pre-computed? For example, if you were repeatedly parsing the same HTML structure from Breezeway or Hospitable, you could measure the structure once and cache selectors. Try this: next time you see a slow operation in your code, ask yourself 'What part of this could I compute once and reuse?' That's the mental model Pretext demonstrates at scale.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Python Vulnerability Lookup",
+        "url": "https://simonwillison.net/2026/Mar/29/python-vulnerability-lookup/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-29T18:46:16+00:00",
+        "description": "Tool: Python Vulnerability Lookup I learned that the OSV.dev open source vulnerability database has an open CORS JSON API , so I had Claude Code build this HTML tool for pasting in a pyproject.toml or requirements.txt file (or name of a GitHub repo containing those) and seeing a list of all reported vulnerabilities from that API. Tags: tools , python , supply-chain , vibe-coding , security",
+        "id": "bf6e76604a77",
+        "content": "Tool: Python Vulnerability Lookup I learned that the OSV.dev open source vulnerability database has an open CORS JSON API , so I had Claude Code build this HTML tool for pasting in a pyproject.toml or requirements.txt file (or name of a GitHub repo containing those) and seeing a list of all reported vulnerabilities from that API. Tags: tools , python , supply-chain , vibe-coding , security",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Simon built a simple HTML tool that checks Python dependencies (from pyproject.toml, requirements.txt, or a GitHub repo) against the OSV.dev vulnerability database using their open CORS API. The key insight is that OSV.dev has an open, no-auth-required JSON API you can hit directly from the browser.",
+        "why_it_matters": "You're managing multiple Python projects in production (STR Daily Briefing, Inspector Scheduler, this briefing tool itself), and you're building with Claude Code, which means rapid iteration without always thinking about dependency security. This gives you a pattern for adding security checks to your GitHub Actions pipelines or even building a pre-commit hook. The real value is discovering that OSV.dev's API is this accessible \u2014 you can query it without setting up credentials or running a CLI tool.",
+        "expandable_implement": "Add a security check to your GitHub Actions workflows. In your .github/workflows directory, create a new job that runs after your tests. Install `requests` and write a short Python script that reads your requirements.txt, queries the OSV API for each package, and fails the build if vulnerabilities are found. Start simple: `import requests; response = requests.post('https://api.osv.dev/v1/query', json={'package': {'name': package_name, 'ecosystem': 'PyPI'}})`. If response.json().get('vulns'), print them and exit 1. This takes about 10 minutes to set up and runs automatically on every push. You can make it fancier later \u2014 ignore specific CVEs, set severity thresholds \u2014 but the basic version gives you visibility immediately.",
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "Claude Code Changelog",
+        "url": "https://www.claudelog.com/claude-code-changelog",
+        "source_name": "ClaudeLog",
+        "layer": 2,
+        "published": "2026-03-29T15:32:46+00:00",
+        "description": "Complete changelog for Claude Code releases with new features, improvements, and bug fixes.",
+        "id": "aa3844b00562",
+        "content": "Changelog 1x On this page Claude Code Changelog Complete version history of Claude Code releases, from early beta versions to the latest stable release. Each version includes feature additions, bug fixes, and links to relevant documentation. Need to downgrade? See our Revert Claude Code Version guide. Power up with parallel agents (ad) Run multiple autonomous coding agents simultaneously with Verdent 's isolated Git worktrees . Each agent tackles different components while maintaining full context awareness, eliminating manual debugging bottlenecks and accelerating feature delivery. Discover Verdent AI (Free Trial) Synopsis: Cowork Dispatch message delivery fix. v2.1.87 \u200b Fixed messages in Cowork Dispatch not getting delivered Mar 29, 2026 Synopsis: Session ID header for proxies. Jujutsu/Sapling VCS support. Resume fix for pre-2.1.85 sessions. Memory and token usage reductions. v2.1.86 \u200b Added X-Claude-Code-Session-Id header to API requests so proxies can aggregate requests by session without parsing the body Added .jj and .sl to VCS directory exclusion lists so Grep and file autocomplete don't descend into Jujutsu or Sapling metadata Fixed --resume failing with \"tool_use ids were found without tool_result blocks\" on sessions created before v2.1.85 Fixed Write/Edit/Read failing on files outside the project root (e.g., ~/.claude/CLAUDE.md ) when conditional skills or rules are configured Fixed unnecessary config disk writes on every skill invocation that could cause performance issues and config corruption on Windows Fixed potential out-of-memory crash when using /feedback on very long sessions with large transcript files Fixed --bare mode dropping MCP tools in interactive sessions and silently discarding messages enqueued mid-turn Fixed the c shortcut copying only ~20 characters of the OAuth login URL instead of the full URL Fixed masked input (e.g., OAuth code paste) leaking the start of the token when wrapping across multiple lines on narrow terminals Fixed offici",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Claude Code v2.1.86 and v2.1.87 shipped with several important fixes: Cowork Dispatch message delivery is fixed, API requests now include a session ID header for better proxy handling, and there's a critical fix for the --resume flag failing on older sessions. There are also memory and token usage reductions, plus support for Jujutsu and Sapling version control systems.",
+        "why_it_matters": "Two things matter here for your workflow. First, the --resume fix directly affects how you iterate on long-running sessions \u2014 if you've been creating fresh sessions instead of resuming because resume was flaky, you can stop doing that. Second, the memory and token usage reductions mean your longer debugging or exploration sessions won't hit limits as quickly. The session ID header is useful if you ever start running Claude Code behind a proxy or want to aggregate logs, but that's not pressing for your current setup.",
+        "expandable_implement": "Start using --resume more aggressively when debugging or iterating on a problem. When you're working through a traceback or refining a feature, instead of starting a new session every time you hit a snag, use `claude code --resume` to pick up where you left off. This preserves context and lets Claude build on what it already learned about your codebase and your specific problem. The fix means this should now be reliable even on sessions you started weeks ago. Try it next time you're debugging the inspector scheduler or working on a new briefing feature \u2014 you'll save time not re-explaining the problem and the context you've already established.",
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "Why OpenAI really shut down Sora",
+        "url": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T03:09:38+00:00",
+        "description": "OpenAI's decision last week to shut down Sora, its AI video-generation tool, just six months after releasing it to the public raised immediate suspicions. The app had invited users to upload their own faces \u2014 so was this some kind of elaborate data grab?",
+        "id": "00313a4d5686",
+        "content": "OpenAI's decision last week to shut down Sora, its AI video-generation tool, just six months after releasing it to the public raised immediate suspicions. The app had invited users to upload their own faces \u2014 so was this some kind of elaborate data grab?",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "OpenAI shut down Sora after just 6 months public availability, raising questions about the viability of consumer AI video tools. This matters because it signals that even well-funded labs are struggling to make video generation economically sustainable or legally defensible at scale. If you were building workflows around Sora, you just learned a hard lesson about platform risk with cutting-edge AI tools.",
+        "rank": 1
+      },
+      {
+        "title": "Sora\u2019s shutdown could be a reality check moment for AI video",
+        "url": "https://techcrunch.com/2026/03/29/soras-shutdown-could-be-a-reality-check-moment-for-ai-video/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-29T16:30:00+00:00",
+        "description": "Is this just normal corporate strategy, or are we about to see a broader pullback on AI-generated video?",
+        "id": "bf16d8c004a9",
+        "content": "Is this just normal corporate strategy, or are we about to see a broader pullback on AI-generated video?",
+        "tier": "NOTED",
+        "summary": "Industry observers are debating whether Sora's shutdown signals a broader pullback in AI video generation. Could be normal corporate strategy or a canary in the coal mine for unsustainable economics in generative video. Worth watching if you're investing time in video automation workflows.",
+        "rank": 2
+      },
+      {
+        "title": "Bluesky\u2019s new app is an AI for customizing your feed",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/903190/bluesky-attie-ai-custom-feeds",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-29T21:44:41+00:00",
+        "description": "The latest app from the team behind Bluesky is Attie, an AI assistant that lets you build your own algorithm. At the Atmosphere conference, Bluesky's former CEO, Jay Graber, and CTO Paul Frazee, unveiled Attie, which is powered by Anthropic's Claude and built on top of Bluesky's underlying AT Protocol (atproto). Attie allows users to [\u2026]",
+        "id": "9e42be92f2f3",
+        "content": "The latest app from the team behind Bluesky is Attie, an AI assistant that lets you build your own algorithm. At the Atmosphere conference, Bluesky's former CEO, Jay Graber, and CTO Paul Frazee, unveiled Attie, which is powered by Anthropic's Claude and built on top of Bluesky's underlying AT Protocol (atproto). Attie allows users to [\u2026]",
+        "tier": "NOTED",
+        "summary": "Bluesky launched Attie, an AI assistant powered by Claude that lets you build custom feed algorithms on their AT Protocol. Interesting technical demonstration of AI as an interface layer for data filtering, but unless you're building social media tools or thinking about AI-driven content curation systems, this is mostly a neat demo.",
+        "rank": 3
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 7
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 5
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 6
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 7
+      },
+      {
+        "rank": 5,
+        "title": "Understand Matt Webb's insight: architect systems to make solutions obvious, not solvable",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Webb identifies the shift from writing code to designing the structure that makes the right solution obvious to agents. Agents can solve any problem with infinite tokens and time, but the skill is creating architectures where the efficient path emerges naturally. This is the mental model that prevents complexity monsters and makes autonomous systems maintainable. It's system design as constraint definition.",
+        "first_step": "Review your inspector scheduler architecture. Identify one place where the agent had to iterate multiple times to get right. Ask: what constraint or structure could you have added to make the correct solution more obvious from the start?",
+        "time_investment": "30 minutes of architectural reflection per project",
+        "days_on_leaderboard": 2
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 8,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 2,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 5
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 5
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 5
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 0,
+      "layer_2": 1,
+      "layer_3": 1
+    },
+    "total_fetched": 62
+  },
+  {
     "date": "2026-03-29",
     "items": [
       {

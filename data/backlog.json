@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 4
+      "days_pending": 5
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 4
+      "days_pending": 5
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 4
+      "days_pending": 5
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 3
+      "days_pending": 4
     },
     {
       "id": "aee0c2de60d5",
@@ -63,7 +63,7 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "58ffcf300589",
@@ -76,11 +76,37 @@
       "date_added": "2026-03-28",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
+    },
+    {
+      "id": "bf6e76604a77",
+      "title": "Python Vulnerability Lookup",
+      "source_url": "https://simonwillison.net/2026/Mar/29/python-vulnerability-lookup/#atom-everything",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "Add a security check to your GitHub Actions workflows. In your .github/workflows directory, create a new job that runs after your tests. Install `requests` and write a short Python script that reads your requirements.txt, queries the OSV API for each package, and fails the build if vulnerabilities are found. Start simple: `import requests; response = requests.post('https://api.osv.dev/v1/query', json={'package': {'name': package_name, 'ecosystem': 'PyPI'}})`. If response.json().get('vulns'), print them and exit 1. This takes about 10 minutes to set up and runs automatically on every push. You can make it fancier later \u2014 ignore specific CVEs, set severity thresholds \u2014 but the basic version gives you visibility immediately.",
+      "status": "pending",
+      "date_added": "2026-03-30",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    },
+    {
+      "id": "aa3844b00562",
+      "title": "Claude Code Changelog",
+      "source_url": "https://www.claudelog.com/claude-code-changelog",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "Start using --resume more aggressively when debugging or iterating on a problem. When you're working through a traceback or refining a feature, instead of starting a new session every time you hit a snag, use `claude code --resume` to pick up where you left off. This preserves context and lets Claude build on what it already learned about your codebase and your specific problem. The fix means this should now be reliable even on sessions you started weeks ago. Try it next time you're debugging the inspector scheduler or working on a new briefing feature \u2014 you'll save time not re-explaining the problem and the context you've already established.",
+      "status": "pending",
+      "date_added": "2026-03-30",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
     }
   ],
   "stats": {
-    "total_added": 6,
+    "total_added": 8,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0

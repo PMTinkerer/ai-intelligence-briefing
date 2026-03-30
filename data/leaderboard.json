@@ -7,7 +7,7 @@
       "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
       "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
       "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
-      "days_on_leaderboard": 6
+      "days_on_leaderboard": 7
     },
     {
       "rank": 2,
@@ -16,7 +16,7 @@
       "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
       "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
       "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
-      "days_on_leaderboard": 4
+      "days_on_leaderboard": 5
     },
     {
       "rank": 3,
@@ -25,7 +25,7 @@
       "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
       "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
       "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
-      "days_on_leaderboard": 5
+      "days_on_leaderboard": 6
     },
     {
       "rank": 4,
@@ -34,7 +34,7 @@
       "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
       "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
       "time_investment": "Ongoing practice\u2014every failure is a training session",
-      "days_on_leaderboard": 6
+      "days_on_leaderboard": 7
     },
     {
       "rank": 5,
@@ -43,11 +43,11 @@
       "rationale": "Webb identifies the shift from writing code to designing the structure that makes the right solution obvious to agents. Agents can solve any problem with infinite tokens and time, but the skill is creating architectures where the efficient path emerges naturally. This is the mental model that prevents complexity monsters and makes autonomous systems maintainable. It's system design as constraint definition.",
       "first_step": "Review your inspector scheduler architecture. Identify one place where the agent had to iterate multiple times to get right. Ask: what constraint or structure could you have added to make the correct solution more obvious from the start?",
       "time_investment": "30 minutes of architectural reflection per project",
-      "days_on_leaderboard": 1
+      "days_on_leaderboard": 2
     }
   ],
   "changes_today": [
-    "Matt Webb's observation about architecting for agent efficiency enters at #5, displacing 'vibe coding' workflow. Webb's insight is more fundamental\u2014it's about system design philosophy that applies to every build, not just rapid prototyping. The vibe coding pattern was valuable but too narrow in scope compared to this architectural paradigm shift."
+    "No changes. Today's classified items (Python vulnerability checker, Claude Code changelog fixes, OpenAI Sora shutdown analysis) are all incremental updates that don't displace the current paradigm-level capabilities on the leaderboard. The leaderboard remains stable because these five items represent compounding, transferable capabilities that continue to build edge over competitors."
   ],
-  "date": "2026-03-29"
+  "date": "2026-03-30"
 }
