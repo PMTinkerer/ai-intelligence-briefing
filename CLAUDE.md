@@ -90,3 +90,7 @@ Run these after every change:
 - The leaderboard prompt must include previous day's leaderboard for stability
 - Don't add items to backlog without checking for duplicates (same ID)
 - State files may not exist on first run — always use `load_json_or_default`
+
+## Supply Chain Security
+
+This project follows the global supply chain security standard defined in `~/CLAUDE.md`. All dependencies must be pinned to exact versions, GitHub Actions must be SHA-pinned, and pip-audit must run in CI.
