@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 5
+      "days_pending": 6
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 5
+      "days_pending": 6
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 5
+      "days_pending": 6
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 4
+      "days_pending": 5
     },
     {
       "id": "aee0c2de60d5",
@@ -63,7 +63,7 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 3
+      "days_pending": 4
     },
     {
       "id": "58ffcf300589",
@@ -76,7 +76,7 @@
       "date_added": "2026-03-28",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "bf6e76604a77",
@@ -89,7 +89,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 0
+      "days_pending": 1
     },
     {
       "id": "aa3844b00562",
@@ -102,7 +102,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 0
+      "days_pending": 1
     }
   ],
   "stats": {

@@ -1,5 +1,195 @@
 [
   {
+    "date": "2026-03-31",
+    "items": [
+      {
+        "title": "Quoting Georgi Gerganov",
+        "url": "https://simonwillison.net/2026/Mar/30/georgi-gerganov/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-30T21:31:02+00:00",
+        "description": "Note that the main issues that people currently unknowingly face with local models mostly revolve around the harness and some intricacies around model chat templates and prompt construction. Sometimes there are even pure inference bugs. From typing the task in the client to the actual result, there is a long chain of components that atm are not only fragile - are also developed by different parties. So it's difficult to consolidate the entire stack and you have to keep in mind that what you are currently observing is with very high probability still broken in some subtle way along that chain. \u2014 Georgi Gerganov , explaining why it's hard to find local models that work well with coding agents Tags: coding-agents , generative-ai , ai , local-llms , llms , georgi-gerganov",
+        "id": "9c1b33b6458f",
+        "content": "Note that the main issues that people currently unknowingly face with local models mostly revolve around the harness and some intricacies around model chat templates and prompt construction. Sometimes there are even pure inference bugs. From typing the task in the client to the actual result, there is a long chain of components that atm are not only fragile - are also developed by different parties. So it's difficult to consolidate the entire stack and you have to keep in mind that what you are currently observing is with very high probability still broken in some subtle way along that chain. \u2014 Georgi Gerganov , explaining why it's hard to find local models that work well with coding agents Tags: coding-agents , generative-ai , ai , local-llms , llms , georgi-gerganov",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Georgi Gerganov (creator of llama.cpp) explains why local coding models often feel broken \u2014 it's usually not the model itself, but the fragile chain between your task description and the final code output. Chat templates, prompt construction, and inference bugs all introduce subtle failures that are hard to diagnose because different parties maintain different parts of the stack.",
+        "why_it_matters": "You're already running into this with Claude Code Skills and multi-system orchestration. When something breaks in your GitHub Actions pipeline or an MCP integration doesn't behave as expected, this framing helps you debug smarter. Instead of assuming the model is 'bad at X,' you can investigate the harness \u2014 how prompts are constructed, how context is passed between systems, whether chat templates are being applied correctly. This becomes critical as you move toward autonomous agent loops where these chains get longer and more opaque.",
+        "expandable_implement": null,
+        "expandable_learn": "Think of the 'harness' as everything between your intention and the model's actual execution context \u2014 similar to how your GitHub Actions workflows have triggers, environment setup, and context-passing steps before any actual work happens. Next time a local model (or even Claude Code) produces unexpected output, trace backward: What was the exact prompt? Was context properly formatted? Did the chat template expect a different structure? Try this: Pick a recent Claude Code session that didn't work as expected. Look at the raw API call if you can access it. Compare what you *said* to what the model actually *received*. You'll likely find the gap isn't where you thought it was.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own computer",
+        "url": "https://simonwillison.net/2026/Mar/30/mr-chatterbox/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-03-30T14:28:34+00:00",
+        "description": "Trip Venturella released Mr. Chatterbox , a language model trained entirely on out-of-copyright text from the British Library. Here's how he describes it: Mr. Chatterbox is a language model trained entirely from scratch on a corpus of over 28,000 Victorian-era British texts published between 1837 and 1899, drawn from a dataset made available by the British Library . The model has absolutely no training inputs from after 1899 \u2014 the vocabulary and ideas are formed exclusively from nineteenth-century literature. Mr. Chatterbox's training corpus was 28,035 books, with an estimated 2.93 billion input tokens after filtering. The model has roughly 340 million paramaters, roughly the same size as GPT-2-Medium. The difference is, of course, that unlike GPT-2, Mr. Chatterbox is trained entirely on historical data. Given how hard it is to train a useful LLM without using vast amounts of scraped, unlicensed data I've been dreaming of a model like this for a couple of years now. What would a model trained on out-of-copyright text be like to chat with? Thanks to Trip we can now find out for ourselves! The model itself is tiny, at least by Large Language Model standards - just 2.05GB on disk. You can try it out using Trip's HuggingFace Spaces demo : Honestly, it's pretty terrible. Talking with it feels more like chatting with a Markov chain than an LLM - the responses may have a delightfully Victorian flavor to them but it's hard to get a response that usefully answers a question. The 2022 Chinchilla paper suggests a ratio of 20x the parameter count to training tokens. For a 340m model that would suggest around 7 billion tokens, more than twice the British Library corpus used here. The smallest Qwen 3.5 model is 600m parameters and that model family starts to get interesting at 2b - so my hunch is we would need 4x or more the training data to get something that starts to feel like a useful conversational partner. But what a fun project! Running it locally with LLM I decided to see if I could run the model on my own machine using my LLM framework. I got Claude Code to do most of the work - here's the transcript . Trip trained the model using Andrej Karpathy's nanochat , so I cloned that project, pulled the model weights and told Claude to build a Python script to run the model. Once we had that working (which ended up needing some extra details from the Space demo source code ) I had Claude read the LLM plugin tutorial and build the rest of the plugin. llm-mrchatterbox is the result. Install the plugin like this: llm install llm-mrchatterbox The first time you run a prompt it will fetch the 2.05GB model file from Hugging Face. Try that like this: llm -m mrchatterbox \"Good day, sir\" Or start an ongoing chat session like this: llm chat -m mrchatterbox If you don't have LLM installed you can still get a chat session started from scratch using uvx like this: uvx --with llm-mrchatterbox llm chat -m mrchatterbox When you are finished with the model you can delete the cached file using: llm mrchatterbox delete-model This is the first time I've had Claude Code build a full LLM model plugin from scratch and it worked really well. I expect I'll be using this method again in the future. I continue to hope we can get a useful model from entirely public domain data. The fact that Trip was able to get this far using nanochat and 2.93 billion training tokens is a promising start. Tags: ai , andrej-karpathy , generative-ai , local-llms , llms , ai-assisted-programming , hugging-face , llm , training-data , uv , ai-ethics , claude-code",
+        "id": "54b18218bea6",
+        "content": "Trip Venturella released Mr. Chatterbox , a language model trained entirely on out-of-copyright text from the British Library. Here's how he describes it: Mr. Chatterbox is a language model trained entirely from scratch on a corpus of over 28,000 Victorian-era British texts published between 1837 and 1899, drawn from a dataset made available by the British Library . The model has absolutely no training inputs from after 1899 \u2014 the vocabulary and ideas are formed exclusively from nineteenth-century literature. Mr. Chatterbox's training corpus was 28,035 books, with an estimated 2.93 billion input tokens after filtering. The model has roughly 340 million paramaters, roughly the same size as GPT-2-Medium. The difference is, of course, that unlike GPT-2, Mr. Chatterbox is trained entirely on historical data. Given how hard it is to train a useful LLM without using vast amounts of scraped, unlicensed data I've been dreaming of a model like this for a couple of years now. What would a model trained on out-of-copyright text be like to chat with? Thanks to Trip we can now find out for ourselves! The model itself is tiny, at least by Large Language Model standards - just 2.05GB on disk. You can try it out using Trip's HuggingFace Spaces demo : Honestly, it's pretty terrible. Talking with it feels more like chatting with a Markov chain than an LLM - the responses may have a delightfully Victorian flavor to them but it's hard to get a response that usefully answers a question. The 2022 Chinchilla paper suggests a ratio of 20x the parameter count to training tokens. For a 340m model that would suggest around 7 billion tokens, more than twice the British Library corpus used here. The smallest Qwen 3.5 model is 600m parameters and that model family starts to get interesting at 2b - so my hunch is we would need 4x or more the training data to get something that starts to feel like a useful conversational partner. But what a fun project! Running it locally with LLM I decided to see",
+        "tier": "NOTED",
+        "what_it_is": "Trip Venturella trained a 340M parameter language model exclusively on 28,000 Victorian-era books from the British Library \u2014 no modern data, no scraped web content, entirely out-of-copyright text from 1837-1899. The result is conversational but not very useful, more like a Markov chain than a modern LLM, because it's undertrained (2.93B tokens vs. the ~7B tokens the Chinchilla paper would recommend for this size model).",
+        "why_it_matters": "This is an existence proof that addresses a question you've probably wondered about: can you build a genuinely useful LLM without copyright-questionable training data? The answer here is 'not yet, but maybe.' The model is tiny (2.05GB) and demonstrates that ethical training is possible, but it also shows the practical constraints \u2014 you need either way more out-of-copyright data or a different approach entirely. For someone building AI-powered tools, this matters as regulatory pressure increases and 'provenance-clean' models become a competitive advantage. It's not actionable today, but it signals where the industry might need to go.",
+        "expandable_implement": null,
+        "expandable_learn": "The Chinchilla paper established a useful rule of thumb: for optimal performance, you want roughly 20 tokens of training data per parameter. So a 340M model needs about 7B tokens. Mr. Chatterbox had less than half that, which explains why it feels incomplete. This ratio helps you evaluate any 'small but mighty' model claims you encounter \u2014 if someone says their 1B parameter model is amazing, ask how much training data it had. If it's less than 20B tokens, it's probably undertrained. The bigger insight: ethical constraints (copyright-free data) create technical constraints (limited training corpus) that directly affect capability. As you build tools, watch for this tradeoff between 'clean provenance' and 'actual usefulness' \u2014 it's becoming a real factor in model selection.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Popular AI gateway startup LiteLLM ditches controversial startup Delve",
+        "url": "https://techcrunch.com/2026/03/30/popular-ai-gateway-startup-litellm-ditches-controversial-startup-delve/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T23:08:12+00:00",
+        "description": "LiteLLM had obtained two security compliance certifications via Delve and fell victim to some horrific credential-stealing malware last week.",
+        "id": "cdd9dd088ef7",
+        "content": "LiteLLM had obtained two security compliance certifications via Delve and fell victim to some horrific credential-stealing malware last week.",
+        "tier": "NOTED",
+        "summary": "LiteLLM, a popular AI gateway tool, got hit with credential-stealing malware through a security vendor. Reminder that as you build more AI infrastructure, your attack surface grows \u2014 especially around API keys and gateway tools that sit between you and model providers. Operational security matters.",
+        "rank": 5
+      },
+      {
+        "title": "As more Americans adopt AI tools, fewer say they can trust the results",
+        "url": "https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T20:24:53+00:00",
+        "description": "AI adoption is rising in the U.S., but trust remains low, with most Americans concerned about transparency, regulation, and the technology\u2019s broader societal impact, according to a new Quinnipiac poll.",
+        "id": "9ecb760d4fd8",
+        "content": "AI adoption is rising in the U.S., but trust remains low, with most Americans concerned about transparency, regulation, and the technology\u2019s broader societal impact, according to a new Quinnipiac poll.",
+        "tier": "NOTED",
+        "summary": "New poll shows AI adoption rising in the U.S. but trust declining \u2014 most people worry about transparency and regulation. Matters for change management if you're deploying AI in operations: your team's skepticism is the norm, not the exception. Plan for it.",
+        "rank": 6
+      },
+      {
+        "title": "Mantis Biotech is making \u2018digital twins\u2019 of humans to help solve medicine\u2019s data availability problem",
+        "url": "https://techcrunch.com/2026/03/30/mantis-biotech-is-making-digital-twins-of-humans-to-help-solve-medicines-data-availability-problem/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T14:30:00+00:00",
+        "description": "Mantis takes disparate sources of data to make synthetic datasets that can be used to build so-called \"digital twins\" of the human body, representing anatomy, physiology and behavior.",
+        "id": "7fd86e0c3cf5",
+        "content": "Mantis takes disparate sources of data to make synthetic datasets that can be used to build so-called \"digital twins\" of the human body, representing anatomy, physiology and behavior.",
+        "tier": "NOTED",
+        "summary": "Mantis Biotech is creating synthetic datasets and 'digital twins' of human biology for medical research. Interesting case study in AI solving data availability problems in regulated industries \u2014 a pattern that applies beyond healthcare when you're trying to build AI systems without enough training data.",
+        "rank": 4
+      },
+      {
+        "title": "ScaleOps raises $130M to improve computing efficiency amid AI demand",
+        "url": "https://techcrunch.com/2026/03/30/scaleops-130m-series-c-kubernetes-efficiency-ai-demand-funding/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T13:52:02+00:00",
+        "description": "ScaleOps just raised $130M to tackle GPU shortages and soaring AI cloud costs by automating infrastructure in real time.",
+        "id": "050200c1db54",
+        "content": "ScaleOps just raised $130M to tackle GPU shortages and soaring AI cloud costs by automating infrastructure in real time.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "ScaleOps raised $130M to automate infrastructure optimization in real-time, tackling GPU shortages and AI cloud costs. If you're running any serious AI workloads, tools that automatically tune your infrastructure without manual intervention directly impact your economics. This is infrastructure as a competitive advantage.",
+        "rank": 2
+      },
+      {
+        "title": "Qodo raises $70M for code verification as AI coding scales",
+        "url": "https://techcrunch.com/2026/03/30/qodo-bets-on-code-verification-as-ai-coding-scales-raises-70m/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-03-30T12:30:00+00:00",
+        "description": "As AI floods software development with code, Qodo is betting the real challenge is making sure it actually works.",
+        "id": "959a3c613802",
+        "content": "As AI floods software development with code, Qodo is betting the real challenge is making sure it actually works.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Qodo raised $70M to build tools that verify AI-generated code actually works. As you automate more operations with AI code generation, the bottleneck shifts from writing code to ensuring it's reliable \u2014 this is tooling aimed squarely at that problem. Worth watching if you're scaling AI-assisted development in your ops.",
+        "rank": 1
+      },
+      {
+        "title": "Okta&#8217;s CEO is betting big on AI agent identity",
+        "url": "https://www.theverge.com/podcast/902264/oktas-ceo-is-betting-big-on-ai-agent-identity",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-03-30T15:15:00+00:00",
+        "description": "Today, I\u2019m talking with Todd McKinnon, who is co-founder and CEO of Okta, a platform that lets big companies manage security and identity across all the apps and services their employees use. Think of it like login management \u2014 actually, that\u2019s a great way to think about it because the way most people encounter Okta [\u2026]",
+        "id": "ce6994234ff9",
+        "content": "Today, I\u2019m talking with Todd McKinnon, who is co-founder and CEO of Okta, a platform that lets big companies manage security and identity across all the apps and services their employees use. Think of it like login management \u2014 actually, that\u2019s a great way to think about it because the way most people encounter Okta [\u2026]",
+        "tier": "NOTED",
+        "summary": "Okta's CEO is focusing on AI agent identity management \u2014 basically, how companies control what their AI agents can access and do. As you build more autonomous workflows, managing agent permissions becomes a real operational issue. Early days, but points to infrastructure gaps you'll eventually hit.",
+        "rank": 3
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 8
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 6
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 7
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 8
+      },
+      {
+        "rank": 5,
+        "title": "Understand Georgi Gerganov's insight: fragile inference chains are the real bug, not the model",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Gerganov (creator of llama.cpp) reveals why local coding models often feel broken when cloud versions work fine: it's the fragile chain between task \u2192 prompt \u2192 inference \u2192 code. Chat templates, tokenization, and sampling bugs all introduce subtle failures that are hard to diagnose because different parties maintain different parts. Understanding this makes you better at debugging ANY AI system, identifying whether failures are in the model, the prompt, or the infrastructure.",
+        "first_step": "Next time a Claude Code generation feels 'off,' pause and diagram the chain: your spec \u2192 Claude's interpretation \u2192 code generation \u2192 execution. Identify which link failed before asking for a regeneration.",
+        "time_investment": "20 minutes of reflection per puzzling failure, builds diagnostic intuition",
+        "days_on_leaderboard": 1
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 8,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 6
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 6
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 6
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 2,
+      "layer_3": 4
+    },
+    "total_fetched": 68
+  },
+  {
     "date": "2026-03-30",
     "items": [
       {

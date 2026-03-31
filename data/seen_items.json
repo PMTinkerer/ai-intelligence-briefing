@@ -989,7 +989,97 @@
       "first_seen": "2026-03-30",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "6398e7f8db7c": {
+      "title": "v2.1.88",
+      "first_seen": "2026-03-31",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "07ebf3de78b1": {
+      "title": "datasette-files 0.1a3",
+      "first_seen": "2026-03-31",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "9c1b33b6458f": {
+      "title": "Quoting Georgi Gerganov",
+      "first_seen": "2026-03-31",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "6d8321d1b3b5": {
+      "title": "datasette-llm 0.1a3",
+      "first_seen": "2026-03-31",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "54b18218bea6": {
+      "title": "Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own computer",
+      "first_seen": "2026-03-31",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "ec06b2ddb709": {
+      "title": "15% of Americans say they\u2019d be willing to work for an AI boss, according to new poll",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "cdd9dd088ef7": {
+      "title": "Popular AI gateway startup LiteLLM ditches controversial startup Delve",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9ecb760d4fd8": {
+      "title": "As more Americans adopt AI tools, fewer say they can trust the results",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "7fd86e0c3cf5": {
+      "title": "Mantis Biotech is making \u2018digital twins\u2019 of humans to help solve medicine\u2019s data availability problem",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "050200c1db54": {
+      "title": "ScaleOps raises $130M to improve computing efficiency amid AI demand",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "aede5d57036d": {
+      "title": "AI chip startup Rebellions raises $400 million at $2.3B valuation in pre-IPO round",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "494409322506": {
+      "title": "Mistral AI raises $830M in debt to set up a data center near Paris",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "959a3c613802": {
+      "title": "Qodo raises $70M for code verification as AI coding scales",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "668a086acc72": {
+      "title": "Starcloud raises $170 million Series A to build data centers in space",
+      "first_seen": "2026-03-31",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "ce6994234ff9": {
+      "title": "Okta&#8217;s CEO is betting big on AI agent identity",
+      "first_seen": "2026-03-31",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-30T10:14:58.983466+00:00"
+  "last_run": "2026-03-31T10:04:16.129987+00:00"
 }
