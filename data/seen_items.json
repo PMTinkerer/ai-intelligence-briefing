@@ -1079,7 +1079,175 @@
       "first_seen": "2026-03-31",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "84d1e44b6bbe": {
+      "title": "v2.1.89",
+      "first_seen": "2026-04-01",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "4eff84ed2b5e": {
+      "title": "datasette-extract 0.3a0",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "fb10afc16f4b": {
+      "title": "datasette-enrichments-llm 0.2a0",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "b1c8f1828e72": {
+      "title": "datasette-llm-usage 0.2a0",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "1c215cc9989e": {
+      "title": "datasette-llm 0.1a5",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "12c9a89802c9": {
+      "title": "Quoting Soohoon Choi",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "a20017ed4b8b": {
+      "title": "Supply Chain Attack on Axios Pulls Malicious Dependency from npm",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "5f220b4c1e0e": {
+      "title": "datasette-llm 0.1a4",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "3b24de590a17": {
+      "title": "llm-all-models-async 0.1",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "20b085bb2a54": {
+      "title": "llm 0.30",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "60412b7ae9d2": {
+      "title": "llm-echo 0.4",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "7abe1c522004": {
+      "title": "llm-echo 0.3",
+      "first_seen": "2026-04-01",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "f339d53d495f": {
+      "title": "Claude Dispatch and the Power of Interfaces",
+      "first_seen": "2026-04-01",
+      "source_name": "Ethan Mollick",
+      "layer": 2
+    },
+    "9982e57855c4": {
+      "title": "Quantum computers need vastly fewer resources than thought to break vital encryption",
+      "first_seen": "2026-04-01",
+      "source_name": "Ars Technica",
+      "layer": 3
+    },
+    "136cfdde0149": {
+      "title": "Mercor says it was hit by cyberattack tied to compromise of open-source LiteLLM project",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "c27dd3009565": {
+      "title": "Anthropic is having a month",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "2b5204b4513e": {
+      "title": "Salesforce announces an AI-heavy makeover for Slack, with 30 new features",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "510945e08fa5": {
+      "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "840e4278b156": {
+      "title": "Yupp shuts down after raising $33M from a16z crypto\u2019s Chris Dixon",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "3b57f331e9cf": {
+      "title": "Alexa+ gets new food ordering experiences with Uber Eats and Grubhub",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "e3b5465487a0": {
+      "title": "Nomadic raises $8.4 million to wrangle the data pouring off autonomous vehicles",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "1838e73346d0": {
+      "title": "Exclusive: Runway launches $10M fund, Builders program to support early-stage AI startups",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "174e982490fa": {
+      "title": "With its new app store, Ring bets on AI to go beyond home security",
+      "first_seen": "2026-04-01",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "b4ebb70a95ad": {
+      "title": "Claude Code leak exposes a Tamagotchi-style \u2018pet\u2019 and an always-on agent",
+      "first_seen": "2026-04-01",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "bd72bc3f20cb": {
+      "title": "You can now use ChatGPT with Apple\u2019s CarPlay",
+      "first_seen": "2026-04-01",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "a72d54ff62d7": {
+      "title": "The Galaxy S26\u2019s photo app can sloppify your memories",
+      "first_seen": "2026-04-01",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "75b6e2d93e79": {
+      "title": "Art schools are being torn apart by AI",
+      "first_seen": "2026-04-01",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "4adabb8d53b3": {
+      "title": "You can order Grubhub and Uber Eats \u2018conversationally\u2019 with Alexa Plus",
+      "first_seen": "2026-04-01",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-03-31T10:04:16.129987+00:00"
+  "last_run": "2026-04-01T10:04:52.982494+00:00"
 }
