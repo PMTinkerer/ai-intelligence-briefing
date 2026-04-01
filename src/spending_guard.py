@@ -16,8 +16,7 @@ logger = logging.getLogger(__name__)
 
 # Per-token pricing (USD).  Add new models / providers here.
 PRICING: dict[str, dict[str, float]] = {
-    "claude-sonnet-4-5-20250929": {"input": 3.00 / 1_000_000, "output": 15.00 / 1_000_000},
-    "claude-sonnet-4-5": {"input": 3.00 / 1_000_000, "output": 15.00 / 1_000_000},
+    "claude-sonnet-4-6": {"input": 3.00 / 1_000_000, "output": 15.00 / 1_000_000},
     "claude-haiku-4-5": {"input": 0.80 / 1_000_000, "output": 4.00 / 1_000_000},
 }
 

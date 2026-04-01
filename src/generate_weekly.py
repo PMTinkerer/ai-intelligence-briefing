@@ -16,7 +16,7 @@ from src.state import load_json_or_default
 
 logger = logging.getLogger(__name__)
 
-_MODEL = "claude-sonnet-4-5-20250929"
+_MODEL = "claude-sonnet-4-6"
 
 
 def build_weekly_email(
