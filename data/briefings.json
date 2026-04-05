@@ -1,5 +1,162 @@
 [
   {
+    "date": "2026-04-05",
+    "items": [
+      {
+        "title": "v2.1.92",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2192",
+        "source_name": "Claude Code Changelog",
+        "layer": 1,
+        "published": null,
+        "description": "Added `forceRemoteSettingsRefresh` policy setting: when set, the CLI blocks startup until remote managed settings are freshly fetched, and exits if the fetch fails (fail-closed) Added interactive Bedrock setup wizard accessible from the login screen when selecting \"3rd-party platform\" \u2014 guides you through AWS authentication, region configuration, credential verification, and model pinning Added per-model and cache-hit breakdown to `/cost` for subscription users `/release-notes` is now an interactive version picker Remote Control session names now use your hostname as the default prefix (e.g. `myhost-graceful-unicorn`), overridable with `--remote-control-session-name-prefix` Pro users now see a footer hint when returning to a session after the prompt cache has expired, showing roughly how many tokens the next turn will send uncached Fixed subagent spawning permanently failing with \"Could not determine pane count\" after tmux windows are killed or renumbered during a long-running session Fixed prompt-type Stop hooks incorrectly failing when the small fast model returns `ok:false`, and restored `preventContinuation:true` semantics for non-Stop prompt-type hooks Fixed tool input validation failures when streaming emits array/object fields as JSON-encoded strings Fixed an API 400 error that could occur when extended thinking produced a whitespace-only text block alongside real content Fixed accidental feedback survey submissions from auto-pilot keypresses and consecutive-prompt digit collisions Fixed misleading \"esc to interrupt\" hint appearing alongside \"esc to clear\" when a text selection exists in fullscreen mode during processing Fixed Homebrew install update prompts to use the cask's release channel (`claude-code` \u2192 stable, `claude-code@latest` \u2192 latest) Fixed `ctrl+e` jumping to the end of the next line when already at end of line in multiline prompts Fixed an issue where the same message could appear at two positions when scrolling up in fullscreen mode (iTerm2, Ghostty, and other terminals with DEC 2026 support) Fixed idle-return \"/clear to save X tokens\" hint showing cumulative session tokens instead of current context size Fixed plugin MCP servers stuck \"connecting\" on session start when they duplicate a claude.ai connector that is unauthenticated Improved Write tool diff computation speed for large files (60% faster on files with tabs/`&`/`$`) Removed `/tag` command Removed `/vim` command (toggle vim mode via `/config` \u2192 Editor mode) Linux sandbox now ships the `apply-seccomp` helper in both npm and native builds, restoring unix-socket blocking for sandboxed commands",
+        "id": "29e0cc5dc3e9",
+        "content": "Added `forceRemoteSettingsRefresh` policy setting: when set, the CLI blocks startup until remote managed settings are freshly fetched, and exits if the fetch fails (fail-closed) Added interactive Bedrock setup wizard accessible from the login screen when selecting \"3rd-party platform\" \u2014 guides you through AWS authentication, region configuration, credential verification, and model pinning Added per-model and cache-hit breakdown to `/cost` for subscription users `/release-notes` is now an interactive version picker Remote Control session names now use your hostname as the default prefix (e.g. `myhost-graceful-unicorn`), overridable with `--remote-control-session-name-prefix` Pro users now see a footer hint when returning to a session after the prompt cache has expired, showing roughly how many tokens the next turn will send uncached Fixed subagent spawning permanently failing with \"Could not determine pane count\" after tmux windows are killed or renumbered during a long-running session Fixed prompt-type Stop hooks incorrectly failing when the small fast model returns `ok:false`, and restored `preventContinuation:true` semantics for non-Stop prompt-type hooks Fixed tool input validation failures when streaming emits array/object fields as JSON-encoded strings Fixed an API 400 error that could occur when extended thinking produced a whitespace-only text block alongside real content Fixed accidental feedback survey submissions from auto-pilot keypresses and consecutive-prompt digit collisions Fixed misleading \"esc to interrupt\" hint appearing alongside \"esc to clear\" when a text selection exists in fullscreen mode during processing Fixed Homebrew install update prompts to use the cask's release channel (`claude-code` \u2192 stable, `claude-code@latest` \u2192 latest) Fixed `ctrl+e` jumping to the end of the next line when already at end of line in multiline prompts Fixed an issue where the same message could appear at two positions when scrolling up in fullscreen mode (iTerm2, Gh",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Claude Code v2.1.92 ships a mix of visibility features and bug fixes. The standout additions are a per-model and cache-hit cost breakdown in the /cost command, and a footer hint for Pro users that tells you how many tokens will go uncached when you return to a cold session. Several bugs around subagent spawning and Stop hooks are also fixed.",
+        "why_it_matters": "The cache-hit breakdown in /cost is directly useful to you. You're running production tools against the Anthropic API \u2014 the STR Daily Briefing, the Intelligence Briefing, any future agent loops. Knowing exactly which models are burning money and how often you're hitting the cache versus paying full price lets you make informed architecture decisions (when to restructure a prompt, when to consolidate calls, whether Haiku is actually cheaper for a given task). The uncached-token warning on session resume is a smaller win, but it makes the 'is this session still warm?' question explicit instead of something you have to guess at.",
+        "expandable_implement": "Next time you're in a Claude Code session, type `/cost` and look at the new breakdown. You'll see costs split by model (if you've used multiple in the session) and a line showing cache hits vs. misses. The key number to watch is your cache hit rate \u2014 if it's low, your prompts or system context are changing too much between turns to cache effectively. For your GitHub Actions pipelines, cache hits matter most on the system prompt: if you're rebuilding the same large context every run, consider whether you can stabilize it so Anthropic's prompt cache can do its job.",
+        "expandable_learn": "Anthropic's prompt cache works by recognizing when the beginning of a conversation (typically your system prompt and any stable context) is identical to a recent call. When it matches, you pay roughly 10% of the normal input token cost for those tokens. The catch: the cache expires after a period of inactivity, which is what that new footer hint is surfacing. Think of it like RAM vs. disk \u2014 a warm cache is fast and cheap, a cold cache means paying full price to reload everything. Designing your prompts so the stable stuff comes first (system prompt, large context blocks) and the variable stuff comes last maximizes the portion that can be cached.",
+        "unblocks_project": null
+      },
+      {
+        "title": "v2.1.91",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2191",
+        "source_name": "Claude Code Changelog",
+        "layer": 1,
+        "published": null,
+        "description": "Added MCP tool result persistence override via `_meta[\"anthropic/maxResultSizeChars\"]` annotation (up to 500K), allowing larger results like DB schemas to pass through without truncation Added `disableSkillShellExecution` setting to disable inline shell execution in skills, custom slash commands, and plugin commands Added support for multi-line prompts in `claude-cli://open?q=` deep links (encoded newlines `%0A` no longer rejected) Plugins can now ship executables under `bin/` and invoke them as bare commands from the Bash tool Fixed transcript chain breaks on `--resume` that could lose conversation history when async transcript writes fail silently Fixed `cmd+delete` not deleting to start of line on iTerm2, kitty, WezTerm, Ghostty, and Windows Terminal Fixed plan mode in remote sessions losing track of the plan file after a container restart, which caused permission prompts on plan edits and an empty plan-approval modal Fixed JSON schema validation for `permissions.defaultMode: \"auto\"` in settings.json Fixed Windows version cleanup not protecting the active version's rollback copy `/feedback` now explains why it's unavailable instead of disappearing from the slash menu Improved `/claude-api` skill guidance for agent design patterns including tool surface decisions, context management, and caching strategy Improved performance: faster `stripAnsi` on Bun by routing through `Bun.stripANSI` Edit tool now uses shorter `old_string` anchors, reducing output tokens",
+        "id": "c154f0b2397e",
+        "content": "Added MCP tool result persistence override via `_meta[\"anthropic/maxResultSizeChars\"]` annotation (up to 500K), allowing larger results like DB schemas to pass through without truncation Added `disableSkillShellExecution` setting to disable inline shell execution in skills, custom slash commands, and plugin commands Added support for multi-line prompts in `claude-cli://open?q=` deep links (encoded newlines `%0A` no longer rejected) Plugins can now ship executables under `bin/` and invoke them as bare commands from the Bash tool Fixed transcript chain breaks on `--resume` that could lose conversation history when async transcript writes fail silently Fixed `cmd+delete` not deleting to start of line on iTerm2, kitty, WezTerm, Ghostty, and Windows Terminal Fixed plan mode in remote sessions losing track of the plan file after a container restart, which caused permission prompts on plan edits and an empty plan-approval modal Fixed JSON schema validation for `permissions.defaultMode: \"auto\"` in settings.json Fixed Windows version cleanup not protecting the active version's rollback copy `/feedback` now explains why it's unavailable instead of disappearing from the slash menu Improved `/claude-api` skill guidance for agent design patterns including tool surface decisions, context management, and caching strategy Improved performance: faster `stripAnsi` on Bun by routing through `Bun.stripANSI` Edit tool now uses shorter `old_string` anchors, reducing output tokens",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Claude Code v2.1.91 adds the ability for MCP tool results to pass through up to 500K characters without truncation, using a metadata annotation. It also improves the /claude-api skill guidance specifically around agent design patterns \u2014 tool surface decisions, context management, and caching strategy.",
+        "why_it_matters": "The 500K MCP result override is directly relevant to your Guest Comms Intelligence Layer if and when Breezeway opens up \u2014 large data payloads (conversation history, booking context, full schemas) hitting truncation limits is a real architectural problem in data-heavy integrations. The improved /claude-api skill guidance around agent design patterns is worth a read now: you're at Stage 3 heading toward Stage 4, and 'tool surface decisions' (deciding what an agent can touch and what it can't) is exactly the kind of architectural thinking that separates people who build fragile agents from people who build reliable ones. This is Anthropic essentially publishing their internal design principles inside the tool you're already using.",
+        "expandable_implement": "To read the improved guidance: open Claude Code and type `/claude-api`. Look specifically at the sections on tool surface decisions and context management. These aren't abstract \u2014 they'll give you a concrete vocabulary for decisions you're already making intuitively (like why your Daily Briefing uses Haiku for parsing but would use Sonnet for synthesis). For the MCP override: when you're building any MCP integration and a large result is getting cut off, the fix is to include `_meta: { \"anthropic/maxResultSizeChars\": 500000 }` in the tool result object. This tells Claude Code to let that result through at full size.",
+        "expandable_learn": "'Tool surface' is the set of actions an agent is allowed to take \u2014 its reach into the world. Getting this right is one of the hardest problems in agent design. Too narrow and the agent can't solve the problem. Too wide and it takes actions you didn't anticipate. The principle is minimum viable surface: give the agent exactly the tools it needs for the task, no more. Your inspector scheduler does this naturally \u2014 it doesn't have a 'send emails' tool, just a routing optimizer. As you build more agentic systems, ask: 'What's the smallest set of capabilities this agent needs to accomplish the goal?' Then enforce that as a hard constraint, not a soft guideline.",
+        "unblocks_project": "Guest Comms Intelligence Layer \u2014 partially relevant. The 500K MCP result size override means that when a Breezeway MCP connector eventually exists, large conversation histories or property context won't be silently truncated. Not a blocker removal, but removes a future architectural concern."
+      },
+      {
+        "title": "v2.1.90",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2190",
+        "source_name": "Claude Code Changelog",
+        "layer": 1,
+        "published": null,
+        "description": "Added `/powerup` \u2014 interactive lessons teaching Claude Code features with animated demos Added `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` env var to keep the existing marketplace cache when `git pull` fails, useful in offline environments Added `.husky` to protected directories (acceptEdits mode) Fixed an infinite loop where the rate-limit options dialog would repeatedly auto-open after hitting your usage limit, eventually crashing the session Fixed `--resume` causing a full prompt-cache miss on the first request for users with deferred tools, MCP servers, or custom agents (regression since v2.1.69) Fixed `Edit`/`Write` failing with \"File content has changed\" when a PostToolUse format-on-save hook rewrites the file between consecutive edits Fixed `PreToolUse` hooks that emit JSON to stdout and exit with code 2 not correctly blocking the tool call Fixed collapsed search/read summary badge appearing multiple times in fullscreen scrollback when a CLAUDE.md file auto-loads during a tool call Fixed auto mode not respecting explicit user boundaries (\"don't push\", \"wait for X before Y\") even when the action would otherwise be allowed Fixed click-to-expand hover text being nearly invisible on light terminal themes Fixed UI crash when malformed tool input reached the permission dialog Fixed headers disappearing when scrolling `/model`, `/config`, and other selection screens Hardened PowerShell tool permission checks: fixed trailing `&` background job bypass, `-ErrorAction Break` debugger hang, archive-extraction TOCTOU, and parse-fail fallback deny-rule degradation Improved performance: eliminated per-turn JSON.stringify of MCP tool schemas on cache-key lookup Improved performance: SSE transport now handles large streamed frames in linear time (was quadratic) Improved performance: SDK sessions with long conversations no longer slow down quadratically on transcript writes Improved `/resume` all-projects view to load project sessions in parallel, improving load times for users with many projects Changed `--resume` picker to no longer show sessions created by `claude -p` or SDK invocations Removed `Get-DnsClientCache` and `ipconfig /displaydns` from auto-allow (DNS cache privacy)",
+        "id": "d2c2c9fd9286",
+        "content": "Added `/powerup` \u2014 interactive lessons teaching Claude Code features with animated demos Added `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` env var to keep the existing marketplace cache when `git pull` fails, useful in offline environments Added `.husky` to protected directories (acceptEdits mode) Fixed an infinite loop where the rate-limit options dialog would repeatedly auto-open after hitting your usage limit, eventually crashing the session Fixed `--resume` causing a full prompt-cache miss on the first request for users with deferred tools, MCP servers, or custom agents (regression since v2.1.69) Fixed `Edit`/`Write` failing with \"File content has changed\" when a PostToolUse format-on-save hook rewrites the file between consecutive edits Fixed `PreToolUse` hooks that emit JSON to stdout and exit with code 2 not correctly blocking the tool call Fixed collapsed search/read summary badge appearing multiple times in fullscreen scrollback when a CLAUDE.md file auto-loads during a tool call Fixed auto mode not respecting explicit user boundaries (\"don't push\", \"wait for X before Y\") even when the action would otherwise be allowed Fixed click-to-expand hover text being nearly invisible on light terminal themes Fixed UI crash when malformed tool input reached the permission dialog Fixed headers disappearing when scrolling `/model`, `/config`, and other selection screens Hardened PowerShell tool permission checks: fixed trailing `&` background job bypass, `-ErrorAction Break` debugger hang, archive-extraction TOCTOU, and parse-fail fallback deny-rule degradation Improved performance: eliminated per-turn JSON.stringify of MCP tool schemas on cache-key lookup Improved performance: SSE transport now handles large streamed frames in linear time (was quadratic) Improved performance: SDK sessions with long conversations no longer slow down quadratically on transcript writes Improved `/resume` all-projects view to load project sessions in parallel, improving load times for",
+        "tier": "NOTED",
+        "what_it_is": "Claude Code v2.1.90 fixes a significant performance regression (/resume causing full prompt-cache misses since v2.1.69), adds /powerup interactive feature lessons, and ships several bug fixes including an infinite rate-limit dialog loop and quadratic slowdowns on long conversations.",
+        "why_it_matters": "The --resume cache miss fix matters if you use session resumption in long builds \u2014 you were silently paying full token price on the first turn of every resumed session if you had MCP servers or custom agents configured. The quadratic slowdown fix on long transcripts is similarly silent but real: sessions that felt sluggish toward the end of complex builds should now stay snappy. /powerup is worth a quick look as a structured way to learn features you might be missing, though it's not urgent.",
+        "expandable_implement": null,
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "scan-for-secrets 0.1",
+        "url": "https://simonwillison.net/2026/Apr/5/scan-for-secrets-3/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-04-05T03:27:13+00:00",
+        "description": "Release: scan-for-secrets 0.1 I like publishing transcripts of local Claude Code sessions using my claude-code-transcripts tool but I'm often paranoid that one of my API keys or similar secrets might inadvertently be revealed in the detailed log files. I built this new Python scanning tool to help reassure me. You can feed it secrets and have it scan for them in a specified directory: uvx scan-for-secrets $OPENAI_API_KEY -d logs-to-publish/ If you leave off the -d it defaults to the current directory. It doesn't just scan for the literal secrets - it also scans for common encodings of those secrets e.g. backslash or JSON escaping, as described in the README . If you have a set of secrets you always want to protect you can list commands to echo them in a ~/.scan-for-secrets.conf.sh file. Mine looks like this: llm keys get openai\nllm keys get anthropic\nllm keys get gemini\nllm keys get mistral\nawk -F= '/aws_secret_access_key/{print $2}' ~/.aws/credentials | xargs I built this tool using README-driven-development: I carefully constructed the README describing exactly how the tool should work, then dumped it into Claude Code and told it to build the actual tool (using red/green TDD , naturally.) Tags: projects , security , agentic-engineering , coding-agents , ai-assisted-programming , claude-code",
+        "id": "87bfadc322f6",
+        "content": "Release: scan-for-secrets 0.1 I like publishing transcripts of local Claude Code sessions using my claude-code-transcripts tool but I'm often paranoid that one of my API keys or similar secrets might inadvertently be revealed in the detailed log files. I built this new Python scanning tool to help reassure me. You can feed it secrets and have it scan for them in a specified directory: uvx scan-for-secrets $OPENAI_API_KEY -d logs-to-publish/ If you leave off the -d it defaults to the current directory. It doesn't just scan for the literal secrets - it also scans for common encodings of those secrets e.g. backslash or JSON escaping, as described in the README . If you have a set of secrets you always want to protect you can list commands to echo them in a ~/.scan-for-secrets.conf.sh file. Mine looks like this: llm keys get openai\nllm keys get anthropic\nllm keys get gemini\nllm keys get mistral\nawk -F= '/aws_secret_access_key/{print $2}' ~/.aws/credentials | xargs I built this tool using README-driven-development: I carefully constructed the README describing exactly how the tool should work, then dumped it into Claude Code and told it to build the actual tool (using red/green TDD , naturally.) Tags: projects , security , agentic-engineering , coding-agents , ai-assisted-programming , claude-code",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Simon Willison built a small CLI tool that scans directories for accidentally leaked API keys before you publish anything publicly. You give it your secrets, point it at a folder, and it checks \u2014 including sneaky encodings like JSON or backslash escaping that a plain text search would miss.",
+        "why_it_matters": "You're already publishing Claude Code session transcripts and building automation that touches API keys for Anthropic, OpenAI, Gmail, and GitHub. Any one of those logs could contain a key you didn't realize was captured. This is a fast, one-command safety net you can run before pushing anything to a repo or sharing a transcript. The config file pattern \u2014 where you pull keys dynamically from your existing key manager \u2014 means you set it up once and it stays current as your keys rotate.",
+        "expandable_implement": "Here's how to set this up in about 5 minutes:\n\n1. **Install it** (no permanent install needed, `uvx` runs it directly):\n   ```bash\n   pip install uv  # if you don't have it\n   ```\n\n2. **Test it on a single key first** to see how it works:\n   ```bash\n   uvx scan-for-secrets $ANTHROPIC_API_KEY -d ~/path/to/your/logs/\n   ```\n   This checks for the literal key AND common encodings of it. If it finds nothing, you're clear.\n\n3. **Create the config file** so it always knows what to protect. Create `~/.scan-for-secrets.conf.sh` with commands that echo your secrets:\n   ```bash\n   # Each line is a shell command whose output is a secret to scan for\n   echo $ANTHROPIC_API_KEY\n   echo $OPENAI_API_KEY\n   echo $GITHUB_TOKEN\n   # If you use the `llm` CLI like Willison:\n   # llm keys get anthropic\n   ```\n\n4. **Run it before any publish step**. For your STR briefing or other repos:\n   ```bash\n   uvx scan-for-secrets -d ./logs/ -d ./outputs/\n   ```\n   With the config file in place, it automatically picks up all your registered secrets.\n\n5. **Optional: wire it into a GitHub Action** as a pre-publish check so it runs automatically before any logs get committed.",
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage",
+        "url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-04T16:32:22+00:00",
+        "description": "It\u2019s about to become more expensive for Claude Code subscribers to use Anthropic\u2019s coding assistant with OpenClaw and other third-party tools.",
+        "id": "e5fb1f7c225d",
+        "content": "It\u2019s about to become more expensive for Claude Code subscribers to use Anthropic\u2019s coding assistant with OpenClaw and other third-party tools.",
+        "tier": "NOTED",
+        "summary": "Anthropic is adding extra costs for Claude Code users who want to use it with third-party tools like OpenClaw. If you're building automation workflows that combine Claude Code with external tools, your costs are about to go up \u2014 worth checking your stack.",
+        "rank": 1
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 10
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Zechner's warning about 'complexity monsters' addresses the Stage 4 trap: agents generate code faster than you can reason about it. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built\u2014even if it works\u2014is what prevents production systems from becoming unmaintainable black boxes. This is the difference between shipping fast and shipping sustainably.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Force yourself to read through each file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice\u2014adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 8
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works (what triggers review vs auto-approval) teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature\u2014it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 9
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features\u2014it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice\u2014every failure is a training session",
+        "days_on_leaderboard": 10
+      },
+      {
+        "rank": 5,
+        "title": "Use per-model cost visibility to build cost-aware agent architectures",
+        "category": "NEW_CAPABILITY",
+        "rationale": "The new per-model and cache-hit breakdown in Claude Code's /cost command is more than a billing tool\u2014it's the feedback loop that teaches you to architect cost-efficiently. Operators who internalize which tasks justify Sonnet vs Haiku, and which prompts yield high cache hits, will run the same workflows at a fraction of the cost of competitors who don't. At scale across multi-agent systems, this compounds into a structural cost advantage that funds more automation. The 500K MCP pass-through in v2.1.91 amplifies this: large tool results that previously got truncated now flow cleanly, meaning architectures you couldn't trust before become viable.",
+        "first_step": "After your next Claude Code session, run /cost and read the model and cache breakdown. Identify one workflow where you could swap Sonnet for Haiku without quality loss, then test it.",
+        "time_investment": "20 minutes to establish the habit, ongoing discipline to compound it",
+        "days_on_leaderboard": 1
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 11,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 3,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 11
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 11
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 11
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 0,
+      "layer_2": 3,
+      "layer_3": 2
+    },
+    "total_fetched": 61
+  },
+  {
     "date": "2026-04-01",
     "items": [],
     "leaderboard": [

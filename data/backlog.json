@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 7
+      "days_pending": 11
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 7
+      "days_pending": 11
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 7
+      "days_pending": 11
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 6
+      "days_pending": 10
     },
     {
       "id": "aee0c2de60d5",
@@ -63,7 +63,7 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 5
+      "days_pending": 9
     },
     {
       "id": "58ffcf300589",
@@ -76,7 +76,7 @@
       "date_added": "2026-03-28",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 4
+      "days_pending": 8
     },
     {
       "id": "bf6e76604a77",
@@ -89,7 +89,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 6
     },
     {
       "id": "aa3844b00562",
@@ -102,11 +102,50 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 6
+    },
+    {
+      "id": "29e0cc5dc3e9",
+      "title": "v2.1.92",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2192",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 1,
+      "expandable_implement": "Next time you're in a Claude Code session, type `/cost` and look at the new breakdown. You'll see costs split by model (if you've used multiple in the session) and a line showing cache hits vs. misses. The key number to watch is your cache hit rate \u2014 if it's low, your prompts or system context are changing too much between turns to cache effectively. For your GitHub Actions pipelines, cache hits matter most on the system prompt: if you're rebuilding the same large context every run, consider whether you can stabilize it so Anthropic's prompt cache can do its job.",
+      "status": "pending",
+      "date_added": "2026-04-05",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    },
+    {
+      "id": "c154f0b2397e",
+      "title": "v2.1.91",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2191",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 1,
+      "expandable_implement": "To read the improved guidance: open Claude Code and type `/claude-api`. Look specifically at the sections on tool surface decisions and context management. These aren't abstract \u2014 they'll give you a concrete vocabulary for decisions you're already making intuitively (like why your Daily Briefing uses Haiku for parsing but would use Sonnet for synthesis). For the MCP override: when you're building any MCP integration and a large result is getting cut off, the fix is to include `_meta: { \"anthropic/maxResultSizeChars\": 500000 }` in the tool result object. This tells Claude Code to let that result through at full size.",
+      "status": "pending",
+      "date_added": "2026-04-05",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
+    },
+    {
+      "id": "87bfadc322f6",
+      "title": "scan-for-secrets 0.1",
+      "source_url": "https://simonwillison.net/2026/Apr/5/scan-for-secrets-3/#atom-everything",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 2,
+      "expandable_implement": "Here's how to set this up in about 5 minutes:\n\n1. **Install it** (no permanent install needed, `uvx` runs it directly):\n   ```bash\n   pip install uv  # if you don't have it\n   ```\n\n2. **Test it on a single key first** to see how it works:\n   ```bash\n   uvx scan-for-secrets $ANTHROPIC_API_KEY -d ~/path/to/your/logs/\n   ```\n   This checks for the literal key AND common encodings of it. If it finds nothing, you're clear.\n\n3. **Create the config file** so it always knows what to protect. Create `~/.scan-for-secrets.conf.sh` with commands that echo your secrets:\n   ```bash\n   # Each line is a shell command whose output is a secret to scan for\n   echo $ANTHROPIC_API_KEY\n   echo $OPENAI_API_KEY\n   echo $GITHUB_TOKEN\n   # If you use the `llm` CLI like Willison:\n   # llm keys get anthropic\n   ```\n\n4. **Run it before any publish step**. For your STR briefing or other repos:\n   ```bash\n   uvx scan-for-secrets -d ./logs/ -d ./outputs/\n   ```\n   With the config file in place, it automatically picks up all your registered secrets.\n\n5. **Optional: wire it into a GitHub Action** as a pre-publish check so it runs automatically before any logs get committed.",
+      "status": "pending",
+      "date_added": "2026-04-05",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
     }
   ],
   "stats": {
-    "total_added": 8,
+    "total_added": 11,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0
