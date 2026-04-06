@@ -1,5 +1,140 @@
 [
   {
+    "date": "2026-04-06",
+    "items": [
+      {
+        "title": "Eight years of wanting, three months of building with AI",
+        "url": "https://simonwillison.net/2026/Apr/5/building-with-ai/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-04-05T23:54:18+00:00",
+        "description": "Eight years of wanting, three months of building with AI Lalit Maganti provides one of my favorite pieces of long-form writing on agentic engineering I've seen in ages. They spent eight years thinking about and then three months building syntaqlite , which they describe as \" high-fidelity devtools that SQLite deserves \". The goal was to provide fast, robust and comprehensive linting and verifying tools for SQLite, suitable for use in language servers and other development tools - a parser, formatter, and verifier for SQLite queries. I've found myself wanting this kind of thing in the past myself, hence my (far less production-ready) sqlite-ast project from a few months ago. Lalit had been procrastinating on this project for years, because of the inevitable tedium of needing to work through 400+ grammar rules to help build a parser. That's exactly the kind of tedious work that coding agents excel at! Claude Code helped get over that initial hump and build the first prototype: AI basically let me put aside all my doubts on technical calls, my uncertainty of building the right thing and my reluctance to get started by giving me very concrete problems to work on. Instead of \u201cI need to understand how SQLite\u2019s parsing works\u201d, it was \u201cI need to get AI to suggest an approach for me so I can tear it up and build something better\". I work so much better with concrete prototypes to play with and code to look at than endlessly thinking about designs in my head, and AI lets me get to that point at a pace I could not have dreamed about before. Once I took the first step, every step after that was so much easier. That first vibe-coded prototype worked great as a proof of concept, but they eventually made the decision to throw it away and start again from scratch. AI worked great for the low level details but did not produce a coherent high-level architecture: I found that AI made me procrastinate on key design decisions. Because refactoring was cheap, I could always say \u201cI\u2019ll deal with this later.\u201d And because AI could refactor at the same industrial scale it generated code, the cost of deferring felt low. But it wasn\u2019t: deferring decisions corroded my ability to think clearly because the codebase stayed confusing in the meantime. The second attempt took a lot longer and involved a great deal more human-in-the-loop decision making, but the result is a robust library that can stand the test of time. It's worth setting aside some time to read this whole thing - it's full of non-obvious downsides to working heavily with AI, as well as a detailed explanation of how they overcame those hurdles. The key idea I took away from this concerns AI's weakness in terms of design and architecture: When I was working on something where I didn\u2019t even know what I wanted, AI was somewhere between unhelpful and harmful. The architecture of the project was the clearest case: I spent weeks in the early days following AI down dead ends, exploring designs that felt productive in the moment but collapsed under scrutiny. In hindsight, I have to wonder if it would have been faster just thinking it through without AI in the loop at all. But expertise alone isn\u2019t enough. Even when I understood a problem deeply, AI still struggled if the task had no objectively checkable answer. Implementation has a right answer, at least at a local level: the code compiles, the tests pass, the output matches what you asked for. Design doesn\u2019t. We\u2019re still arguing about OOP decades after it first took off. Via Hacker News Tags: sqlite , ai , generative-ai , llms , ai-assisted-programming , vibe-coding , agentic-engineering",
+        "id": "ad663a59bc1b",
+        "content": "Eight years of wanting, three months of building with AI Lalit Maganti provides one of my favorite pieces of long-form writing on agentic engineering I've seen in ages. They spent eight years thinking about and then three months building syntaqlite , which they describe as \" high-fidelity devtools that SQLite deserves \". The goal was to provide fast, robust and comprehensive linting and verifying tools for SQLite, suitable for use in language servers and other development tools - a parser, formatter, and verifier for SQLite queries. I've found myself wanting this kind of thing in the past myself, hence my (far less production-ready) sqlite-ast project from a few months ago. Lalit had been procrastinating on this project for years, because of the inevitable tedium of needing to work through 400+ grammar rules to help build a parser. That's exactly the kind of tedious work that coding agents excel at! Claude Code helped get over that initial hump and build the first prototype: AI basically let me put aside all my doubts on technical calls, my uncertainty of building the right thing and my reluctance to get started by giving me very concrete problems to work on. Instead of \u201cI need to understand how SQLite\u2019s parsing works\u201d, it was \u201cI need to get AI to suggest an approach for me so I can tear it up and build something better\". I work so much better with concrete prototypes to play with and code to look at than endlessly thinking about designs in my head, and AI lets me get to that point at a pace I could not have dreamed about before. Once I took the first step, every step after that was so much easier. That first vibe-coded prototype worked great as a proof of concept, but they eventually made the decision to throw it away and start again from scratch. AI worked great for the low level details but did not produce a coherent high-level architecture: I found that AI made me procrastinate on key design decisions. Because refactoring was cheap, I could always say \u201cI\u2019ll deal",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "A developer shares an honest post-mortem on spending eight years procrastinating on a hard project, then completing it in three months with Claude Code. The key insight: AI didn't just speed up coding \u2014 it broke the psychological logjam by giving him concrete prototypes to react to instead of endless abstract planning. He also shares a hard-won warning: AI is great for low-level detail work but will let you avoid making the important architectural decisions, which eventually caught up with him.",
+        "why_it_matters": "This maps directly to how you use Claude Code. You're past the 'does this work?' phase and into production systems \u2014 the place where the author's warning becomes relevant. When Claude refactors something cheaply, it's easy to keep patching instead of making the call about whether the structure is right. Your Inspector Scheduling System and the emerging multi-system orchestration work are exactly where deferred architectural decisions become expensive. The flip side is equally useful: if a new project feels too abstract to start, this confirms that asking Claude to sketch a rough prototype is a legitimate and effective forcing function.",
+        "expandable_implement": null,
+        "expandable_learn": "The core mental model here is the difference between 'generative' and 'evaluative' thinking. Humans are much better at looking at something concrete and saying 'this is wrong, here's why' than at designing something from scratch in their heads. AI collapses the cost of getting to that concrete thing \u2014 but only you can do the evaluating. So the pattern is: use Claude to get to a working prototype fast, then switch into critic mode. Write down the architectural decisions you're deferring ('I'll refactor this later') and schedule a deliberate review. A small experiment: next time you start something new with Claude Code, after the first working version, pause and write three sentences about what you'd do differently if starting over. That's where your real design thinking lives.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Copilot is \u2018for entertainment purposes only,\u2019 according to Microsoft\u2019s terms of use",
+        "url": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-05T18:51:37+00:00",
+        "description": "AI skeptics aren\u2019t the only ones warning users not to unthinkingly trust models\u2019 outputs \u2014 that\u2019s what the AI companies say themselves in their terms of service.",
+        "id": "6f1300d8378b",
+        "content": "AI skeptics aren\u2019t the only ones warning users not to unthinkingly trust models\u2019 outputs \u2014 that\u2019s what the AI companies say themselves in their terms of service.",
+        "tier": "NOTED",
+        "summary": "Microsoft's Copilot terms of service apparently classify it as 'for entertainment purposes only,' which is a wild liability hedge for a tool being sold to enterprises for serious work. Practically, this reinforces the point that you own the verification layer \u2014 never outsource judgment to the model.",
+        "rank": 2
+      },
+      {
+        "title": "In Japan, the robot isn\u2019t coming for your job; it\u2019s filling the one nobody wants",
+        "url": "https://techcrunch.com/2026/04/05/japan-is-proving-experimental-physical-ai-is-ready-for-the-real-world/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-05T14:00:00+00:00",
+        "description": "Driven by labor shortages, Japan is pushing physical AI from pilot projects into real-world deployment.",
+        "id": "65b8108bb3d0",
+        "content": "Driven by labor shortages, Japan is pushing physical AI from pilot projects into real-world deployment.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Japan is moving physical AI robots out of pilot programs and into real deployment to address serious labor shortages. This is a concrete case study of AI filling operational gaps in industries nobody wants to work in \u2014 construction, caregiving, logistics. Worth watching as a model for how labor-constrained operations get automated first.",
+        "rank": 1
+      },
+      {
+        "title": "I let Gemini in Google Maps plan my day and it went surprisingly well",
+        "url": "https://www.theverge.com/tech/907015/gemini-google-maps-hands-on",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-05T14:00:00+00:00",
+        "description": "You may be familiar with Gemini as the thing that's in every Google service you use - whether you want it or not. While it's been a constant, sometimes unwelcome presence in Gmail for at least the past year, it's a relatively new addition to Maps. And you know what? It's kind of great. To [\u2026]",
+        "id": "a1634131ed60",
+        "content": "You may be familiar with Gemini as the thing that's in every Google service you use - whether you want it or not. While it's been a constant, sometimes unwelcome presence in Gmail for at least the past year, it's a relatively new addition to Maps. And you know what? It's kind of great. To [\u2026]",
+        "tier": "NOTED",
+        "summary": "Gemini is now in Google Maps and someone tested it for day planning \u2014 and it worked well. Not groundbreaking, but it's a reminder that AI is quietly getting embedded in tools you already use daily, and the practical use cases are compounding fast.",
+        "rank": 3
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 11
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The honest post-mortem from today's briefing lands here with force: AI broke the psychological logjam by producing concrete prototypes to react to, but let the developer avoid the hard architectural decisions \u2014 which caught up with him. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 9
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 10
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice \u2014 every failure is a training session",
+        "days_on_leaderboard": 11
+      },
+      {
+        "rank": 5,
+        "title": "Use per-model cost visibility to build cost-aware agent architectures",
+        "category": "NEW_CAPABILITY",
+        "rationale": "The new per-model and cache-hit breakdown in Claude Code's /cost command is more than a billing tool \u2014 it's the feedback loop that teaches you to architect cost-efficiently. Operators who internalize which tasks justify Sonnet vs Haiku, and which prompts yield high cache hits, will run the same workflows at a fraction of the cost of competitors who don't. At scale across multi-agent systems, this compounds into a structural cost advantage that funds more automation.",
+        "first_step": "After your next Claude Code session, run /cost and read the model and cache breakdown. Identify one workflow where you could swap Sonnet for Haiku without quality loss, then test it.",
+        "time_investment": "20 minutes to establish the habit, ongoing discipline to compound it",
+        "days_on_leaderboard": 2
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 11,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 12
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 12
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 12
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 0,
+      "layer_2": 7,
+      "layer_3": 3
+    },
+    "total_fetched": 68
+  },
+  {
     "date": "2026-04-05",
     "items": [
       {

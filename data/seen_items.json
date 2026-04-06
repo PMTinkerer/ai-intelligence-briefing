@@ -1307,7 +1307,91 @@
       "first_seen": "2026-04-05",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "856adaa154a6": {
+      "title": "Google AI Edge Gallery",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "e2e646ed6dd4": {
+      "title": "datasette-ports 0.2",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "577397a168b1": {
+      "title": "scan-for-secrets 0.3",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "9bcf76a22665": {
+      "title": "Cleanup Claude Code Paste",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "96c803b35278": {
+      "title": "datasette-ports 0.1",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "ad663a59bc1b": {
+      "title": "Eight years of wanting, three months of building with AI",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "8cc8fce8eca7": {
+      "title": "Quoting Chengpeng Mou",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "28a81ebf3ec2": {
+      "title": "Syntaqlite Playground",
+      "first_seen": "2026-04-06",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "6f1300d8378b": {
+      "title": "Copilot is \u2018for entertainment purposes only,\u2019 according to Microsoft\u2019s terms of use",
+      "first_seen": "2026-04-06",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "e6ec89d84ec5": {
+      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
+      "first_seen": "2026-04-06",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "65b8108bb3d0": {
+      "title": "In Japan, the robot isn\u2019t coming for your job; it\u2019s filling the one nobody wants",
+      "first_seen": "2026-04-06",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "d482ac71eeed": {
+      "title": "Suno is a music copyright nightmare",
+      "first_seen": "2026-04-06",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "a1634131ed60": {
+      "title": "I let Gemini in Google Maps plan my day and it went surprisingly well",
+      "first_seen": "2026-04-06",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "2cf4c3996710": {
+      "title": "Grammarly\u2019s sloppelganger saga",
+      "first_seen": "2026-04-06",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-04-05T09:36:57.285718+00:00"
+  "last_run": "2026-04-06T10:06:51.827257+00:00"
 }
