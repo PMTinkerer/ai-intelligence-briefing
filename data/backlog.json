@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 12
+      "days_pending": 13
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 12
+      "days_pending": 13
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 12
+      "days_pending": 13
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 11
+      "days_pending": 12
     },
     {
       "id": "aee0c2de60d5",
@@ -63,7 +63,7 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 10
+      "days_pending": 11
     },
     {
       "id": "58ffcf300589",
@@ -76,7 +76,7 @@
       "date_added": "2026-03-28",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 9
+      "days_pending": 10
     },
     {
       "id": "bf6e76604a77",
@@ -89,7 +89,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 7
+      "days_pending": 8
     },
     {
       "id": "aa3844b00562",
@@ -102,7 +102,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 7
+      "days_pending": 8
     },
     {
       "id": "29e0cc5dc3e9",
@@ -115,7 +115,7 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "c154f0b2397e",
@@ -128,7 +128,7 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     },
     {
       "id": "87bfadc322f6",
@@ -141,7 +141,7 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 1
+      "days_pending": 2
     }
   ],
   "stats": {

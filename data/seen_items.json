@@ -1391,7 +1391,73 @@
       "first_seen": "2026-04-06",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "53280effa762": {
+      "title": "AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "e3b90c21d0b1": {
+      "title": "OpenAI alums have been quietly investing from a new, potentially $100M fund",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "bbffeb3123eb": {
+      "title": "Google quietly launched an AI dictation app that works offline",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9aa7ca8b2a5b": {
+      "title": "Iran threatens \u2018Stargate\u2019 AI data centers",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "58c85546f3af": {
+      "title": "OpenAI\u2019s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "0f768381e6f2": {
+      "title": "Startup Battlefield 200 applications open: a chance for VC access, TechCrunch coverage, and $100K",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "fc4665a2038e": {
+      "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "b1582b232bc6": {
+      "title": "Ticket savings of up to $500 this week for TechCrunch Disrupt 2026",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "8cd93bd9f520": {
+      "title": "Spain\u2019s Xoople raises $130 million Series B to map the Earth for AI",
+      "first_seen": "2026-04-07",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "5a5afdb8e696": {
+      "title": "Iran threatens OpenAI\u2019s Stargate data center in Abu Dhabi",
+      "first_seen": "2026-04-07",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "8b6b843e560c": {
+      "title": "Cisco CEO Chuck Robbins wants data centers in space",
+      "first_seen": "2026-04-07",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-04-06T10:06:51.827257+00:00"
+  "last_run": "2026-04-07T10:06:15.759155+00:00"
 }

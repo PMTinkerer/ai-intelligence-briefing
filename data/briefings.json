@@ -1,5 +1,163 @@
 [
   {
+    "date": "2026-04-07",
+    "items": [
+      {
+        "title": "AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost",
+        "url": "https://techcrunch.com/2026/04/06/indian-startup-rocket-wants-its-ai-to-do-mckinsey-style-consulting-at-a-fraction-of-the-cost/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T05:30:00+00:00",
+        "description": "Rocket's new AI platform combines strategy, product building, and competitive intelligence, aiming to move beyond code generation.",
+        "id": "53280effa762",
+        "content": "Rocket's new AI platform combines strategy, product building, and competitive intelligence, aiming to move beyond code generation.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Rocket is building an AI platform that goes beyond coding \u2014 it's targeting strategy, competitive intelligence, and product thinking, essentially positioning itself as AI-powered consulting. Whether or not this specific startup wins, the category is real: AI that produces McKinsey-style analysis at low cost is a direct threat to expensive consulting and a tool for operators who can't afford it. Worth watching.",
+        "rank": 3
+      },
+      {
+        "title": "Google quietly launched an AI dictation app that works offline",
+        "url": "https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-06T18:54:33+00:00",
+        "description": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
+        "id": "bbffeb3123eb",
+        "content": "Google on Monday quietly released an offline-first dictation app called \u201cGoogle AI Edge Eloquent\u201d on iOS to take on the likes of Wispr Flow , SuperWhisper , Willow , and others. The app is free to download, and once its Gemma-based automatic speech recognition (ASR) models are downloaded, you can start dictating on your phone. In the app, you can see the live transcription, and when you hit pause, the app automatically filters out filler words like \u201cum\u201d and \u201cah\u201d and polishes the text. Below the ",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Google quietly dropped a free, offline-first AI dictation app for iOS called 'AI Edge Eloquent' that runs on-device using Gemma models \u2014 no internet required. It auto-removes filler words and polishes your speech in real time. If you're not already using a dictation tool to speed up writing and thinking, this is a zero-cost entry point worth testing immediately.",
+        "rank": 1
+      },
+      {
+        "title": "Iran threatens \u2018Stargate\u2019 AI data centers",
+        "url": "https://techcrunch.com/2026/04/06/iran-threatens-stargate-ai-data-centers/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-06T18:06:28+00:00",
+        "description": "Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.",
+        "id": "9aa7ca8b2a5b",
+        "content": "Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.",
+        "tier": "NOTED",
+        "summary": "Iran is threatening to target U.S.-linked AI data centers, including Stargate infrastructure, amid escalating U.S.-Iran tensions. Relevant only as a macro risk flag \u2014 if key data center infrastructure gets disrupted, it affects availability of the cloud AI services you rely on.",
+        "rank": 5
+      },
+      {
+        "title": "OpenAI\u2019s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek",
+        "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-06T15:55:55+00:00",
+        "description": "OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI\u2019s economic impact.",
+        "id": "58c85546f3af",
+        "content": "OpenAI proposes taxes on AI profits, public wealth funds, and expanded safety nets to address job loss and inequality, blending redistribution with capitalism as policymakers debate AI\u2019s economic impact.",
+        "tier": "NOTED",
+        "summary": "OpenAI published a policy vision suggesting robot taxes, public wealth funds, and a 4-day workweek to handle AI-driven job displacement. This is more politics than product, but it signals how OpenAI is trying to shape the regulatory conversation \u2014 and gives you a sense of where policy pressure may land on AI profits and labor.",
+        "rank": 4
+      },
+      {
+        "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
+        "url": "https://techcrunch.com/2026/04/06/how-to-use-chatgpt-apps-doordash-spotify-uber/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-06T14:11:42+00:00",
+        "description": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
+        "id": "fc4665a2038e",
+        "content": "OpenAI offers app integrations in ChatGPT to allow you to connect your accounts directly to ChatGPT and ask the assistant to do things for you. For instance, with a Spotify integration , you can tell it to create personalized playlists that will show up right in your Spotify app. To get started, make sure you\u2019re logged into ChatGPT. Then type the name of the app you want to use at the start of your prompt, and ChatGPT will guide you through signing in and connecting your account. If you want to ",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "ChatGPT now integrates directly with apps like DoorDash, Spotify, and Uber, letting you take actions inside those platforms through natural language. This is the early shape of AI as an operator layer \u2014 you tell it what you want done, it does it across services. Worth understanding how this architecture works because it's the pattern that will spread to business tools.",
+        "rank": 2
+      },
+      {
+        "title": "Iran threatens OpenAI\u2019s Stargate data center in Abu Dhabi",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/907427/iran-openai-stargate-datacenter-uae-abu-dhabi-threat",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-06T15:54:19+00:00",
+        "description": "Iran's Islamic Revolutionary Guard Corps (IRGC) has published a video threatening OpenAI's planned Abu Dhabi data center if the US follows through on threats to attack the country's power plants, as reported earlier by Tom's Hardware. The video, which was published to an Iranian state-backed news outlet's X account on April 3rd, says the IRGC [\u2026]",
+        "id": "5a5afdb8e696",
+        "content": "Iran's Islamic Revolutionary Guard Corps (IRGC) has published a video threatening OpenAI's planned Abu Dhabi data center if the US follows through on threats to attack the country's power plants, as reported earlier by Tom's Hardware. The video, which was published to an Iranian state-backed news outlet's X account on April 3rd, says the IRGC [\u2026]",
+        "tier": "NOTED",
+        "summary": "Same story as above with more detail \u2014 Iran's IRGC specifically named OpenAI's Abu Dhabi Stargate data center in a threat video. Geopolitical risk to AI infrastructure is now explicit and public. Not actionable today, but worth knowing the specific assets being targeted.",
+        "rank": 6
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 12
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes. This isn't a Claude Code habit; it's an operator discipline that applies to every automated system you'll ever delegate to.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 10
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 11
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice \u2014 every failure is a training session",
+        "days_on_leaderboard": 12
+      },
+      {
+        "rank": 5,
+        "title": "Use per-model cost visibility to build cost-aware agent architectures",
+        "category": "NEW_CAPABILITY",
+        "rationale": "The new per-model and cache-hit breakdown in Claude Code's /cost command is more than a billing tool \u2014 it's the feedback loop that teaches you to architect cost-efficiently. Operators who internalize which tasks justify Sonnet vs Haiku, and which prompts yield high cache hits, will run the same workflows at a fraction of the cost of competitors who don't. At scale across multi-agent systems, this compounds into a structural cost advantage that funds more automation.",
+        "first_step": "After your next Claude Code session, run /cost and read the model and cache breakdown. Identify one workflow where you could swap Sonnet for Haiku without quality loss, then test it.",
+        "time_investment": "20 minutes to establish the habit, ongoing discipline to compound it",
+        "days_on_leaderboard": 3
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 11,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 13
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 13
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 13
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 0,
+      "layer_2": 0,
+      "layer_3": 5
+    },
+    "total_fetched": 65
+  },
+  {
     "date": "2026-04-06",
     "items": [
       {

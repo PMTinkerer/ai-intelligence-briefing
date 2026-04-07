@@ -7,16 +7,16 @@
       "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
       "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
       "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
-      "days_on_leaderboard": 11
+      "days_on_leaderboard": 12
     },
     {
       "rank": 2,
       "title": "Learn when to slow agents down and demand understanding before proceeding",
       "category": "PARADIGM_SHIFT",
-      "rationale": "The honest post-mortem from today's briefing lands here with force: AI broke the psychological logjam by producing concrete prototypes to react to, but let the developer avoid the hard architectural decisions \u2014 which caught up with him. Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes.",
+      "rationale": "Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes. This isn't a Claude Code habit; it's an operator discipline that applies to every automated system you'll ever delegate to.",
       "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
       "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
-      "days_on_leaderboard": 9
+      "days_on_leaderboard": 10
     },
     {
       "rank": 3,
@@ -25,7 +25,7 @@
       "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
       "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
       "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
-      "days_on_leaderboard": 10
+      "days_on_leaderboard": 11
     },
     {
       "rank": 4,
@@ -34,7 +34,7 @@
       "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
       "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
       "time_investment": "Ongoing practice \u2014 every failure is a training session",
-      "days_on_leaderboard": 11
+      "days_on_leaderboard": 12
     },
     {
       "rank": 5,
@@ -43,11 +43,11 @@
       "rationale": "The new per-model and cache-hit breakdown in Claude Code's /cost command is more than a billing tool \u2014 it's the feedback loop that teaches you to architect cost-efficiently. Operators who internalize which tasks justify Sonnet vs Haiku, and which prompts yield high cache hits, will run the same workflows at a fraction of the cost of competitors who don't. At scale across multi-agent systems, this compounds into a structural cost advantage that funds more automation.",
       "first_step": "After your next Claude Code session, run /cost and read the model and cache breakdown. Identify one workflow where you could swap Sonnet for Haiku without quality loss, then test it.",
       "time_investment": "20 minutes to establish the habit, ongoing discipline to compound it",
-      "days_on_leaderboard": 2
+      "days_on_leaderboard": 3
     }
   ],
   "changes_today": [
-    "No items entered or exited. Today's classified items \u2014 the post-mortem on AI-assisted building and the Japan labor automation piece \u2014 are both worth reading but neither displaces existing leaderboard items. The post-mortem reinforces Rank 2 (slow agents down, demand understanding) and adds texture to it with the psychological dimension of AI breaking logjams while enabling avoidance of hard decisions. That's a useful color on an existing item, not a new one. The Japan piece is a macro labor trend signal with no near-term operational application. All five items hold."
+    "No changes today. Today's classified items (Rocket AI reports, Google offline dictation, ChatGPT app integrations) did not meet the displacement threshold. None introduce a new capability, paradigm, or applied pattern that outranks any current item \u2014 they are either tool-specific conveniences or ecosystem noise with no clear compounding mechanism for this operator. The backlog contains no items that warrant promotion: version changelogs, a SwiftUI vibe coding post, a package manager opinion piece, and a security breach notice for a tool not in the stack. All five existing items remain stable, well-justified, and actively actionable. Leaderboard held."
   ],
-  "date": "2026-04-06"
+  "date": "2026-04-07"
 }
