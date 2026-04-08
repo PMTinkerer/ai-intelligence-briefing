@@ -1,5 +1,263 @@
 [
   {
+    "date": "2026-04-08",
+    "items": [
+      {
+        "title": "v2.1.94",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2194",
+        "source_name": "Claude Code Changelog",
+        "layer": 1,
+        "published": null,
+        "description": "Added support for Amazon Bedrock powered by Mantle, set `CLAUDE_CODE_USE_MANTLE=1` Changed default effort level from medium to high for API-key, Bedrock/Vertex/Foundry, Team, and Enterprise users (control this with `/effort`) Added compact `Slacked #channel` header with a clickable channel link for Slack MCP send-message tool calls Added `keep-coding-instructions` frontmatter field support for plugin output styles Added `hookSpecificOutput.sessionTitle` to `UserPromptSubmit` hooks for setting the session title Plugin skills declared via `\"skills\": [\"./\"]` now use the skill's frontmatter `name` for the invocation name instead of the directory basename, giving a stable name across install methods Fixed agents appearing stuck after a 429 rate-limit response with a long Retry-After header \u2014 the error now surfaces immediately instead of silently waiting Fixed Console login on macOS silently failing with \"Not logged in\" when the login keychain is locked or its password is out of sync \u2014 the error is now surfaced and `claude doctor` diagnoses the fix Fixed plugin skill hooks defined in YAML frontmatter being silently ignored Fixed plugin hooks failing with \"No such file or directory\" when `CLAUDE_PLUGIN_ROOT` was not set Fixed `${CLAUDE_PLUGIN_ROOT}` resolving to the marketplace source directory instead of the installed cache for local-marketplace plugins on startup Fixed scrollback showing the same diff repeated and blank pages in long-running sessions Fixed multiline user prompts in the transcript indenting wrapped lines under the `\u276f` caret instead of under the text Fixed Shift+Space inserting the literal word \"space\" instead of a space character in search inputs Fixed hyperlinks opening two browser tabs when clicked inside tmux running in an xterm.js-based terminal (VS Code, Hyper, Tabby) Fixed an alt-screen rendering bug where content height changes mid-scroll could leave compounding ghost lines Fixed `FORCE_HYPERLINK` environment variable being ignored when set via `settings.json` `env` Fixed native terminal cursor not tracking the selected tab in dialogs, so screen readers and magnifiers can follow tab navigation Fixed Bedrock invocation of Sonnet 3.5 v2 by using the `us.` inference profile ID Fixed SDK/print mode not preserving the partial assistant response in conversation history when interrupted mid-stream Improved `--resume` to resume sessions from other worktrees of the same repo directly instead of printing a `cd` command Fixed CJK and other multibyte text being corrupted with U+FFFD in stream-json input/output when chunk boundaries split a UTF-8 sequence [VSCode] Reduced cold-open subprocess work on starting a session [VSCode] Fixed dropdown menus selecting the wrong item when the mouse was over the list while typing or using arrow keys [VSCode] Added a warning banner when `settings.json` files fail to parse, so users know their permission rules are not being applied",
+        "id": "a7ffb32f8421",
+        "content": "Added support for Amazon Bedrock powered by Mantle, set `CLAUDE_CODE_USE_MANTLE=1` Changed default effort level from medium to high for API-key, Bedrock/Vertex/Foundry, Team, and Enterprise users (control this with `/effort`) Added compact `Slacked #channel` header with a clickable channel link for Slack MCP send-message tool calls Added `keep-coding-instructions` frontmatter field support for plugin output styles Added `hookSpecificOutput.sessionTitle` to `UserPromptSubmit` hooks for setting the session title Plugin skills declared via `\"skills\": [\"./\"]` now use the skill's frontmatter `name` for the invocation name instead of the directory basename, giving a stable name across install methods Fixed agents appearing stuck after a 429 rate-limit response with a long Retry-After header \u2014 the error now surfaces immediately instead of silently waiting Fixed Console login on macOS silently failing with \"Not logged in\" when the login keychain is locked or its password is out of sync \u2014 the error is now surfaced and `claude doctor` diagnoses the fix Fixed plugin skill hooks defined in YAML frontmatter being silently ignored Fixed plugin hooks failing with \"No such file or directory\" when `CLAUDE_PLUGIN_ROOT` was not set Fixed `${CLAUDE_PLUGIN_ROOT}` resolving to the marketplace source directory instead of the installed cache for local-marketplace plugins on startup Fixed scrollback showing the same diff repeated and blank pages in long-running sessions Fixed multiline user prompts in the transcript indenting wrapped lines under the `\u276f` caret instead of under the text Fixed Shift+Space inserting the literal word \"space\" instead of a space character in search inputs Fixed hyperlinks opening two browser tabs when clicked inside tmux running in an xterm.js-based terminal (VS Code, Hyper, Tabby) Fixed an alt-screen rendering bug where content height changes mid-scroll could leave compounding ghost lines Fixed `FORCE_HYPERLINK` environment variable being ignored when set via `se",
+        "tier": "WORTH_YOUR_TIME",
+        "what_it_is": "Claude Code v2.1.94 is a substantial release with one meaningful behavioral change buried among bug fixes: the default effort level for API-key users just got bumped from medium to high. Everything else is polish \u2014 Bedrock infrastructure additions, plugin/skill naming improvements, and a pile of UI fixes for things like duplicate browser tabs and ghost lines in long sessions.",
+        "why_it_matters": "The effort level change is the one that affects you directly and silently. Your production tools \u2014 the STR Daily Briefing, any GitHub Actions workflows hitting the API \u2014 are now running at higher effort by default, which means better output quality but also potentially higher token costs per call. You didn't ask for this change, it just happened. Worth checking your Anthropic usage dashboard after a few days to see if costs ticked up. If they did, you can lock effort explicitly with `/effort medium` in sessions or tune it per-call in your API workflows. The plugin/skill naming fix (stable names across install methods) matters once you start extracting reusable Claude Code Skills from your project patterns \u2014 that's a Stage 4 gap you're building toward.",
+        "expandable_implement": "To check and control effort level explicitly:\n\n1. **In a Claude Code session**: Type `/effort` to see current setting. Type `/effort medium` to dial it back if you want to conserve tokens on lighter tasks. `/effort high` is now the default.\n\n2. **In your API calls** (STR Briefing, GitHub Actions): The effort level is controlled by the `thinking` budget or model parameters depending on how your scripts are structured. Pull up your briefing script and search for where you call `anthropic.messages.create()`. If you're using Haiku, this change may not apply \u2014 Haiku runs its own effort profile. But if you've upgraded any workflow to Sonnet or Opus, keep an eye on it.\n\n3. **To monitor cost impact**: Log into console.anthropic.com \u2192 Usage. Compare this week's token burn to last week's. If it's up 10-20% with no change in volume, the effort bump is the likely cause.\n\nNo action required immediately \u2014 just stay aware and check your usage in 3-5 days.",
+        "expandable_learn": "\"Effort level\" in Claude Code is essentially how hard the model tries before responding \u2014 it controls how much internal reasoning (sometimes called chain-of-thought or extended thinking) the model does before giving you an answer. Higher effort = more thorough reasoning = better output on complex problems, but more tokens consumed and slightly slower responses.\n\nThink of it like asking a contractor to give you a quick verbal estimate versus sitting down and doing a full written scope. Same contractor, same knowledge \u2014 but the second one catches more edge cases and produces a better result, at the cost of more of their time (and yours, and your money).\n\nFor your use case, high effort makes sense for complex builds and architectural decisions. It might be overkill for your daily briefing summarization, where Haiku at medium effort already does the job well. The skill here isn't knowing which setting to use right now \u2014 it's developing the instinct to match effort level to task complexity. That's a judgment call that compounds: every time you correctly size effort to task, you're spending less and getting the same quality where it counts.",
+        "unblocks_project": null
+      },
+      {
+        "title": "Anthropic's Project Glasswing - restricting Claude Mythos to security researchers - sounds necessary to me",
+        "url": "https://simonwillison.net/2026/Apr/7/project-glasswing/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-04-07T20:52:54+00:00",
+        "description": "Anthropic didn't release their latest model, Claude Mythos ( system card PDF ), today. They have instead made it available to a very restricted set of preview partners under their newly announced Project Glasswing . The model is a general purpose model, similar to Claude Opus 4.6, but Anthropic claim that its cyber-security research abilities are strong enough that they need to give the software industry as a whole time to prepare. Mythos Preview has already found thousands of high-severity vulnerabilities, including some in every major operating system and web browser . Given the rate of AI progress, it will not be long before such capabilities proliferate, potentially beyond actors who are committed to deploying them safely. [...] Project Glasswing partners will receive access to Claude Mythos Preview to find and fix vulnerabilities or weaknesses in their foundational systems\u2014systems that represent a very large portion of the world\u2019s shared cyberattack surface. We anticipate this work will focus on tasks like local vulnerability detection, black box testing of binaries, securing endpoints, and penetration testing of systems. There's a great deal more technical detail in Assessing Claude Mythos Preview\u2019s cybersecurity capabilities on the Anthropic Red Team blog: In one case, Mythos Preview wrote a web browser exploit that chained together four vulnerabilities, writing a complex JIT heap spray that escaped both renderer and OS sandboxes. It autonomously obtained local privilege escalation exploits on Linux and other operating systems by exploiting subtle race conditions and KASLR-bypasses. And it autonomously wrote a remote code execution exploit on FreeBSD's NFS server that granted full root access to unauthenticated users by splitting a 20-gadget ROP chain over multiple packets. Plus this comparison with Claude 4.6 Opus: Our internal evaluations showed that Opus 4.6 generally had a near-0% success rate at autonomous exploit development. But Mythos Preview is in a different league. For example, Opus 4.6 turned the vulnerabilities it had found in Mozilla\u2019s Firefox 147 JavaScript engine\u2014all patched in Firefox 148\u2014into JavaScript shell exploits only two times out of several hundred attempts. We re-ran this experiment as a benchmark for Mythos Preview, which developed working exploits 181 times, and achieved register control on 29 more. Saying \"our model is too dangerous to release\" is a great way to build buzz around a new model, but in this case I expect their caution is warranted. Just a few days ( last Friday ) ago I started a new ai-security-research tag on this blog to acknowledge an uptick in credible security professionals pulling the alarm on how good modern LLMs have got at vulnerability research. Greg Kroah-Hartman of the Linux kernel: Months ago, we were getting what we called 'AI slop,' AI-generated security reports that were obviously wrong or low quality. It was kind of funny. It didn't really worry us. Something happened a month ago, and the world switched. Now we have real reports. All open source projects have real reports that are made with AI, but they're good, and they're real. Daniel Stenberg of curl : The challenge with AI in open source security has transitioned from an AI slop tsunami into more of a ... plain security report tsunami. Less slop but lots of reports. Many of them really good. I'm spending hours per day on this now. It's intense. And Thomas Ptacek published Vulnerability Research Is Cooked , a post inspired by his podcast conversation with Anthropic's Nicholas Carlini. Anthropic have a 5 minute talking heads video describing the Glasswing project. Nicholas Carlini appears as one of those talking heads, where he said (highlights mine): It has the ability to chain together vulnerabilities. So what this means is you find two vulnerabilities, either of which doesn't really get you very much independently. But this model is able to create exploits out of three, four, or sometimes five vulnerabilities that in sequence give you some kind of very sophisticated end outcome. [...] I've found more bugs in the last couple of weeks than I found in the rest of my life combined . We've used the model to scan a bunch of open source code, and the thing that we went for first was operating systems, because this is the code that underlies the entire internet infrastructure. For OpenBSD, we found a bug that's been present for 27 years, where I can send a couple of pieces of data to any OpenBSD server and crash it . On Linux, we found a number of vulnerabilities where as a user with no permissions, I can elevate myself to the administrator by just running some binary on my machine. For each of these bugs, we told the maintainers who actually run the software about them, and they went and fixed them and have deployed the patches  patches so that anyone who runs the software is no longer vulnerable to these attacks. I found this on the OpenBSD 7.8 errata page : 025: RELIABILITY FIX: March 25, 2026 All architectures TCP packets with invalid SACK options could crash the kernel. A source code patch exists which remedies this problem. I tracked that change down in the GitHub mirror of the OpenBSD CVS repo (apparently they still use CVS!) and found it using git blame : Sure enough, the surrounding code is from 27 years ago. I'm not sure which Linux vulnerability Nicholas was describing, but it may have been this NFS one recently covered by Michael Lynch . There's enough smoke here that I believe there's a fire. It's not surprising to find vulnerabilities in decades-old software, especially given that they're mostly written in C, but what's new is that coding agents run by the latest frontier LLMs are proving tirelessly capable at digging up these issues. I actually thought to myself on Friday that this sounded like an industry-wide reckoning in the making, and that it might warrant a huge investment of time and money to get ahead of the inevitable barrage of vulnerabilities. Project Glasswing incorporates \"$100M in usage credits ... as well as $4M in direct donations to open-source security organizations\". Partners include AWS, Apple, Microsoft, Google, and the Linux Foundation. It would be great to see OpenAI involved as well - GPT-5.4 already has a strong reputation for finding security vulnerabilities and they have stronger models on the near horizon. The bad news for those of us who are not trusted partners is this: We do not plan to make Claude Mythos Preview generally available, but our eventual goal is to enable our users to safely deploy Mythos-class models at scale\u2014for cybersecurity purposes, but also for the myriad other benefits that such highly capable models will bring. To do so, we need to make progress in developing cybersecurity (and other) safeguards that detect and block the model\u2019s most dangerous outputs. We plan to launch new safeguards with an upcoming Claude Opus model, allowing us to improve and refine them with a model that does not pose the same level of risk as Mythos Preview. I can live with that. I think the security risks really are credible here, and having extra time for trusted teams to get ahead of them is a reasonable trade-off. Tags: security , thomas-ptacek , ai , generative-ai , llms , anthropic , nicholas-carlini , ai-ethics , llm-release , ai-security-research",
+        "id": "ba9b45c61eab",
+        "content": "Anthropic didn't release their latest model, Claude Mythos ( system card PDF ), today. They have instead made it available to a very restricted set of preview partners under their newly announced Project Glasswing . The model is a general purpose model, similar to Claude Opus 4.6, but Anthropic claim that its cyber-security research abilities are strong enough that they need to give the software industry as a whole time to prepare. Mythos Preview has already found thousands of high-severity vulnerabilities, including some in every major operating system and web browser . Given the rate of AI progress, it will not be long before such capabilities proliferate, potentially beyond actors who are committed to deploying them safely. [...] Project Glasswing partners will receive access to Claude Mythos Preview to find and fix vulnerabilities or weaknesses in their foundational systems\u2014systems that represent a very large portion of the world\u2019s shared cyberattack surface. We anticipate this work will focus on tasks like local vulnerability detection, black box testing of binaries, securing endpoints, and penetration testing of systems. There's a great deal more technical detail in Assessing Claude Mythos Preview\u2019s cybersecurity capabilities on the Anthropic Red Team blog: In one case, Mythos Preview wrote a web browser exploit that chained together four vulnerabilities, writing a complex JIT heap spray that escaped both renderer and OS sandboxes. It autonomously obtained local privilege escalation exploits on Linux and other operating systems by exploiting subtle race conditions and KASLR-bypasses. And it autonomously wrote a remote code execution exploit on FreeBSD's NFS server that granted full root access to unauthenticated users by splitting a 20-gadget ROP chain over multiple packets. Plus this comparison with Claude 4.6 Opus: Our internal evaluations showed that Opus 4.6 generally had a near-0% success rate at autonomous exploit development. But Mythos Preview is in a ",
+        "tier": "NOTED",
+        "what_it_is": "Anthropic built a model called Claude Mythos that's so capable at offensive cybersecurity \u2014 autonomously chaining browser exploits, escalating OS privileges, writing ROP chains \u2014 that they decided not to release it publicly. Instead, they're giving restricted access to security researchers under 'Project Glasswing' so the industry can patch vulnerabilities before this capability goes wide.",
+        "why_it_matters": "This is a landscape signal, not a tool you'll use tomorrow. It tells you that the gap between 'AI that helps you code' and 'AI that autonomously breaks systems' has closed faster than most people expected. For someone building production systems with Claude Code and GitHub Actions pipelines, it's worth knowing that the threat model for AI-assisted attacks is evolving quickly \u2014 your STR systems aren't high-value targets, but the broader infrastructure they depend on (OS, browsers, cloud services) is exactly what Mythos is being used to harden.",
+        "expandable_implement": null,
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "SQLite WAL Mode Across Docker Containers Sharing a Volume",
+        "url": "https://simonwillison.net/2026/Apr/7/sqlite-wal-docker-containers/#atom-everything",
+        "source_name": "Simon Willison",
+        "layer": 2,
+        "published": "2026-04-07T15:41:00+00:00",
+        "description": "Research: SQLite WAL Mode Across Docker Containers Sharing a Volume Inspired by this conversation on Hacker News about whether two SQLite processes in separate Docker containers that share the same volume might run into problems due to WAL shared memory. The answer is that everything works fine - Docker containers on the same host and filesystem share the same shared memory in a way that allows WAL to collaborate as it should. Tags: docker , sqlite",
+        "id": "4a87b12378ac",
+        "content": "Research: SQLite WAL Mode Across Docker Containers Sharing a Volume Inspired by this conversation on Hacker News about whether two SQLite processes in separate Docker containers that share the same volume might run into problems due to WAL shared memory. The answer is that everything works fine - Docker containers on the same host and filesystem share the same shared memory in a way that allows WAL to collaborate as it should. Tags: docker , sqlite",
+        "tier": "NOTED",
+        "what_it_is": "Simon Willison investigated whether two separate Docker containers sharing a volume can both safely use SQLite in WAL mode \u2014 the write-ahead logging mode that allows concurrent reads during writes. The answer is yes: on the same host, they share memory correctly and it just works.",
+        "why_it_matters": "If you ever scale any of your Python tools (STR briefing, inspector scheduler) into Docker containers while keeping SQLite as the database, this removes a concern you might have had about data corruption. It's a green light for a simple architecture pattern: multiple containers, one SQLite file on a shared volume, no need to immediately reach for Postgres.",
+        "expandable_implement": null,
+        "expandable_learn": null,
+        "unblocks_project": null
+      },
+      {
+        "title": "Google quietly launched an AI dictation app that works offline",
+        "url": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-08T05:40:19+00:00",
+        "description": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
+        "id": "138bf4303ae3",
+        "content": "Update (April 7, 10:30 PM PT): The company has updated the app store listing and removed references to the Android app. But it also added that the iOS keyboard is coming soon. Google on Monday quietly released an offline-first dictation app called \u201cGoogle AI Edge Eloquent\u201d on iOS to take on the likes of Wispr Flow , SuperWhisper , Willow , and others. The app is free to download, and once its Gemma-based automatic speech recognition (ASR) models are downloaded, you can start dictating on your ph",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Google released a free offline AI dictation app (Google AI Edge Eloquent) powered by Gemma that runs entirely on your device \u2014 no internet needed. For anyone building voice-first workflows or working in environments where privacy or connectivity matters, this is a free, capable alternative to paid tools like Wispr Flow or SuperWhisper.",
+        "rank": 4
+      },
+      {
+        "title": "I can\u2019t help rooting for tiny open source AI model maker Arcee",
+        "url": "https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T21:35:02+00:00",
+        "description": "Arcee is a tiny 26-person U.S. startup that built a high-performing, massive, open source LLM. And it's gaining popularity with OpenClaw users.",
+        "id": "44e1983a92a1",
+        "content": "Arcee is a tiny 26-person U.S. startup that built a high-performing, massive, open source LLM. And it's gaining popularity with OpenClaw users.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Arcee, a 26-person startup, built a high-performing open-source LLM that's gaining real traction. Worth watching because small teams building competitive open-source models means the gap between frontier closed models and what you can self-host keeps shrinking \u2014 which changes your deployment and cost options.",
+        "rank": 5
+      },
+      {
+        "title": "Intel signs on to Elon Musk\u2019s Terafab chips project",
+        "url": "https://techcrunch.com/2026/04/07/intel-signs-on-to-elon-musks-terafab-chips-project/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T18:10:01+00:00",
+        "description": "Intel will join SpaceX and Tesla in an effort to build a new U.S. semiconductor factory in Texas, although the scope of its contributions are unclear.",
+        "id": "f358d36c0c8a",
+        "content": "Intel will join SpaceX and Tesla in an effort to build a new U.S. semiconductor factory in Texas, although the scope of its contributions are unclear.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Intel is joining Elon Musk's Terafab project to build a new AI chip factory in Texas alongside SpaceX and Tesla. This matters because U.S. domestic chip manufacturing capacity is one of the key constraints on AI compute costs \u2014 more supply eventually means cheaper inference for everyone.",
+        "rank": 6
+      },
+      {
+        "title": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative",
+        "url": "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T18:00:00+00:00",
+        "description": "The new model will be used by a small number of high-profile companies to engage in defensive cybersecurity work.",
+        "id": "2710e3f8d9f0",
+        "content": "The new model will be used by a small number of high-profile companies to engage in defensive cybersecurity work.",
+        "tier": "GAME_CHANGER",
+        "summary": "Anthropic just previewed a new model called Mythos, specifically built for cybersecurity work. It's being rolled out to a small group of high-profile companies for defensive security applications \u2014 meaning Anthropic is now building specialized models beyond general-purpose assistants, which signals where the frontier is heading.",
+        "rank": 1
+      },
+      {
+        "title": "Uber is the latest to be won over by Amazon\u2019s AI chips",
+        "url": "https://techcrunch.com/2026/04/07/uber-is-the-latest-to-be-won-over-by-amazons-ai-chips/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T16:46:59+00:00",
+        "description": "Uber is expanding its AWS contract to run more of its ride-sharing features on Amazon's chips. This is a thumb-of-the nose at Oracle and Google.",
+        "id": "2414ecd4740a",
+        "content": "Uber is expanding its AWS contract to run more of its ride-sharing features on Amazon's chips. This is a thumb-of-the nose at Oracle and Google.",
+        "tier": "NOTED",
+        "summary": "Uber is moving more of its core ride-sharing infrastructure to run on Amazon's custom AI chips (Trainium/Inferentia). It's a signal that AWS's in-house silicon is now competitive enough for production workloads at scale \u2014 relevant if you're thinking about cloud AI cost optimization.",
+        "rank": 8
+      },
+      {
+        "title": "Anthropic\u00a0ups compute deal with Google and Broadcom amid skyrocketing demand",
+        "url": "https://techcrunch.com/2026/04/07/anthropic-compute-deal-google-broadcom-tpus/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-07T16:05:56+00:00",
+        "description": "Anthropic bulked up its compute deal with Google and Broadcom as the company has seen its run-rate revenue surge to $30 billion.",
+        "id": "4b89a43fb600",
+        "content": "Anthropic bulked up its compute deal with Google and Broadcom as the company has seen its run-rate revenue surge to $30 billion.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Anthropic's run-rate revenue hit $30 billion, and they're now expanding compute deals with Google and Broadcom to keep up with demand. This tells you the enterprise adoption curve is steeper than most people realize \u2014 these aren't pilot projects anymore, this is operational infrastructure at massive scale.",
+        "rank": 3
+      },
+      {
+        "title": "A new Anthropic model found security problems &#8216;in every major operating system and web browser&#8217;",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/908114/anthropic-project-glasswing-cybersecurity",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-07T18:00:00+00:00",
+        "description": "Anthropic is debuting a new AI model as part of a cybersecurity partnership with Nvidia, Google, Amazon Web Services, Apple, Microsoft, and other companies. Project Glasswing, as it's called, is billed as a way for large companies, and potentially even the government, to flag vulnerabilities in their systems with virtually no human intervention. Anthropic is [\u2026]",
+        "id": "e2b3c7436d0e",
+        "content": "Anthropic is debuting a new AI model as part of a cybersecurity partnership with Nvidia, Google, Amazon Web Services, Apple, Microsoft, and other companies. Project Glasswing, as it's called, is billed as a way for large companies, and potentially even the government, to flag vulnerabilities in their systems with virtually no human intervention. Anthropic is [\u2026]",
+        "tier": "GAME_CHANGER",
+        "summary": "Anthropic's Project Glasswing \u2014 backed by Nvidia, Google, AWS, Apple, Microsoft \u2014 found security vulnerabilities in every major OS and web browser with virtually no human in the loop. This is a real-world demonstration of AI doing expert-level technical work autonomously at scale, and it's the clearest signal yet that agentic AI can replace entire security audit workflows.",
+        "rank": 2
+      },
+      {
+        "title": "Suno and major music labels reportedly clash over AI music sharing",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/908119/suno-sony-universal-music-ai-disagreement",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-07T16:21:22+00:00",
+        "description": "The AI-powered musicmaker Suno is struggling to reach licensing deals with Universal Music Group and Sony Music Entertainment. That's according to a report from the Financial Times, which says both sides can't agree on whether users should be able to share the AI-generated songs they create. \"Universal wants AI-generated tracks to stay inside apps such [\u2026]",
+        "id": "25eac330d7fd",
+        "content": "The AI-powered musicmaker Suno is struggling to reach licensing deals with Universal Music Group and Sony Music Entertainment. That's according to a report from the Financial Times, which says both sides can't agree on whether users should be able to share the AI-generated songs they create. \"Universal wants AI-generated tracks to stay inside apps such [\u2026]",
+        "tier": "NOTED",
+        "summary": "Suno and major music labels can't agree on whether AI-generated music should be shareable outside the apps that created it \u2014 labels want to keep it locked in. This content licensing battle will set precedents that ripple into other AI-generated creative content categories.",
+        "rank": 9
+      },
+      {
+        "title": "Intel will help build Elon Musk\u2019s Terafab AI chip factory",
+        "url": "https://www.theverge.com/transportation/907976/elon-musk-terafab-intel-ai-chip-spacex-tesla",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-07T15:43:17+00:00",
+        "description": "Elon Musk's Terafab AI chip project in Austin, Texas, is gaining a crucial new partner: Intel. On Tuesday, the American chipmaker announced it was signing on to help design and build the sprawling facility, which would supply AI chips to Musk's two companies, SpaceX (newly merged with xAI) and Tesla. Musk needs AI chips to [\u2026]",
+        "id": "0424a79630d1",
+        "content": "Elon Musk's Terafab AI chip project in Austin, Texas, is gaining a crucial new partner: Intel. On Tuesday, the American chipmaker announced it was signing on to help design and build the sprawling facility, which would supply AI chips to Musk's two companies, SpaceX (newly merged with xAI) and Tesla. Musk needs AI chips to [\u2026]",
+        "tier": "NOTED",
+        "summary": "More detail on the Terafab/Intel story \u2014 Intel will handle design and manufacturing for a facility supplying chips to SpaceX (now merged with xAI) and Tesla. The SpaceX/xAI merger detail is notable context for anyone tracking where Grok and xAI's compute stack is heading.",
+        "rank": 7
+      },
+      {
+        "title": "Gemini is making it faster for distressed users to reach mental health resources",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/907842/google-gemini-mental-health-interface-update",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-07T10:09:57+00:00",
+        "description": "Google says it has updated Gemini to better direct users to get mental health resources during moments of crisis. The change comes as the tech giant faces a wrongful death lawsuit alleging its chatbot \"coached\" a man to die by suicide, the latest in a string of lawsuits alleging tangible harm from AI products. When [\u2026]",
+        "id": "c55316a7c02f",
+        "content": "Google says it has updated Gemini to better direct users to get mental health resources during moments of crisis. The change comes as the tech giant faces a wrongful death lawsuit alleging its chatbot \"coached\" a man to die by suicide, the latest in a string of lawsuits alleging tangible harm from AI products. When [\u2026]",
+        "tier": "NOTED",
+        "summary": "Google updated Gemini to route distressed users to mental health resources faster, in the context of a wrongful death lawsuit. Worth noting as a reminder that AI products deployed at consumer scale carry real liability \u2014 relevant if you're building anything user-facing.",
+        "rank": 10
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 13
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes. This isn't a Claude Code habit; it's an operator discipline that applies to every automated system you'll ever delegate to.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 11
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 12
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice \u2014 every failure is a training session",
+        "days_on_leaderboard": 13
+      },
+      {
+        "rank": 5,
+        "title": "Anthropic's Mythos cybersecurity model: understand what autonomous vulnerability discovery means for operators",
+        "category": "STRATEGIC_MOVE",
+        "rationale": "Anthropic debuting a model that found security problems in every major OS and browser isn't just a capability milestone \u2014 it signals that AI systems are entering a phase where they can autonomously discover non-obvious failure modes in complex systems. The direct implication for you: the same reasoning pattern (agent explores a system, identifies structural weaknesses, surfaces findings) applies to operational fragility in your own stack. An operator who learns to direct this kind of adversarial probing at his own workflows \u2014 'where are the failure modes no one has thought to look for?' \u2014 builds more robust systems faster than anyone running purely constructive builds.",
+        "first_step": "In your next Claude Code session, after shipping a feature, run a dedicated adversarial pass: prompt Claude to act as an attacker or failure investigator and enumerate every way the system could break, be abused, or produce silent errors. Treat this as standard post-build protocol.",
+        "time_investment": "30 minutes to establish the protocol, then 10-15 minutes per build as a habit",
+        "days_on_leaderboard": 1
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 12,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 1,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 14
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 14
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 14
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 1,
+      "layer_3": 5
+    },
+    "total_fetched": 72
+  },
+  {
     "date": "2026-04-07",
     "items": [
       {

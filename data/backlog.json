@@ -11,7 +11,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 13
+      "days_pending": 14
     },
     {
       "id": "8d3fcf0b18b8",
@@ -24,7 +24,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 13
+      "days_pending": 14
     },
     {
       "id": "73318f044426",
@@ -37,7 +37,7 @@
       "date_added": "2026-03-25",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 13
+      "days_pending": 14
     },
     {
       "id": "021c63d29d0d",
@@ -50,7 +50,7 @@
       "date_added": "2026-03-26",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 12
+      "days_pending": 13
     },
     {
       "id": "aee0c2de60d5",
@@ -63,7 +63,7 @@
       "date_added": "2026-03-27",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 11
+      "days_pending": 12
     },
     {
       "id": "58ffcf300589",
@@ -76,7 +76,7 @@
       "date_added": "2026-03-28",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 10
+      "days_pending": 11
     },
     {
       "id": "bf6e76604a77",
@@ -89,7 +89,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 8
+      "days_pending": 9
     },
     {
       "id": "aa3844b00562",
@@ -102,7 +102,7 @@
       "date_added": "2026-03-30",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 8
+      "days_pending": 9
     },
     {
       "id": "29e0cc5dc3e9",
@@ -115,7 +115,7 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "c154f0b2397e",
@@ -128,7 +128,7 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
     },
     {
       "id": "87bfadc322f6",
@@ -141,11 +141,24 @@
       "date_added": "2026-04-05",
       "date_adopted": null,
       "date_archived": null,
-      "days_pending": 2
+      "days_pending": 3
+    },
+    {
+      "id": "a7ffb32f8421",
+      "title": "v2.1.94",
+      "source_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2194",
+      "tier": "WORTH_YOUR_TIME",
+      "layer": 1,
+      "expandable_implement": "To check and control effort level explicitly:\n\n1. **In a Claude Code session**: Type `/effort` to see current setting. Type `/effort medium` to dial it back if you want to conserve tokens on lighter tasks. `/effort high` is now the default.\n\n2. **In your API calls** (STR Briefing, GitHub Actions): The effort level is controlled by the `thinking` budget or model parameters depending on how your scripts are structured. Pull up your briefing script and search for where you call `anthropic.messages.create()`. If you're using Haiku, this change may not apply \u2014 Haiku runs its own effort profile. But if you've upgraded any workflow to Sonnet or Opus, keep an eye on it.\n\n3. **To monitor cost impact**: Log into console.anthropic.com \u2192 Usage. Compare this week's token burn to last week's. If it's up 10-20% with no change in volume, the effort bump is the likely cause.\n\nNo action required immediately \u2014 just stay aware and check your usage in 3-5 days.",
+      "status": "pending",
+      "date_added": "2026-04-08",
+      "date_adopted": null,
+      "date_archived": null,
+      "days_pending": 0
     }
   ],
   "stats": {
-    "total_added": 11,
+    "total_added": 12,
     "total_adopted": 0,
     "total_archived": 0,
     "adoption_rate_4w": 0.0

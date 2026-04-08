@@ -1457,7 +1457,127 @@
       "first_seen": "2026-04-07",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "7b3e262088c8": {
+      "title": "v2.1.96",
+      "first_seen": "2026-04-08",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "a7ffb32f8421": {
+      "title": "v2.1.94",
+      "first_seen": "2026-04-08",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "fffc62a99de8": {
+      "title": "GLM-5.1: Towards Long-Horizon Tasks",
+      "first_seen": "2026-04-08",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "ba9b45c61eab": {
+      "title": "Anthropic's Project Glasswing - restricting Claude Mythos to security researchers - sounds necessary to me",
+      "first_seen": "2026-04-08",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "4a87b12378ac": {
+      "title": "SQLite WAL Mode Across Docker Containers Sharing a Volume",
+      "first_seen": "2026-04-08",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "138bf4303ae3": {
+      "title": "Google quietly launched an AI dictation app that works offline",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "44e1983a92a1": {
+      "title": "I can\u2019t help rooting for tiny open source AI model maker Arcee",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "5102bc57d779": {
+      "title": "Firmus, the \u2018Southgate\u2019 AI data center builder backed by Nvidia, hits $5.5B valuation",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "f358d36c0c8a": {
+      "title": "Intel signs on to Elon Musk\u2019s Terafab chips project",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "2710e3f8d9f0": {
+      "title": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "2414ecd4740a": {
+      "title": "Uber is the latest to be won over by Amazon\u2019s AI chips",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "4b89a43fb600": {
+      "title": "Anthropic\u00a0ups compute deal with Google and Broadcom amid skyrocketing demand",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "ee04a63f03ed": {
+      "title": "Google Maps can now write captions for your photos using AI",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "6f066d88ede8": {
+      "title": "4\u00a0days left to save close to $500 on TechCrunch Disrupt 2026 passes",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "42b81447aef6": {
+      "title": "The AI gold rush is pulling private wealth into riskier, earlier bets",
+      "first_seen": "2026-04-08",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "98965b7fbf69": {
+      "title": "Spotify&#8217;s Prompted Playlists can help you find new podcasts to listen to",
+      "first_seen": "2026-04-08",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "e2b3c7436d0e": {
+      "title": "A new Anthropic model found security problems &#8216;in every major operating system and web browser&#8217;",
+      "first_seen": "2026-04-08",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "25eac330d7fd": {
+      "title": "Suno and major music labels reportedly clash over AI music sharing",
+      "first_seen": "2026-04-08",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "0424a79630d1": {
+      "title": "Intel will help build Elon Musk\u2019s Terafab AI chip factory",
+      "first_seen": "2026-04-08",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "c55316a7c02f": {
+      "title": "Gemini is making it faster for distressed users to reach mental health resources",
+      "first_seen": "2026-04-08",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-04-07T10:06:15.759155+00:00"
+  "last_run": "2026-04-08T10:06:06.949085+00:00"
 }
