@@ -1577,7 +1577,115 @@
       "first_seen": "2026-04-08",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "8f7df68a4199": {
+      "title": "v2.1.97",
+      "first_seen": "2026-04-09",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "e5c84393ed08": {
+      "title": "Meta's new model is Muse Spark, and meta.ai chat has some interesting tools",
+      "first_seen": "2026-04-09",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "4442112c576a": {
+      "title": "Quoting Giles Turnbull",
+      "first_seen": "2026-04-09",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "ac585ce305fb": {
+      "title": "Iran-linked hackers disrupt operations at US critical infrastructure sites",
+      "first_seen": "2026-04-09",
+      "source_name": "Ars Technica",
+      "layer": 3
+    },
+    "256e2378eaa4": {
+      "title": "Thousands of consumer routers hacked by Russia's military",
+      "first_seen": "2026-04-09",
+      "source_name": "Ars Technica",
+      "layer": 3
+    },
+    "d58abd0d4928": {
+      "title": "Poke makes using AI agents as easy as sending a text",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "7452a177d911": {
+      "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9f007a62d848": {
+      "title": "Tubi is the first streamer to launch a native app within ChatGPT",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "a54a610d3c61": {
+      "title": "Astropad\u2019s Workbench reimagines remote desktop for AI agents, not IT support",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "3f012d925061": {
+      "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "cb1c20bdeec2": {
+      "title": "Databricks co-founder wins prestigious ACM award, says \u2018AGI is here already\u2019",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "0e0cd0b5a809": {
+      "title": "Final\u00a03\u00a0days to save up to $500 on your TechCrunch Disrupt 2026 pass",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "9449b66e74b9": {
+      "title": "Atlassian launches visual\u00a0AI tools\u00a0and third-party agents\u00a0in Confluence",
+      "first_seen": "2026-04-09",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "f51dc84725df": {
+      "title": "Gemini gets notebooks to help you organize projects",
+      "first_seen": "2026-04-09",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "8621939622f0": {
+      "title": "OpenAI made economic proposals \u2014 here\u2019s what DC thinks of them",
+      "first_seen": "2026-04-09",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "f1ceb5de3757": {
+      "title": "Meta is reentering the AI race with a new model called Muse Spark",
+      "first_seen": "2026-04-09",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "c7409d03ad52": {
+      "title": "The vibes are off at OpenAI",
+      "first_seen": "2026-04-09",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "2725b7be2675": {
+      "title": "Unionized ProPublica staff are on strike over AI, layoffs, and wages",
+      "first_seen": "2026-04-09",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-04-08T10:06:06.949085+00:00"
+  "last_run": "2026-04-09T10:11:53.225694+00:00"
 }

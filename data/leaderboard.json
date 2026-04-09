@@ -7,7 +7,7 @@
       "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
       "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
       "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
-      "days_on_leaderboard": 13
+      "days_on_leaderboard": 14
     },
     {
       "rank": 2,
@@ -16,7 +16,7 @@
       "rationale": "Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes. This isn't a Claude Code habit; it's an operator discipline that applies to every automated system you'll ever delegate to.",
       "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
       "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
-      "days_on_leaderboard": 11
+      "days_on_leaderboard": 12
     },
     {
       "rank": 3,
@@ -25,7 +25,7 @@
       "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
       "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
       "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
-      "days_on_leaderboard": 12
+      "days_on_leaderboard": 13
     },
     {
       "rank": 4,
@@ -34,7 +34,7 @@
       "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
       "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
       "time_investment": "Ongoing practice \u2014 every failure is a training session",
-      "days_on_leaderboard": 13
+      "days_on_leaderboard": 14
     },
     {
       "rank": 5,
@@ -43,12 +43,11 @@
       "rationale": "Anthropic debuting a model that found security problems in every major OS and browser isn't just a capability milestone \u2014 it signals that AI systems are entering a phase where they can autonomously discover non-obvious failure modes in complex systems. The direct implication for you: the same reasoning pattern (agent explores a system, identifies structural weaknesses, surfaces findings) applies to operational fragility in your own stack. An operator who learns to direct this kind of adversarial probing at his own workflows \u2014 'where are the failure modes no one has thought to look for?' \u2014 builds more robust systems faster than anyone running purely constructive builds.",
       "first_step": "In your next Claude Code session, after shipping a feature, run a dedicated adversarial pass: prompt Claude to act as an attacker or failure investigator and enumerate every way the system could break, be abused, or produce silent errors. Treat this as standard post-build protocol.",
       "time_investment": "30 minutes to establish the protocol, then 10-15 minutes per build as a habit",
-      "days_on_leaderboard": 1
+      "days_on_leaderboard": 2
     }
   ],
   "changes_today": [
-    "Rank 5 EXITED: 'Use per-model cost visibility to build cost-aware agent architectures' \u2014 solid but incremental. At 4 days on the board, the habit either took hold or it didn't. Not transformative enough to hold a slot against today's new entry.",
-    "Rank 5 ENTERED: 'Anthropic's Mythos cybersecurity model: understand what autonomous vulnerability discovery means for operators' \u2014 the Mythos/cybersecurity release is not classified as a game-changer for operator tooling, but what it signals about AI-directed adversarial system analysis is directly actionable. The 'red-team your own stack' protocol it suggests is a transferable pattern with compounding value across every system he builds. Displaces the cost-visibility item on strategic depth."
+    "No changes today. All five items hold their positions. Today's classified items \u2014 Poke, Astropad Workbench, the Databricks AGI commentary, Atlassian Confluence AI, Gemini notebooks, and the Meta Muse Spark report \u2014 were evaluated and none cleared the bar for displacement. Poke and Astropad are consumer-facing UX wrappers that don't expand the operator's capability in a meaningful way. The Databricks co-founder quote is commentary, not a capability shift. Atlassian and Gemini are enterprise tool updates irrelevant to his stack. Meta Muse Spark was classified GAME_CHANGER in the feed, but on review it is a model release from a competitor ecosystem with no clear mechanism by which it makes this operator more formidable today \u2014 it's ecosystem news, not a capability shift. The leaderboard remains stable."
   ],
-  "date": "2026-04-08"
+  "date": "2026-04-09"
 }
