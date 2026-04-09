@@ -53,15 +53,9 @@ def run_weekly_rollup(dry_run: bool = False) -> None:
         logger.info("Weekly rollup complete (no email sent).")
         return
 
-    from src.send_email import authenticate, send_email
+    from src.send_email import send_email
 
-    try:
-        service = authenticate()
-    except Exception:
-        logger.critical("Gmail authentication failed", exc_info=True)
-        sys.exit(1)
-
-    ok = send_email(service, BRIEFING_RECIPIENTS, subject, email_html)
+    ok = send_email(BRIEFING_RECIPIENTS, subject, email_html)
     if not ok:
         logger.error("Weekly email delivery failed")
         sys.exit(1)

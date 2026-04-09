@@ -178,15 +178,9 @@ def run_daily_briefing(dry_run: bool = False, layer: int | None = None) -> None:
         logger.info("Daily briefing complete (no email sent).")
         return
 
-    from src.send_email import authenticate, send_email
+    from src.send_email import send_email
 
-    try:
-        service = authenticate()
-    except Exception:
-        logger.critical("Gmail authentication failed", exc_info=True)
-        sys.exit(1)
-
-    ok = send_email(service, BRIEFING_RECIPIENTS, subject, email_html)
+    ok = send_email(BRIEFING_RECIPIENTS, subject, email_html)
     if not ok:
         logger.error("Email delivery failed")
         sys.exit(1)
@@ -198,6 +192,31 @@ def run_daily_briefing(dry_run: bool = False, layer: int | None = None) -> None:
     logger.info("Monthly API spend: $%.2f / $%.2f budget", monthly_total(ledger), SPENDING_BUDGET_USD)
 
     logger.info("Daily briefing complete.")
+
+    # Ping Healthchecks.io dead-man-switch on successful run
+    ping_url = os.environ.get("HEALTHCHECK_PING_URL")
+    if ping_url:
+        try:
+            import requests as _req
+            _req.get(ping_url, timeout=10)
+        except Exception:
+            pass
+
+
+def _send_pushover_crash(title: str, message: str) -> None:
+    """Send a Pushover alert on unhandled crash. Non-fatal."""
+    try:
+        import os as _os
+        import requests as _req
+        token = _os.environ.get("PUSHOVER_API_TOKEN", "")
+        user = _os.environ.get("PUSHOVER_USER_KEY", "")
+        if token and user:
+            _req.post("https://api.pushover.net/1/messages.json", data={
+                "token": token, "user": user,
+                "title": title, "message": message[:1024], "priority": 1,
+            }, timeout=10)
+    except Exception:
+        pass
 
 
 if __name__ == "__main__":
@@ -213,4 +232,9 @@ if __name__ == "__main__":
                         help="Process only this layer")
     args = parser.parse_args()
 
-    run_daily_briefing(dry_run=args.dry_run, layer=args.layer)
+    try:
+        run_daily_briefing(dry_run=args.dry_run, layer=args.layer)
+    except Exception as exc:
+        logger.exception("Unhandled exception in AI briefing")
+        _send_pushover_crash("AI Briefing CRASH", str(exc))
+        sys.exit(1)
