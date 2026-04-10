@@ -1685,7 +1685,115 @@
       "first_seen": "2026-04-09",
       "source_name": "The Verge AI",
       "layer": 3
+    },
+    "562536bc66cb": {
+      "title": "v2.1.98",
+      "first_seen": "2026-04-10",
+      "source_name": "Claude Code Changelog",
+      "layer": 1
+    },
+    "097adb842c27": {
+      "title": "GitHub Repo Size",
+      "first_seen": "2026-04-10",
+      "source_name": "Simon Willison",
+      "layer": 2
+    },
+    "e60a421638e1": {
+      "title": "\u201cNegative\u201d views of Broadcom driving thousands of VMware migrations, rival says",
+      "first_seen": "2026-04-10",
+      "source_name": "Ars Technica",
+      "layer": 3
+    },
+    "a445e393e829": {
+      "title": "ChatGPT finally offers $100/month Pro plan",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "499dfdeba502": {
+      "title": "Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "d548fb0be4c7": {
+      "title": "After data breach, $10B-valued startup Mercor is having a month",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "4e30998e1f96": {
+      "title": "Meta AI app climbs to No. 5 on the App Store after Muse Spark launch",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "e930c8f8d603": {
+      "title": "Is Anthropic limiting the release of Mythos to protect the internet \u2014 or Anthropic?",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "3119fefc235c": {
+      "title": "Google and Intel deepen AI infrastructure partnership",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "06e496a9c4d7": {
+      "title": "Sierra\u2019s Bret Taylor says the era of clicking buttons is over",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "fdcd9e03c9be": {
+      "title": "Amazon CEO takes aim at Nvidia, Intel, Starlink, more in annual shareholder letter",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "8bdf86e126ef": {
+      "title": "Final 2 days to save up to $500 on your TechCrunch Disrupt 2026 ticket",
+      "first_seen": "2026-04-10",
+      "source_name": "TechCrunch AI",
+      "layer": 3
+    },
+    "12599f5a6904": {
+      "title": "Microsoft starts removing Copilot buttons from Windows 11 apps",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "5f11795b3115": {
+      "title": "ChatGPT has a new $100 per month Pro subscription",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "3e1330db8dec": {
+      "title": "Florida launches investigation into OpenAI",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "558a56e27085": {
+      "title": "Google\u2019s Gemini AI can answer your questions with 3D models and simulations",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "d63b04a32bef": {
+      "title": "The AI industry\u2019s race for profits is now existential",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
+    },
+    "00b5736e96ce": {
+      "title": "Google makes it easy to deepfake yourself",
+      "first_seen": "2026-04-10",
+      "source_name": "The Verge AI",
+      "layer": 3
     }
   },
-  "last_run": "2026-04-09T10:11:53.225694+00:00"
+  "last_run": "2026-04-10T10:06:58.061950+00:00"
 }

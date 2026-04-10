@@ -1,5 +1,215 @@
 [
   {
+    "date": "2026-04-10",
+    "items": [
+      {
+        "title": "ChatGPT finally offers $100/month Pro plan",
+        "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-09T21:29:11+00:00",
+        "description": "OpenAI announced on Thursday something that power users have been asking for: a $100/month plan. Previously, subscriptions jumped from $20 to $200 per month.",
+        "id": "a445e393e829",
+        "content": "OpenAI announced on Thursday something that power users have been asking for: a $100/month plan. Previously, subscriptions jumped from $20 to $200 per month.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "OpenAI dropped a $100/month ChatGPT Pro tier, filling the gap between $20 Plus and $200 Pro. The new tier is specifically built around heavier Codex (coding) usage \u2014 5x more than Plus. If you're using AI for automation and code generation at volume, this is a meaningful pricing unlock that didn't exist before.",
+        "rank": 4
+      },
+      {
+        "title": "Meta AI app climbs to No. 5 on the App Store after Muse Spark launch",
+        "url": "https://techcrunch.com/2026/04/09/meta-ai-app-climbs-to-no-5-on-the-app-store-after-muse-spark-launch/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-09T19:10:07+00:00",
+        "description": "The app was ranking No. 57 on the App Store just before Meta AI's new model launched. Now it's No. 5 \u2014 and rising.",
+        "id": "4e30998e1f96",
+        "content": "The app was ranking No. 57 on the App Store just before Meta AI's new model launched. Now it's No. 5 \u2014 and rising.",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Meta AI's app jumped from #57 to #5 on the App Store after launching Muse Spark. This matters less as a product story and more as a signal \u2014 consumer AI adoption is still accelerating fast, and Meta is now a serious player in the daily-use AI space alongside ChatGPT. The competitive pressure on all fronts is intensifying.",
+        "rank": 6
+      },
+      {
+        "title": "Is Anthropic limiting the release of Mythos to protect the internet \u2014 or Anthropic?",
+        "url": "https://techcrunch.com/2026/04/09/is-anthropic-limiting-the-release-of-mythos-to-protect-the-internet-or-anthropic/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-09T18:50:05+00:00",
+        "description": "Anthropic said this week that it limited the release of its newest model, dubbed Mythos, because it is too capable of finding security exploits in software relied upon by users around the world. Are real cybersecurity concerns a cover for a bigger problem at the frontier lab?",
+        "id": "e930c8f8d603",
+        "content": "Anthropic said this week that it limited the release of its newest model, dubbed Mythos, because it is too capable of finding security exploits in software relied upon by users around the world. Are real cybersecurity concerns a cover for a bigger problem at the frontier lab?",
+        "tier": "GAME_CHANGER",
+        "summary": "Anthropic built a model called Mythos that's apparently so good at finding software security exploits that they're limiting its release. This is a landmark moment \u2014 it means AI has crossed a threshold where its offensive capabilities are genuinely dangerous at scale, not just theoretically. If you're building on top of AI infrastructure, this signals the frontier is moving faster than safety controls, which affects how you think about trust and deployment.",
+        "rank": 1
+      },
+      {
+        "title": "Google and Intel deepen AI infrastructure partnership",
+        "url": "https://techcrunch.com/2026/04/09/google-and-intel-deepen-ai-infrastructure-partnership/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-09T18:27:47+00:00",
+        "description": "The two tech giants are looking to co-develop custom chips, at a time when demand for CPUs is high due to a growing global shortage.",
+        "id": "3119fefc235c",
+        "content": "The two tech giants are looking to co-develop custom chips, at a time when demand for CPUs is high due to a growing global shortage.",
+        "tier": "NOTED",
+        "summary": "Google and Intel are co-developing custom chips amid a CPU shortage driven by AI demand. This is infrastructure-layer news \u2014 won't change what you can build today, but chip supply constraints are one of the main reasons AI API costs stay high. Worth watching as a backdrop to pricing trends.",
+        "rank": 8
+      },
+      {
+        "title": "Sierra\u2019s Bret Taylor says the era of clicking buttons is over",
+        "url": "https://techcrunch.com/2026/04/09/sierras-bret-taylor-says-the-era-of-clicking-buttons-is-over/",
+        "source_name": "TechCrunch AI",
+        "layer": 3,
+        "published": "2026-04-09T17:20:50+00:00",
+        "description": "Last month, Sierra launched Ghostwriter, an agent designed to build other agents. With this \u201cagent as a service\u201d tool, the startup intends to replace traditional click-based web applications with natural language. Users simply describe what they need, prompting Ghostwriter to autonomously create and deploy a specialized agent to execute the task.",
+        "id": "06e496a9c4d7",
+        "content": "Last month, Sierra launched Ghostwriter, an agent designed to build other agents. With this \u201cagent as a service\u201d tool, the startup intends to replace traditional click-based web applications with natural language. Users simply describe what they need, prompting Ghostwriter to autonomously create and deploy a specialized agent to execute the task.",
+        "tier": "GAME_CHANGER",
+        "summary": "Sierra (Bret Taylor's company) launched Ghostwriter \u2014 an agent that builds other agents on demand from natural language descriptions. Instead of clicking through apps, you just describe what you need and an agent gets spun up to do it. This is the clearest signal yet that the 'build once, configure forever' model for software is being replaced by 'describe and deploy' \u2014 and it has massive implications for how you think about operational workflows.",
+        "rank": 2
+      },
+      {
+        "title": "Microsoft starts removing Copilot buttons from Windows 11 apps",
+        "url": "https://www.theverge.com/news/909640/microsoft-removing-copilot-windows-11-buttons",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-10T09:22:06+00:00",
+        "description": "Microsoft is starting to remove \"unnecessary\" Copilot buttons from its Windows 11 apps. In the latest version of the Notepad app for Windows Insiders, Microsoft has removed the Copilot button in favor of a \"writing tools\" menu. The Copilot button in the Snipping Tool app also no longer appears when you select an area to [\u2026]",
+        "id": "12599f5a6904",
+        "content": "Microsoft is starting to remove \"unnecessary\" Copilot buttons from its Windows 11 apps. In the latest version of the Notepad app for Windows Insiders, Microsoft has removed the Copilot button in favor of a \"writing tools\" menu. The Copilot button in the Snipping Tool app also no longer appears when you select an area to [\u2026]",
+        "tier": "NOTED",
+        "summary": "Microsoft is quietly removing Copilot buttons from Windows 11 apps and replacing them with more generic 'writing tools' menus. Small signal that Microsoft is rethinking how aggressively it surfaces Copilot branding \u2014 possibly a UX lesson that forcing AI into every touchpoint creates friction rather than adoption.",
+        "rank": 10
+      },
+      {
+        "title": "ChatGPT has a new $100 per month Pro subscription",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/909599/chatgpt-pro-subscription-new",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-09T22:57:15+00:00",
+        "description": "OpenAI has announced a new version of its ChatGPT Pro subscription that costs $100 per month. The new Pro tier offers \"5x more\" usage of its Codex coding tool than the $20 per month Plus subscription and \"is best for longer, high-effort Codex sessions,\" OpenAI says. The company is introducing the new tier as it [\u2026]",
+        "id": "5f11795b3115",
+        "content": "OpenAI has announced a new version of its ChatGPT Pro subscription that costs $100 per month. The new Pro tier offers \"5x more\" usage of its Codex coding tool than the $20 per month Plus subscription and \"is best for longer, high-effort Codex sessions,\" OpenAI says. The company is introducing the new tier as it [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Same story as above from The Verge \u2014 the new $100 ChatGPT tier is primarily a Codex play, optimized for long, high-effort coding sessions. Worth noting the framing here: OpenAI is explicitly positioning this tier for power builders, not casual users.",
+        "rank": 5
+      },
+      {
+        "title": "Florida launches investigation into OpenAI",
+        "url": "https://www.theverge.com/policy/909557/openai-florida-investigation",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-09T22:17:06+00:00",
+        "description": "Florida Attorney General James Uthmeier is launching an investigation into OpenAI over public safety and national security risks, as reported earlier by Reuters. In a statement on Thursday, Uthmeier says there are concerns that OpenAI's data and technology are \"falling into the hands of America's enemies, such as the Chinese Communist Party.\" Uthmeier also says [\u2026]",
+        "id": "3e1330db8dec",
+        "content": "Florida Attorney General James Uthmeier is launching an investigation into OpenAI over public safety and national security risks, as reported earlier by Reuters. In a statement on Thursday, Uthmeier says there are concerns that OpenAI's data and technology are \"falling into the hands of America's enemies, such as the Chinese Communist Party.\" Uthmeier also says [\u2026]",
+        "tier": "NOTED",
+        "summary": "Florida's AG is investigating OpenAI over national security concerns \u2014 specifically worrying about data ending up with adversaries like China. Not an immediate operational concern, but if you're building anything with sensitive data through OpenAI's APIs, regulatory scrutiny on data handling is creeping closer.",
+        "rank": 9
+      },
+      {
+        "title": "Google\u2019s Gemini AI can answer your questions with 3D models and simulations",
+        "url": "https://www.theverge.com/tech/909391/google-gemini-ai-3d-models-simulations",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-09T17:57:58+00:00",
+        "description": "Google's latest upgrade for Gemini will allow the chatbot to generate interactive 3D models and simulations in response to your questions. With the new feature, you may see options to rotate the AI-generated model, manually adjust sliders on it, or input different values to change the simulation in real-time. When trying out the feature for [\u2026]",
+        "id": "558a56e27085",
+        "content": "Google's latest upgrade for Gemini will allow the chatbot to generate interactive 3D models and simulations in response to your questions. With the new feature, you may see options to rotate the AI-generated model, manually adjust sliders on it, or input different values to change the simulation in real-time. When trying out the feature for [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Google's Gemini can now generate interactive 3D models and simulations in response to questions \u2014 rotate them, adjust sliders, change values in real-time. This is a meaningful capability jump for anyone doing product design, engineering, training, or education. Visual + interactive AI outputs start to replace entire categories of specialist software.",
+        "rank": 3
+      },
+      {
+        "title": "The AI industry\u2019s race for profits is now existential",
+        "url": "https://www.theverge.com/podcast/909042/ai-monetization-cliff-anthropic-openai-profitable-ai-existential-moment",
+        "source_name": "The Verge AI",
+        "layer": 3,
+        "published": "2026-04-09T14:00:00+00:00",
+        "description": "Today on Decoder, let\u2019s talk about the looming AI monetization cliff, and whether some of the biggest companies in the space can become real, profitable businesses before they careen right off it. My guest today is Hayden Field, who\u2019s our senior AI reporter here at The Verge. She\u2019s been keeping close tabs on both Anthropic [\u2026]",
+        "id": "d63b04a32bef",
+        "content": "Today on Decoder, let\u2019s talk about the looming AI monetization cliff, and whether some of the biggest companies in the space can become real, profitable businesses before they careen right off it. My guest today is Hayden Field, who\u2019s our senior AI reporter here at The Verge. She\u2019s been keeping close tabs on both Anthropic [\u2026]",
+        "tier": "WORTH_YOUR_TIME",
+        "summary": "Good explainer on the AI monetization cliff \u2014 the question of whether Anthropic, OpenAI, and others can become profitable businesses before they burn through their capital. For someone building on these platforms, understanding their financial durability matters: if your workflows depend on Claude or GPT, you want to know these companies are viable long-term.",
+        "rank": 7
+      }
+    ],
+    "leaderboard": [
+      {
+        "rank": 1,
+        "title": "Build autonomous optimization loops using scoring functions",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "The autoresearch pattern (define a scoring function, let an agent explore overnight, review improvements) is how Anthropic trained Claude to be exceptional at structured tasks. This same pattern applies to ANY system where quality can be scored: prompt optimization, scraper tuning, route efficiency, pricing models. Mastering this unlocks compound improvements across every future system you build. The Shopify CEO example proves it works on production code, not just ML training.",
+        "first_step": "Take the inspector scheduling scoring function (route efficiency, time windows, priority) and set up a 4-hour overnight loop that generates alternative schedules, scores them, and surfaces the top 3 by morning.",
+        "time_investment": "2-3 sessions to internalize the pattern, then reusable forever",
+        "days_on_leaderboard": 15
+      },
+      {
+        "rank": 2,
+        "title": "Learn when to slow agents down and demand understanding before proceeding",
+        "category": "PARADIGM_SHIFT",
+        "rationale": "Auto mode is powerful, but cognitive debt is real. The discipline of stopping when you don't understand what the agent built \u2014 even if it works \u2014 is what separates operators who ship sustainably from those who accumulate unmaintainable black boxes. This isn't a Claude Code habit; it's an operator discipline that applies to every automated system you'll ever delegate to.",
+        "first_step": "Next Claude Code session: when the agent finishes a complex multi-file change, stop before testing. Read each changed file and articulate what changed and why. If you can't, don't proceed until you can.",
+        "time_investment": "Immediate practice \u2014 adds 10-15 minutes per complex build, but prevents hours of debugging later",
+        "days_on_leaderboard": 13
+      },
+      {
+        "rank": 3,
+        "title": "Master Claude Code auto mode to architect safer autonomous systems",
+        "category": "NEW_CAPABILITY",
+        "rationale": "Auto mode fundamentally changes the trust boundary for autonomous agents. Understanding how the permission classifier works \u2014 what triggers review vs auto-approval \u2014 teaches you to architect systems that can run unsupervised without creating risk. This isn't about using a feature; it's about learning to design agent workflows that balance autonomy with safety. That skill transfers to ANY autonomous system you build, whether in Claude Code or not.",
+        "first_step": "Trigger auto mode deliberately in your next Claude Code session. Try actions you know should auto-approve (file reads, basic git ops) and ones that should block (env var access, package installs). Study the classifier's decisions.",
+        "time_investment": "20 minutes hands-on experimentation, ongoing pattern recognition",
+        "days_on_leaderboard": 14
+      },
+      {
+        "rank": 4,
+        "title": "Master independent debugging of production failures",
+        "category": "SKILL_GAP",
+        "rationale": "The gap between Stage 3 and Stage 4 is not knowing more features \u2014 it's being able to fix things when they break at 3am without waiting for Claude. Reading tracebacks, isolating root causes, and understanding state management are the skills that let you deploy confidently. Your daily briefing is in production. Any failure is real reputational damage. You need to be able to diagnose and fix it yourself.",
+        "first_step": "Next time the daily briefing fails, resist asking Claude 'what's wrong?' Instead: read the GitHub Actions log line-by-line, identify the exact failure point, form a hypothesis, THEN validate it with Claude.",
+        "time_investment": "Ongoing practice \u2014 every failure is a training session",
+        "days_on_leaderboard": 15
+      },
+      {
+        "rank": 5,
+        "title": "Sierra's Bret Taylor: internalize the 'button era is over' framing for your own operations",
+        "category": "STRATEGIC_MOVE",
+        "rationale": "Taylor's claim isn't a product pitch \u2014 it's a structural observation about where human-software interaction is heading. The operators who thrive in that transition won't be the ones who learned to use agentic tools; they'll be the ones who re-architected their workflows assuming natural language intent is the interface. Applied to your business: every place a human currently navigates a UI to trigger an action (Breezeway task creation, Guesty status updates, inspector dispatch) is a candidate for collapsing into a single intent statement. Start cataloging those friction points now, before the tools to automate them fully arrive.",
+        "first_step": "Spend 20 minutes writing a list of every UI-navigation workflow in your operation \u2014 anything where a person opens an app, clicks through menus, and submits a form. This becomes your automation target backlog when agentic interfaces mature.",
+        "time_investment": "20 minutes to build the inventory, ongoing mindset shift",
+        "days_on_leaderboard": 1
+      }
+    ],
+    "backlog_summary": {
+      "total_pending": 12,
+      "total_adopted": 0,
+      "total_archived": 0,
+      "adoption_rate_4w": 0.0,
+      "new_this_run": 0,
+      "archived_this_run": 0,
+      "oldest_pending": [
+        {
+          "title": "v2.1.83",
+          "days_pending": 16
+        },
+        {
+          "title": "Auto mode for Claude Code",
+          "days_pending": 16
+        },
+        {
+          "title": "Package Managers Need to Cool Down",
+          "days_pending": 16
+        }
+      ]
+    },
+    "dropped_counts": {
+      "layer_1": 1,
+      "layer_2": 1,
+      "layer_3": 6
+    },
+    "total_fetched": 71
+  },
+  {
     "date": "2026-04-09",
     "items": [
       {
